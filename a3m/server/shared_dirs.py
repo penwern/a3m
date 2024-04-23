@@ -14,6 +14,7 @@ def create():
         "currentlyProcessing/transfer",
         "currentlyProcessing/ingest",
         "completed",
+        "dips",
         "failed",
         "policies",
         "tmp",
