@@ -20,6 +20,7 @@ from a3m.main import models
 from a3m.server.db import auto_close_old_connections
 from a3m.server.jobs import JobChain
 from a3m.server.processing import DEFAULT_PROCESSING_CONFIG
+from a3m.server.utils import uuid_from_path
 
 logger = logging.getLogger(__name__)
 
@@ -407,7 +408,7 @@ class DIP(SIPDIP):
         pass
 
     def get_replacement_mapping(self, filter_subdir_path=None):
-        mapping = super().get_replacement_mapping(filter_subdir_path=filter_subdir_path)
+        mapping = super().get_replacement_mapping()
         mapping[r"%unitType%"] = "DIP"
 
         if filter_subdir_path:
@@ -473,8 +474,8 @@ class Transfer(Package):
         self.current_path = transfer.currentlocation
         self.processing_configuration = transfer.processing_configuration
 
-    def get_replacement_mapping(self, filter_subdir_path=None):
-        mapping = super().get_replacement_mapping(filter_subdir_path=filter_subdir_path)
+    def get_replacement_mapping(self):
+        mapping = super().get_replacement_mapping()
 
         mapping.update(
             {
@@ -506,8 +507,8 @@ class SIP(SIPDIP):
         self.aip_filename = sip.aip_filename or ""
         self.sip_type = sip.sip_type
 
-    def get_replacement_mapping(self, filter_subdir_path=None):
-        mapping = super().get_replacement_mapping(filter_subdir_path=filter_subdir_path)
+    def get_replacement_mapping(self,):
+        mapping = super().get_replacement_mapping()
 
         mapping.update(
             {
