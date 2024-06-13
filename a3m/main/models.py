@@ -124,7 +124,7 @@ class DublinCore(models.Model):
 
 class MetadataAppliesToType(models.Model):
     """
-    What type of unit (SIP, Transfer etc) the metadata link is.
+    What type of unit (SIP, DIP, Transfer etc) the metadata link is.
 
     TODO replace this with choices fields.
     """
@@ -246,6 +246,15 @@ class SIP(models.Model):
     currentpath = models.TextField(db_column="currentPath", null=True, blank=True)
     hidden = models.BooleanField(default=False)
     aip_filename = models.TextField(db_column="aipFilename", null=True, blank=True)
+    SIP_TYPE_CHOICES = (
+        ("SIP", _("SIP")),
+        ("AIC", _("AIC")),
+        ("AIP-REIN", _("Reingested AIP")),
+        ("AIC-REIN", _("Reingested AIC")),
+    )
+    sip_type = models.CharField(
+        max_length=8, choices=SIP_TYPE_CHOICES, db_column="sipType", default="SIP"
+    )
     identifiers = models.ManyToManyField("Identifier")
     diruuids = models.BooleanField(db_column="dirUUIDs", default=False)
 
