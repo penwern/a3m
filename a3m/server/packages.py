@@ -505,7 +505,6 @@ class SIP(SIPDIP):
         sip = models.SIP.objects.get(uuid=self.uuid)
         self.current_path = sip.currentpath
         self.aip_filename = sip.aip_filename or ""
-        self.sip_type = sip.sip_type
 
     def get_replacement_mapping(self,):
         mapping = super().get_replacement_mapping()
