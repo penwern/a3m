@@ -1053,16 +1053,451 @@
       "exit_codes": {
         "0": {
           "job_status": "Completed successfully",
-          "link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d"
+          "link_id": "d8e7614d-6a7b-4c09-9e04-a83315d08623"
         }
       },
       "fallback_job_status": "Failed",
-      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "fallback_link_id": "d8e7614d-6a7b-4c09-9e04-a83315d08623",
       "group": {
         "en": "Add README file",
         "ja": "READMEファイルを追加",
         "pt_BR": "Adicionar arquivo README",
         "sv": "Lägg till README-fil"
+      }
+    },
+    "d8e7614d-6a7b-4c09-9e04-a83315d08623": {
+      "config": {
+        "@manager": "linkTaskManagerChoice",
+        "choices": [
+          {
+            "link_id": "47c83e01-7556-4c13-881f-282c6d9c7d6a",
+            "value": true
+          },
+          {
+            "link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+            "value": false
+          }
+        ],
+        "config_attr": "generate_dip",
+        "default": true
+      },
+      "description": {
+        "en": "Generate DIP?",
+        "es": "Generar DIP?",
+        "fr": "Générer DIP?",
+        "pt_BR": "Gerar DIP?",
+        "sv": "Generera DIP?"
+      },
+      "fallback_job_status": "Failed",
+      "group": {
+        "en": "Generate DIP",
+        "es": "Generar DIP",
+        "fr": "Générer DIP",
+        "pt_BR": "Gerar DIP",
+        "sv": "Generera DIP"
+      }
+    },
+    "47c83e01-7556-4c13-881f-282c6d9c7d6a": {
+      "config": {
+        "@manager": "linkTaskManagerDirectories",
+        "arguments": "-m 770 \"%SIPDirectory%DIP/\" \"%SIPDirectory%DIP/objects/\"",
+        "execute": "cmd_mkdir"
+      },
+      "description": {
+        "en": "Create DIP directory",
+        "es": "Crear el directorio DIP",
+        "fr": "Créer un répertoire DIP",
+        "ja": "DIPディレクトリを作成する",
+        "pt_BR": "Criar diretório DIP",
+        "sv": "Skapa DIP-mapp"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "bcabd5e2-c93e-4aaa-af6a-9a74d54e8bf0"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "group": {
+        "en": "Generate DIP",
+        "es": "Generar DIP",
+        "fr": "Générer DIP",
+        "pt_BR": "Gerar DIP",
+        "sv": "Generera DIP"
+      }
+    },
+    "bcabd5e2-c93e-4aaa-af6a-9a74d54e8bf0": {
+      "config": {
+        "@manager": "linkTaskManagerFiles",
+        "arguments": "access \"%fileUUID%\" \"%relativeLocation%\" \"%SIPDirectory%\" \"%SIPUUID%\" \"%taskUUID%\" \"original\"",
+        "execute": "normalize",
+        "filter_subdir": "objects/"
+      },
+      "description": {
+        "en": "Normalize for access",
+        "es": "Normalizar para acceso",
+        "fr": "Normaliser aux fins d’accès",
+        "pt_BR": "Normalize para acesso",
+        "sv": "Normalisera för åtkomst"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "286bbb36-6a38-41d5-bf7a-a8ba58aa71ce"
+        },
+        "1": {
+          "job_status": "Completed successfully",
+          "link_id": "286bbb36-6a38-41d5-bf7a-a8ba58aa71ce"
+        },
+        "2": {
+          "job_status": "Completed successfully",
+          "link_id": "286bbb36-6a38-41d5-bf7a-a8ba58aa71ce"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "group": {
+        "en": "Normalize",
+        "es": "Normalizar",
+        "fr": "Normaliser ",
+        "pt_BR": "Normalizar",
+        "sv": "Normalisera"
+      }
+    },
+    "286bbb36-6a38-41d5-bf7a-a8ba58aa71ce": {
+      "config": {
+        "@manager": "linkTaskManagerFiles",
+        "arguments": "\"%relativeLocation%\" \"%fileUUID%\" \"%SIPUUID%\" \"%sharedPath%\" \"access\"",
+        "execute": "validate_file",
+        "filter_subdir": "DIP/objects/"
+      },
+      "description": {
+        "en": "Validate access derivatives",
+        "fr": "Valider les copies de consultation",
+        "ja": "アクセス派生物の妥当性確認",
+        "pt_BR": "Validar derivados de acesso",
+        "sv": "Verifiera åtkomstbearbetningar"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "e419a1a2-5689-471a-b489-1e860792c923"
+        },
+        "1": {
+          "job_status": "Failed",
+          "link_id": "e419a1a2-5689-471a-b489-1e860792c923"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "e419a1a2-5689-471a-b489-1e860792c923",
+      "group": {
+        "en": "Normalize",
+        "es": "Normalizar",
+        "fr": "Normaliser ",
+        "pt_BR": "Normalizar",
+        "sv": "Normalisera"
+      }
+    },
+    "e419a1a2-5689-471a-b489-1e860792c923": {
+      "config": {
+        "@manager": "linkTaskManagerFiles",
+        "arguments": "--fileUUID \"%fileUUID%\" --inputFile \"%relativeLocation%\" --sipDirectory \"%SIPDirectory%\"",
+        "execute": "remove_files_without_premis_metadata",
+        "filter_subdir": "objects/",
+        "stderr_file": "%SIPLogsDirectory%removedFilesWithNoPremisMetadata.log",
+        "stdout_file": "%SIPLogsDirectory%removedFilesWithNoPremisMetadata.log"
+      },
+      "description": {
+        "en": "Remove files without linking information (failed normalization artifacts etc.)",
+        "pt_BR": "Remover arquivos sem vincular informações (itens de normalização falhos, etc.)",
+        "sv": "Ta bort fiier utan att länka information (misslyckade normaliseringsartefakter etc.)"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "8ce07e94-6130-4987-96f0-2399ad45c5c2"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "group": {
+        "en": "Normalize",
+        "es": "Normalizar",
+        "fr": "Normaliser",
+        "pt_BR": "Normalizar",
+        "sv": "Normalisera"
+      }
+    },
+    "8ce07e94-6130-4987-96f0-2399ad45c5c2": {
+      "config": {
+        "@manager": "linkTaskManagerChoice",
+        "choices": [
+          {
+            "link_id": "3bbfbd27-ba41-4e36-8b7f-b4f02676bda3",
+            "value": true
+          },
+          {
+            "link_id": "f3a39155-d655-4336-8227-f8c88e4b7669",
+            "value": false
+          }
+        ],
+        "config_attr": "perform_policy_checks_on_access_derivatives",
+        "default": true
+      },
+      "description": {
+        "en": "Perform policy checks on access derivatives?",
+        "fr": "Effectuer les vérifications de politique sur les copies de consultation?",
+        "pt_BR": "Executar verificações de política em derivadas de acesso?",
+        "sv": "Utför policykontroller på åtkomstbearbetningar?"
+      },
+      "fallback_job_status": "Failed",
+      "group": {
+        "en": "Policy checks for derivatives",
+        "fr": "Vérifications de politique sur les copies",
+        "pt_BR": "Verificações de políticas para derivados",
+        "sv": "Policykontroll för bearbetningar"
+      }
+    },
+    "3bbfbd27-ba41-4e36-8b7f-b4f02676bda3": {
+      "config": {
+        "@manager": "linkTaskManagerFiles",
+        "arguments": "\"%relativeLocation%\" \"%fileUUID%\" \"%SIPUUID%\" \"%sharedPath%\" \"access\"",
+        "execute": "policy_check"
+      },
+      "description": {
+        "en": "Policy checks for access derivatives",
+        "fr": "Vérifications de politique sur les copies de consultation",
+        "pt_BR": "Verificações de política para derivadas de acesso",
+        "sv": "Policykontroll på åtkomstbearbetningar"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "f3a39155-d655-4336-8227-f8c88e4b7669"
+        },
+        "1": {
+          "job_status": "Failed",
+          "link_id": "f3a39155-d655-4336-8227-f8c88e4b7669"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "group": {
+        "en": "Policy checks for derivatives",
+        "fr": "Vérifications de politique sur les copies",
+        "pt_BR": "Verificações de políticas para derivados",
+        "sv": "Policykontroll för bearbetningar"
+      }
+    },
+    "a1b65fe3-9358-479b-93b9-68f2b5e71b2b": {
+      "config": {
+        "@manager": "linkTaskManagerFiles",
+        "arguments": "--sipUUID \"%SIPUUID%\" --sipDirectory \"%SIPDirectory%\" --filePath \"%relativeLocation%\"",
+        "execute": "manual_normalization_move_access_files_to_dip",
+        "filter_subdir": "objects/manualNormalization/access"
+      },
+      "description": {
+        "en": "Move access files to DIP",
+        "es": "Mover ficheros de acceso al DIP",
+        "pt_BR": "Mover arquivos de acesso para DIP",
+        "sv": "Flytta tillgänglighetsfiler till DIP"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "9e9b522a-77ab-4c17-ab08-5a4256f49d59"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "b2ef06b9-bca4-49da-bc5c-866d7b3c4bb1",
+      "group": {
+        "en": "Process manually normalized files",
+        "es": "Procesar manualmente ficheros normalizados",
+        "pt_BR": "Processar arquivos normalizados manualmente",
+        "sv": "Bearbeta manuellt normaliserade filer"
+      }
+    },
+    "f3a39155-d655-4336-8227-f8c88e4b7669": {
+      "config": {
+        "@manager": "linkTaskManagerDirectories",
+        "arguments": "-m 770 \"%SIPDirectory%thumbnails/\"",
+        "execute": "cmd_mkdir"
+      },
+      "description": {
+        "en": "Create thumbnails directory",
+        "es": "Crear directorio de miniaturas",
+        "fr": "Créer un répertoire de vignettes",
+        "pt_BR": "Crie o diretório thumbnails",
+        "sv": "Skapa miniatyrmapp"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "092b47db-6f77-4072-aed3-eb248ab69e9c"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "group": {
+        "en": "Generate DIP",
+        "es": "Generar DIP",
+        "fr": "Générer DIP",
+        "pt_BR": "Gerar DIP",
+        "sv": "Generera DIP"
+      }
+    },
+    "092b47db-6f77-4072-aed3-eb248ab69e9c": {
+      "config": {
+        "@manager": "linkTaskManagerFiles",
+        "arguments": "thumbnail \"%fileUUID%\" \"%relativeLocation%\" \"%SIPDirectory%\" \"%SIPUUID%\" \"%taskUUID%\" \"original\" --thumbnail_mode \"%ThumbnailMode%\"",
+        "execute": "normalize",
+        "filter_subdir": "objects/"
+      },
+      "description": {
+        "en": "Normalize for thumbnails",
+        "es": "Normalizar para miniaturas",
+        "pt_BR": "Normalize para thumbnails",
+        "sv": "Normalisera för förhandsgranskning"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "ad011cc2-b0eb-4f51-96bb-400149a2ea11"
+        },
+        "1": {
+          "job_status": "Completed successfully",
+          "link_id": "ad011cc2-b0eb-4f51-96bb-400149a2ea11"
+        },
+        "2": {
+          "job_status": "Completed successfully",
+          "link_id": "ad011cc2-b0eb-4f51-96bb-400149a2ea11"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "group": {
+        "en": "Normalize",
+        "es": "Normalizar",
+        "fr": "Normaliser ",
+        "pt_BR": "Normalizar",
+        "sv": "Normalisera"
+      }
+    },
+    "ad011cc2-b0eb-4f51-96bb-400149a2ea11": {
+      "config": {
+        "@manager": "linkTaskManagerDirectories",
+        "arguments": "\"%SIPDirectory%METS.%SIPUUID%.xml\" \"%SIPDirectory%DIP/METS.%SIPUUID%.xml\"",
+        "execute": "cmd_cp"
+      },
+      "description": {
+        "en": "Copy METS to DIP directory",
+        "es": "Copiar METS al directorio DIP",
+        "fr": "Copier le METS dans le répertoire DIP",
+        "ja": "DIPディレクトリにMETSをコピー",
+        "pt_BR": "Copie METS para o diretório DIP",
+        "sv": "Kopiera METS till DIP-mapp"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "43c72f8b-3cea-4b4c-b99d-cfdefdfcc270"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d",
+      "group": {
+        "en": "Prepare DIP",
+        "es": "Preparar DIP",
+        "fr": "Préparer le DIP",
+        "sv": "Förbered DIP"
+      }
+    },
+    "43c72f8b-3cea-4b4c-b99d-cfdefdfcc270": {
+      "config": {
+        "@manager": "linkTaskManagerDirectories",
+        "arguments": "\"%SIPObjectsDirectory%metadata/OCRfiles\" \"%SIPDirectory%DIP\"",
+        "execute": "copy_recursive"
+      },
+      "description": {
+        "en": "Copy OCR data to DIP directory",
+        "es": "Copiar datos OCR al directorio DIP",
+        "fr": "Copier les données ROC dans le répertoire DIP",
+        "ja": "DIPディレクトリにOCRをコピー",
+        "pt_BR": "Copie os dados do OCR para o diretório DIP",
+        "sv": "Kopiera OCR-data till DIP-mapp"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "378ae4fc-7b62-40af-b448-a1ab47ac2c0c"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "b2ef06b9-bca4-49da-bc5c-866d7b3c4bb1",
+      "group": {
+        "en": "Prepare DIP",
+        "es": "Preparar DIP",
+        "fr": "Préparer le DIP",
+        "sv": "Förbered DIP"
+      }
+    },
+    "378ae4fc-7b62-40af-b448-a1ab47ac2c0c": {
+      "config": {
+        "@manager": "linkTaskManagerDirectories",
+        "arguments": "\"%SIPDirectory%thumbnails\" \"%SIPDirectory%DIP\"",
+        "execute": "copy_thumbnails_to_dip_directory"
+      },
+      "description": {
+        "en": "Copy thumbnails to DIP directory",
+        "es": "Copiar miniaturas al directorio dIP",
+        "fr": "Copier les vignettes dans le répertoire DIP",
+        "ja": "DIPディレクトリにサムネイルをコピー",
+        "pt_BR": "Copie os thumbnails para o diretório DIP",
+        "sv": "Kopiera tumnagel till DIP-mapp"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "61a8de9c-7b25-4f0f-b218-ad4dde261eed"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "b2ef06b9-bca4-49da-bc5c-866d7b3c4bb1",
+      "group": {
+        "en": "Prepare DIP",
+        "es": "Preparar DIP",
+        "fr": "Préparer le DIP",
+        "sv": "Förbered DIP"
+      }
+    },
+    "61a8de9c-7b25-4f0f-b218-ad4dde261eed": {
+      "config": {
+        "@manager": "linkTaskManagerDirectories",
+        "arguments": "\"%SIPDirectory%DIP\" \"%sharedPath%dips/%SIPDirectoryBasename%\"",
+        "execute": "move_or_merge"
+      },
+      "description": {
+        "en": "Generate DIP",
+        "es": "Generar DIP",
+        "fr": "Générer un DIP",
+        "ja": "DIPを生成",
+        "pt_BR": "Gerar DIP",
+        "sv": "Skapa DIP"
+      },
+      "exit_codes": {
+        "0": {
+          "job_status": "Completed successfully",
+          "link_id": "3e25bda6-5314-4bb4-aa1e-90900dce887d"
+        }
+      },
+      "fallback_job_status": "Failed",
+      "fallback_link_id": "b2ef06b9-bca4-49da-bc5c-866d7b3c4bb1",
+      "group": {
+        "en": "Prepare DIP",
+        "es": "Preparar DIP",
+        "fr": "Préparer le DIP",
+        "sv": "Förbered DIP"
       }
     },
     "56eebd45-5600-4768-a8c2-ec0114555a3d": {
@@ -1454,7 +1889,7 @@
         "filter_subdir": "objects/manualNormalization/preservation"
       },
       "description": {
-        "en": "Check for manual normalized files",
+        "en": "Check for manual normalized preservation files",
         "es": "Comprobar los ficheros normalizados manualmente",
         "fr": "Vérifier les fichiers normalisés manuellement",
         "pt_BR": "Verifique se há arquivos normalizados manualmente",

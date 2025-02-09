@@ -14,9 +14,10 @@ def create():
         "currentlyProcessing/transfer",
         "currentlyProcessing/ingest",
         "completed",
+        "dips",
         "failed",
         "policies",
-        "tmp",
+        "tmp"
     )
     for dirname in dirs:
         dirname = os.path.join(settings.SHARED_DIRECTORY, dirname)
