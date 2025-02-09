@@ -124,7 +124,7 @@ class DublinCore(models.Model):
 
 class MetadataAppliesToType(models.Model):
     """
-    What type of unit (SIP, Transfer etc) the metadata link is.
+    What type of unit (SIP, DIP, Transfer etc) the metadata link is.
 
     TODO replace this with choices fields.
     """
@@ -246,6 +246,12 @@ class SIP(models.Model):
     currentpath = models.TextField(db_column="currentPath", null=True, blank=True)
     hidden = models.BooleanField(default=False)
     aip_filename = models.TextField(db_column="aipFilename", null=True, blank=True)
+    # SIP_TYPE_CHOICES = (
+    #     ("SIP", _("SIP")),
+    # )
+    # sip_type = models.CharField(
+    #     max_length=8, choices=SIP_TYPE_CHOICES, default="SIP"
+    # )
     identifiers = models.ManyToManyField("Identifier")
     diruuids = models.BooleanField(db_column="dirUUIDs", default=False)
 
@@ -1346,3 +1352,45 @@ class FileID(models.Model):
 
     class Meta:
         db_table = "FilesIDs"
+
+# class Access(models.Model):
+#     """Information about an upload to AtoM for a SIP."""
+
+#     id = models.AutoField(primary_key=True, db_column="pk")
+#     sipuuid = UUIDField(default=uuid.uuid4, db_column="SIPUUID", blank=True)
+#     # Qubit ID (slug) generated or preexisting if a new description was not created
+#     resource = models.TextField(db_column="resource", blank=True)
+#     # Before the UploadDIP micro-service is executed, a dialog shows up and ask the user
+#     # the target archival description when the DIP will be deposited via SWORD
+#     # This column is mandatory, the user won't be able to submit the form if this field is empty
+#     target = models.TextField(db_column="target", blank=True)
+#     # Human readable status of an upload (rsync progress percentage, etc)
+#     status = models.TextField(db_column="status", blank=True)
+#     # Machine readable status code of an upload
+#     # 10 = Rsync is working
+#     # 11 = Rsync finished successfully
+#     # 12 = Rsync failed (then see self.exitcode to get rsync exit code)
+#     # 13 = SWORD deposit will be executed
+#     # 14 = Deposit done, Qubit returned code 200 (HTTP Created)
+#     #      - The deposited was created synchronously
+#     #      - At this point self.resource should contains the created Qubit resource
+#     # 15 = Deposit done, Qubit returned code 201 (HTTP Accepted)
+#     #      - The deposited will be created asynchronously (Qubit has a job queue)
+#     #      - At this point self.resource should contains the created Qubit resource
+#     #      - ^ this resource could be under progres, ask to Qubit for the status
+#     statuscode = models.PositiveSmallIntegerField(
+#         db_column="statusCode", null=True, blank=True
+#     )  # Actually a unsigned tinyint
+#     # Rsync exit code
+#     exitcode = models.PositiveSmallIntegerField(
+#         db_column="exitCode", null=True, blank=True
+#     )  # Actually a unsigned tinyint
+#     # Timestamps
+#     createdtime = models.DateTimeField(db_column="createdTime", auto_now_add=True)
+#     updatedtime = models.DateTimeField(db_column="updatedTime", auto_now=True)
+
+#     class Meta:
+#         db_table = "Accesses"
+
+#     def get_title(self):
+#         return Job.objects.filter(sipuuid=self.sipuuid).get_directory_name()
