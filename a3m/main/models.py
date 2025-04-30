@@ -246,12 +246,11 @@ class SIP(models.Model):
     currentpath = models.TextField(db_column="currentPath", null=True, blank=True)
     hidden = models.BooleanField(default=False)
     aip_filename = models.TextField(db_column="aipFilename", null=True, blank=True)
-    # SIP_TYPE_CHOICES = (
-    #     ("SIP", _("SIP")),
-    # )
-    # sip_type = models.CharField(
-    #     max_length=8, choices=SIP_TYPE_CHOICES, default="SIP"
-    # )
+    SIP_TYPE_CHOICES = (
+        ("SIP", _("SIP")),
+        ("DIP", _("DIP")),
+    )
+    sip_type = models.CharField(max_length=8, choices=SIP_TYPE_CHOICES, default="SIP")
     identifiers = models.ManyToManyField("Identifier")
     diruuids = models.BooleanField(db_column="dirUUIDs", default=False)
 
@@ -1352,6 +1351,7 @@ class FileID(models.Model):
 
     class Meta:
         db_table = "FilesIDs"
+
 
 # class Access(models.Model):
 #     """Information about an upload to AtoM for a SIP."""

@@ -15,7 +15,8 @@ from a3m.executeOrRunSubProcess import executeOrRun
 from a3m.fpr.registry import FPR
 from a3m.fpr.registry import Command
 from a3m.fpr.registry import CommandScriptType
-from a3m.fpr.registry import RulePurpose
+
+# from a3m.fpr.registry import RulePurpose
 from a3m.main.models import Derivation
 from a3m.main.models import File
 from a3m.main.models import FileFormatVersion
@@ -137,10 +138,10 @@ def get_replacement_dict(job, opts):
     (directory, basename) = os.path.split(opts.file_path)
     directory += os.path.sep  # All paths should have trailing /
     (filename, _) = os.path.splitext(basename)
-    
+
     # postfix = "-" + opts.task_uuid
     # output_dir = directory
-    
+
     if "preservation" in opts.purpose:
         postfix = "-" + opts.task_uuid
         output_dir = directory
@@ -243,7 +244,7 @@ def check_manual_normalization(job, opts):
     path = os.path.splitext(opts.file_path.replace(opts.sip_path, "%SIPDirectory%", 1))[
         0
     ]
-    
+
     if "preservation" in opts.purpose:
         path = path.replace(
             "%SIPDirectory%objects/",
@@ -353,7 +354,7 @@ def once_normalized(job, executor: Executor, opts, replacement_dict):
                 outcome_detail_note=path_relative_to_sip,
                 today=today,
             )
-            
+
         # Other derivatives go into the Derivations table, but
         # don't get added to the PREMIS Events because they will
         # not appear in the METS.
@@ -364,7 +365,7 @@ def once_normalized(job, executor: Executor, opts, replacement_dict):
                 event=None,
             )
             d.save()
-            
+
         if executor.fpcommand.output_format is None:
             job.print_error("Error - command output format is undefined.")
             executor.exit_code = -2
@@ -417,9 +418,11 @@ def insert_derivation_event(
         derivedFileUUID=output_uuid,
         relatedEventUUID=derivation_uuid,
     )
-    
+
+
 # def get_default_rule(purpose):
 #     return FPR.get_rules(purpose="default_" + purpose)
+
 
 def main(job, opts):
     """Find and execute normalization commands on input file."""
@@ -459,7 +462,7 @@ def main(job, opts):
             " - skipping",
         )
         return SUCCESS
-    
+
     # # For re-ingest: clean up old derivations
     # # If the file already has a Derivation with the same purpose, remove it and mark the derived file as deleted
     # derivatives = Derivation.objects.filter(
@@ -500,7 +503,7 @@ def main(job, opts):
                 outcome_detail_note=None,
             )
         return SUCCESS
-    
+
     # do_fallback = False
     # try:
     #     format_id = FileFormatVersion.objects.get(file_uuid=opts.file_uuid)
@@ -513,17 +516,17 @@ def main(job, opts):
     #     rule = FPR.get_rules(
     #         format_version_id=format_id.format_version_id, purpose=opts.purpose
     #     )
-        # TODO Fix on error - Old code:
-        # except FPRule.DoesNotExist:
-        #     if (
-        #         opts.purpose == "thumbnail"
-        #         and opts.thumbnail_mode == "generate_non_default"
-        #     ):
-        #         job.pyprint("Thumbnail not generated as no rule found for format")
-        #         return SUCCESS
-        #     else:
-        #         do_fallback = True
-    
+    # TODO Fix on error - Old code:
+    # except FPRule.DoesNotExist:
+    #     if (
+    #         opts.purpose == "thumbnail"
+    #         and opts.thumbnail_mode == "generate_non_default"
+    #     ):
+    #         job.pyprint("Thumbnail not generated as no rule found for format")
+    #         return SUCCESS
+    #     else:
+    #         do_fallback = True
+
     # TODO Fix on error - Old code:
     # Try with default rule if no format_id or rule was found
     # if format_id is None or do_fallback:
@@ -536,14 +539,14 @@ def main(job, opts):
     #         opts.purpose,
     #         "rule",
     #     )
-        # except FPR.DoesNotExist:
-        #     job.print_output(
-        #         "Not normalizing",
-        #         os.path.basename(file_.currentlocation),
-        #         " - No rule or default rule found to normalize for",
-        #         opts.purpose,
-        #     )
-        #     return NO_RULE_FOUND
+    # except FPR.DoesNotExist:
+    #     job.print_output(
+    #         "Not normalizing",
+    #         os.path.basename(file_.currentlocation),
+    #         " - No rule or default rule found to normalize for",
+    #         opts.purpose,
+    #     )
+    #     return NO_RULE_FOUND
 
     if not file_.currentlocation:
         job.print_output("Not normalizing file because its path can't be found.")
@@ -562,7 +565,7 @@ def main(job, opts):
 
     cl = Executor(job, command, replacement_dict, once_normalized_callback(job), opts)
     exitstatus = cl.execute()
-    
+
     # TODO Needed for thumbnails?
     # # Store thumbnails locally for use during AIP searches
     # # TODO is this still needed, with the storage service?
@@ -619,7 +622,7 @@ def call(jobs):
         for job in jobs:
             with job.JobContext():
                 opts = parser.parse_args(job.args[1:])
-                
+
                 if (
                     opts.purpose == "thumbnail"
                     and opts.thumbnail_mode == "do_not_generate"
@@ -627,7 +630,7 @@ def call(jobs):
                     job.print_output("Thumbnail generation has been disabled")
                     job.set_status(SUCCESS)
                     continue
-                
+
                 try:
                     job.set_status(main(job, opts))
                 except Exception as e:

@@ -17,7 +17,7 @@ def create():
         "dips",
         "failed",
         "policies",
-        "tmp"
+        "tmp",
     )
     for dirname in dirs:
         dirname = os.path.join(settings.SHARED_DIRECTORY, dirname)

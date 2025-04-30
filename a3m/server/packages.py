@@ -328,8 +328,7 @@ class Package:
 
     @auto_close_old_connections()
     def set_variable(self, key, value, chain_link_id):
-        """Sets a UnitVariable, which tracks choices made by users during processing.
-        """
+        """Sets a UnitVariable, which tracks choices made by users during processing."""
         # TODO: refactor this concept
         if not value:
             value = ""
@@ -337,7 +336,7 @@ class Package:
             value = str(value)
 
         unit_var, created = models.UnitVariable.objects.update_or_create(
-            unittype=self.UNIT_VARIABLE_TYPE,
+            unittype=self.unit_variable_type,
             unituuid=self.uuid,
             variable=key,
             defaults=dict(variablevalue=value, microservicechainlink=chain_link_id),
@@ -360,7 +359,7 @@ class SIPDIP(Package):
     def get_or_create_from_db_by_path(cls, path):
         """Matches a directory to a database SIP by its appended UUID, or path."""
         path = path.replace(_get_setting("SHARED_DIRECTORY"), r"%sharedPath%", 1)
-        package_type = cls.UNIT_VARIABLE_TYPE
+        package_type = cls.unit_variable_type
         sip_uuid = uuid_from_path(path)
         created = True
         if sip_uuid:
@@ -372,6 +371,14 @@ class SIPDIP(Package):
                     "diruuids": False,
                 },
             )
+            # Handle the case where transfer_id is None
+            if sip_obj.transfer_id is None:
+                # Create a Transfer with the same UUID
+                transfer, _ = models.Transfer.objects.get_or_create(
+                    uuid=sip_uuid, defaults={"currentlocation": path}
+                )
+            else:
+                transfer = models.Transfer.objects.get(pk=sip_obj.transfer_id)
             # TODO: we thought this path was unused but some tests have proved
             # us wrong (see issue #1141) - needs to be investigated.
             if package_type == "SIP" and (not created and sip_obj.currentpath != path):
@@ -380,13 +387,18 @@ class SIPDIP(Package):
         else:
             try:
                 sip_obj = models.SIP.objects.get(currentpath=path)
+                transfer = models.Transfer.objects.get(pk=sip_obj.transfer_id)
                 created = False
             except models.SIP.DoesNotExist:
+                sip_id = str(uuid4())
                 sip_obj = models.SIP.objects.create(
-                    uuid=uuid4(),
+                    uuid=sip_id,
                     currentpath=path,
                     sip_type=package_type,
                     diruuids=False,
+                )
+                transfer = models.Transfer.objects.create(
+                    uuid=sip_id, currentlocation=path
                 )
         logger.info(
             "%s %s %s (%s)",
@@ -395,7 +407,7 @@ class SIPDIP(Package):
             "created" if created else "updated",
             path,
         )
-        return cls(path, sip_obj.uuid)
+        return cls(path, sip_obj.uuid, None, transfer, sip_obj)
 
 
 class DIP(SIPDIP):
@@ -426,7 +438,21 @@ class Transfer(Package):
     JOB_UNIT_TYPE = "unitTransfer"
 
     def __init__(self, current_path, uuid, url):
-        super().__init__(current_path, uuid)
+        transfer = models.Transfer.objects.get(uuid=uuid)
+        if not transfer:
+            raise ValueError(f"Transfer with UUID {uuid} not found.")
+        # Try to get the corresponding SIP, or create one if it doesn't exist
+        try:
+            sip = models.SIP.objects.get(pk=transfer.pk)
+        except models.SIP.DoesNotExist:
+            # Create a SIP with the same UUID as the Transfer
+            sip = models.SIP.objects.create(
+                uuid=transfer.pk,
+                currentpath=transfer.currentlocation,
+                sip_type="SIP",
+                diruuids=False,
+            )
+        super().__init__(current_path, uuid, None, transfer, sip)
         self.url = url or ""
 
     @classmethod
@@ -472,7 +498,7 @@ class Transfer(Package):
     def reload(self):
         transfer = models.Transfer.objects.get(uuid=self.uuid)
         self.current_path = transfer.currentlocation
-        self.processing_configuration = transfer.processing_configuration
+        # self.processing_configuration = transfer.processing_configuration
 
     def get_replacement_mapping(self):
         mapping = super().get_replacement_mapping()
@@ -481,7 +507,7 @@ class Transfer(Package):
             {
                 self.REPLACEMENT_PATH_STRING: self.current_path,
                 r"%unitType%": "Transfer",
-                r"%processingConfiguration%": self.processing_configuration,
+                # r"%processingConfiguration%": self.processing_configuration,
                 r"%URL%": self.url,
             }
         )
@@ -506,7 +532,9 @@ class SIP(SIPDIP):
         self.current_path = sip.currentpath
         self.aip_filename = sip.aip_filename or ""
 
-    def get_replacement_mapping(self,):
+    def get_replacement_mapping(
+        self,
+    ):
         mapping = super().get_replacement_mapping()
 
         mapping.update(
