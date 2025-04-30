@@ -11,9 +11,10 @@ jobs:
       uses: actions/checkout@v4
     - uses: whoan/docker-build-with-cache-action@v8
       with:
-        username: sevein
+        username: camlyall
         password: "${{ secrets.CR_PAT }}"
-        image_name: artefactual-labs/a3m
+        image_name: penwern/a3m
         image_tag: main
         registry: ghcr.io
         build_extra_args: "--compress=true"
+        push_image_and_stages: false
