@@ -11,10 +11,8 @@ import uuid
 from django.conf import settings
 
 from a3m.server import metrics
-from a3m.server.jobs import decisions
 from a3m.server.packages import DIP
 from a3m.server.packages import SIP
-
 
 logger = logging.getLogger(__name__)
 
@@ -261,7 +259,7 @@ class PackageQueue:
                 job = self.transfer_queue.get_nowait()
             except queue.Empty:
                 pass
-            
+
         if job is not None:
             metrics.package_queue_length_gauge.labels(
                 package_type=job.package.__class__.__name__

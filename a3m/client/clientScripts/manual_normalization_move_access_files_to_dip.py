@@ -133,11 +133,8 @@ def main(job):
             originalFileUUID + "-" + str(i) + "-" + os.path.basename(opts.filePath)
         )
 
-    try:
-        if not os.path.isdir(dstDir):
-            os.makedirs(dstDir)
-    except:
-        pass
+    # Ensure dstDir exists (no error if it already does)
+    os.makedirs(dstDir, exist_ok=True)
 
     # Rename the file or directory src to dst. If dst is a directory, OSError will be raised. On Unix, if dst exists and is a file, it will be replaced silently if the user has permission. The operation may fail on some Unix flavors if src and dst are on different filesystems.
     # see http://docs.python.org/2/library/os.html

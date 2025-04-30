@@ -15,7 +15,6 @@ from a3m.server.workflow import load as load_workflow
 FIXTURES_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 INTEGRATION_TEST_PATH = os.path.join(FIXTURES_DIR, "workflow-integration-test.json")
 from a3m.server.packages import DIP
-from a3m.server.packages import SIP
 from a3m.server.packages import Transfer
 
 
