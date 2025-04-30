@@ -8,7 +8,7 @@ import pytest
 
 from a3m.api.transferservice.v1beta1.request_response_pb2 import ProcessingConfig
 from a3m.server.jobs import Job
-from a3m.server.packages import Package
+from a3m.server.packages import SIP
 from a3m.server.queues import PackageQueue
 from a3m.server.workflow import Link
 
@@ -69,7 +69,7 @@ class FakeUnit:
 
 @pytest.fixture
 def package(request):
-    return Package(
+    return SIP(
         "package-1",
         "file:///tmp/foobar-1.gz",
         ProcessingConfig(),
@@ -80,7 +80,7 @@ def package(request):
 
 @pytest.fixture
 def package_2(request):
-    return Package(
+    return SIP(
         "package-2",
         "file:///tmp/foobar-2.gz",
         ProcessingConfig(),
