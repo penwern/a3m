@@ -15,6 +15,9 @@ from a3m.executeOrRunSubProcess import executeOrRun
 from a3m.fpr.registry import FPR
 from a3m.fpr.registry import Command
 from a3m.fpr.registry import CommandScriptType
+from a3m.fpr.registry import JSONBackend
+from a3m.fpr.registry import Rule
+from a3m.fpr.registry import RulePurpose
 
 # from a3m.fpr.registry import RulePurpose
 from a3m.main.models import Derivation
@@ -196,6 +199,7 @@ def check_manual_normalization(job, opts):
     ).replace("%SIPDirectory%objects/", "", 1)
     if os.path.isfile(normalization_csv):
         found = False
+        access_file = None
         preservation_file = None
         # use universal newline mode to support unusual newlines, like \r
         with open(normalization_csv) as csv_file:
@@ -207,7 +211,7 @@ def check_manual_normalization(job, opts):
                         continue
                     if "#" in row[0]:  # ignore comments
                         continue
-                    original, _, preservation_file = row
+                    original, access_file, preservation_file = row
                     if original == bname:
                         job.print_output(
                             "Filename",
@@ -227,11 +231,19 @@ def check_manual_normalization(job, opts):
         # If we didn't find a match, let it fall through to the usual method
         if found:
             # No manually normalized file for command classification
-            if not preservation_file:
+            if "preservation" in opts.purpose and not preservation_file:
                 return None
+            if "access" in opts.purpose and not access_file:
+                return None
+
             # If we found a match, verify access/preservation exists in DB
-            # match and pull original location b/c filename change
-            filename = preservation_file
+            # match and pull original location b/c filename changes
+            if "preservation" in opts.purpose:
+                filename = preservation_file
+            elif "access" in opts.purpose:
+                filename = access_file
+            else:
+                return None
             job.print_output("Looking for", filename, "in database")
             # FIXME: SQL uses removedtime=0. Convince Django to express this
             return File.objects.get(
@@ -261,8 +273,8 @@ def check_manual_normalization(job, opts):
     # FIXME: SQL uses removedtime=0. Cannot get Django to express this
     job.print_output(
         "Checking for a manually normalized file by trying to get the"
-        " unique file that matches SIP UUID {} and whose currentlocation"
-        " value starts with this path: {}.".format(opts.sip_uuid, path)
+        f" unique file that matches SIP UUID {opts.sip_uuid} and whose currentlocation"
+        f" value starts with this path: {path}."
     )
     matches = File.objects.filter(  # removedtime = 0
         sip=opts.sip_uuid, currentlocation__startswith=path
@@ -276,7 +288,7 @@ def check_manual_normalization(job, opts):
         # if original is /a/b/abc.NEF then /a/b/abc.tif and /a/b/abc_1.tif will
         # both match but /a/b/abc.tif is the correct match.
         job.print_output(
-            "Multiple files matching path {} found. Returning the shortest one."
+            f"Multiple files matching path {path} found. Returning the shortest one."
         )
         ret = sorted(matches, key=lambda f: f.currentlocation)[0]
         job.print_output(f"Returning file at {ret.currentlocation}")
@@ -420,8 +432,29 @@ def insert_derivation_event(
     )
 
 
-# def get_default_rule(purpose):
-#     return FPR.get_rules(purpose="default_" + purpose)
+def get_default_rule(purpose) -> Rule | None:
+    """Get the default rule for a given purpose."""
+
+    # Convert purpose to default_purpose
+    default_purpose = RulePurpose(f"default_{purpose}")
+
+    # Get all rules for this default purpose
+    rules = []
+    # Type check to ensure we're working with JSONBackend
+    if isinstance(FPR.backend, JSONBackend):
+        for format_version in FPR.backend.versions.values():
+            if (
+                format_version.enabled
+                and format_version.id not in FPR.backend.replaced_versions
+            ):
+                format_rules = FPR.backend.get_rules(format_version.id, default_purpose)
+                rules.extend(format_rules)
+
+        # Return first enabled rule that isn't replaced
+        for rule in rules:
+            if rule.enabled and rule.id not in FPR.backend.replaced_rules:
+                return rule
+    return None
 
 
 def main(job, opts):
@@ -468,7 +501,9 @@ def main(job, opts):
     # derivatives = Derivation.objects.filter(
     #     source_file=file_, derived_file__filegrpuse=opts.purpose
     # )
+    # derivatives_to_delete = []
     # for derivative in derivatives:
+    #     derivatives_to_delete.append(derivative.id)
     #     job.print_output(
     #         opts.purpose,
     #         "derivative",
@@ -483,9 +518,10 @@ def main(job, opts):
     #         databaseFunctions.insertIntoEvents(
     #             fileUUID=derivative.derived_file_id, eventType="deletion"
     #         )
-    # derivatives.delete()
+    # if derivatives_to_delete:
+    #     Derivation.objects.filter(id__in=derivatives_to_delete).delete()
 
-    # If a file has been manually normalized, skip it
+    # If a file has been manually normalized for this purpose, skip it
     manually_normalized_file = check_manual_normalization(job, opts)
     if manually_normalized_file:
         job.print_output(
@@ -504,67 +540,107 @@ def main(job, opts):
             )
         return SUCCESS
 
-    # do_fallback = False
-    # try:
-    #     format_id = FileFormatVersion.objects.get(file_uuid=opts.file_uuid)
-    # except FileFormatVersion.DoesNotExist:
-    #     format_id = None
-    # # Look up the normalization command in the FPR
-    # if format_id:
-    #     job.print_output("File format:", format_id.format_version_id)
-    #     # try:
-    #     rule = FPR.get_rules(
-    #         format_version_id=format_id.format_version_id, purpose=opts.purpose
-    #     )
-    # TODO Fix on error - Old code:
-    # except FPRule.DoesNotExist:
-    #     if (
-    #         opts.purpose == "thumbnail"
-    #         and opts.thumbnail_mode == "generate_non_default"
-    #     ):
-    #         job.pyprint("Thumbnail not generated as no rule found for format")
-    #         return SUCCESS
-    #     else:
-    #         do_fallback = True
+    do_fallback = False
+    try:
+        file_format_version = FileFormatVersion.objects.get(file_uuid=opts.file_uuid)
+    except FileFormatVersion.DoesNotExist:
+        file_format_version = None
 
-    # TODO Fix on error - Old code:
+    # Look up the normalization command in the FPR
+    if file_format_version:
+        job.print_output("File format:", file_format_version.format_version_id)
+        rules = FPR.get_file_rules(file=opts.file_uuid, purpose=opts.purpose)
+        if not rules:
+            if (
+                opts.purpose == "thumbnail"
+                # and opts.thumbnail_mode == "generate_non_default"
+            ):
+                job.pyprint("Thumbnail not generated as no rule found for format")
+                return SUCCESS
+            else:
+                do_fallback = True
+        else:
+            rule = rules[0]
+
     # Try with default rule if no format_id or rule was found
-    # if format_id is None or do_fallback:
-    #     # try:
-    #     rule = get_default_rule(opts.purpose)
-    #     job.print_output(
-    #         os.path.basename(file_.currentlocation),
-    #         "not identified or without rule",
-    #         "- Falling back to default",
-    #         opts.purpose,
-    #         "rule",
-    #     )
-    # except FPR.DoesNotExist:
-    #     job.print_output(
-    #         "Not normalizing",
-    #         os.path.basename(file_.currentlocation),
-    #         " - No rule or default rule found to normalize for",
-    #         opts.purpose,
-    #     )
-    #     return NO_RULE_FOUND
+    if file_format_version is None or do_fallback:
+        rule = get_default_rule(opts.purpose)
+        if rule:
+            job.print_output(
+                os.path.basename(file_.currentlocation),
+                "not identified or without rule",
+                "- Falling back to default",
+                opts.purpose,
+                "rule",
+            )
+        else:
+            job.print_output(
+                "Not normalizing",
+                os.path.basename(file_.currentlocation),
+                " - No rule or default rule found to normalize for",
+                opts.purpose,
+            )
+            return NO_RULE_FOUND
 
-    if not file_.currentlocation:
-        job.print_output("Not normalizing file because its path can't be found.")
-        return NO_RULE_FOUND
-    path = os.path.basename(file_.currentlocation)
+    job.print_output("Format Policy Rule:", rule.id)
+    command = rule.command
+    job.print_output("Format Policy Command:", command.description)
 
-    rules = FPR.get_file_rules(opts.file_uuid, purpose=opts.purpose)
-    if not rules:
-        job.print_output(
-            f"Not normalizing {path} - no rule or default rule found to normalize for {opts.purpose}"
-        )
-        return NO_RULE_FOUND
-
-    command = rules[0].command
     replacement_dict = get_replacement_dict(job, opts)
 
     cl = Executor(job, command, replacement_dict, once_normalized_callback(job), opts)
     exitstatus = cl.execute()
+
+    # TODO Needed?
+    # # If the access/thumbnail normalization command has errored AND a
+    # # derivative was NOT created, then we run the default access/thumbnail
+    # # rule. Note that we DO need to check if the derivative file exists. Even
+    # # when a verification command exists for the normalization command, the
+    # # transcoder.py::Command.execute method will only run the verification
+    # # command if the normalization command returns a 0 exit code.
+    # # Errored thumbnail normalization also needs to result in default thumbnail
+    # # normalization; if not, then a transfer with a single file that failed
+    # # thumbnail normalization will result in a failed SIP at "Prepare DIP: Copy
+    # # thumbnails to DIP directory"
+    # if (
+    #     exitstatus != 0
+    #     and opts.purpose in ("access", "thumbnail")
+    #     and cl.commandObject.output_location
+    #     and (not os.path.isfile(cl.commandObject.output_location))
+    # ):
+    #     # Fall back to default rule
+    #     try:
+    #         fallback_rule = get_default_rule(opts.purpose)
+    #         job.print_output(
+    #             opts.purpose,
+    #             "normalization failed, falling back to default",
+    #             opts.purpose,
+    #             "rule",
+    #         )
+    #     except FPRule.DoesNotExist:
+    #         job.print_output(
+    #             "Not retrying normalizing for",
+    #             os.path.basename(file_.currentlocation.decode()),
+    #             " - No default rule found to normalize for",
+    #             opts.purpose,
+    #         )
+    #         fallback_rule = None
+    #     # Don't re-run the same command
+    #     if fallback_rule and fallback_rule.command != command:
+    #         job.print_output("Fallback Format Policy Rule:", fallback_rule)
+    #         command = fallback_rule.command
+    #         job.print_output("Fallback Format Policy Command", command.description)
+
+    #         # Use existing replacement dict
+    #         cl = transcoder.CommandLinker(
+    #             job,
+    #             fallback_rule,
+    #             command,
+    #             replacement_dict,
+    #             opts,
+    #             once_normalized_callback(job),
+    #         )
+    #         exitstatus = cl.execute()
 
     # TODO Needed for thumbnails?
     # # Store thumbnails locally for use during AIP searches
