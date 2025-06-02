@@ -16,10 +16,10 @@ fi
 curdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 print_status "Running \`ruff check\`..."
-uv run --frozen -- ruff check
+uv run --frozen -- ruff check --exclude a3m/assets/dev --exclude dev/
 
 print_status "Running \`ruff format --check\`..."
-uv run --frozen -- ruff format --check
+uv run --frozen -- ruff format --check --exclude a3m/assets/dev --exclude dev/
 
 print_status "Running \`mypy\`..."
 uv run --frozen -- mypy
