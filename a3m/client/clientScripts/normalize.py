@@ -436,7 +436,10 @@ def get_default_rule(purpose) -> Rule | None:
     """Get the default rule for a given purpose."""
 
     # Convert purpose to default_purpose
-    default_purpose = RulePurpose(f"default_{purpose}")
+    try:
+        default_purpose = RulePurpose(f"default_{purpose}")
+    except ValueError:
+        return None
 
     # Get all rules for this default purpose
     rules = []
@@ -592,55 +595,55 @@ def main(job, opts):
     exitstatus = cl.execute()
 
     # TODO Needed?
-    # # If the access/thumbnail normalization command has errored AND a
-    # # derivative was NOT created, then we run the default access/thumbnail
-    # # rule. Note that we DO need to check if the derivative file exists. Even
-    # # when a verification command exists for the normalization command, the
-    # # transcoder.py::Command.execute method will only run the verification
-    # # command if the normalization command returns a 0 exit code.
-    # # Errored thumbnail normalization also needs to result in default thumbnail
-    # # normalization; if not, then a transfer with a single file that failed
-    # # thumbnail normalization will result in a failed SIP at "Prepare DIP: Copy
-    # # thumbnails to DIP directory"
-    # if (
-    #     exitstatus != 0
-    #     and opts.purpose in ("access", "thumbnail")
-    #     and cl.commandObject.output_location
-    #     and (not os.path.isfile(cl.commandObject.output_location))
-    # ):
-    #     # Fall back to default rule
-    #     try:
-    #         fallback_rule = get_default_rule(opts.purpose)
-    #         job.print_output(
-    #             opts.purpose,
-    #             "normalization failed, falling back to default",
-    #             opts.purpose,
-    #             "rule",
-    #         )
-    #     except FPRule.DoesNotExist:
-    #         job.print_output(
-    #             "Not retrying normalizing for",
-    #             os.path.basename(file_.currentlocation.decode()),
-    #             " - No default rule found to normalize for",
-    #             opts.purpose,
-    #         )
-    #         fallback_rule = None
-    #     # Don't re-run the same command
-    #     if fallback_rule and fallback_rule.command != command:
-    #         job.print_output("Fallback Format Policy Rule:", fallback_rule)
-    #         command = fallback_rule.command
-    #         job.print_output("Fallback Format Policy Command", command.description)
+    # If the access/thumbnail normalization command has errored AND a
+    # derivative was NOT created, then we run the default access/thumbnail
+    # rule. Note that we DO need to check if the derivative file exists. Even
+    # when a verification command exists for the normalization command, the
+    # transcoder.py::Command.execute method will only run the verification
+    # command if the normalization command returns a 0 exit code.
+    # Errored thumbnail normalization also needs to result in default thumbnail
+    # normalization; if not, then a transfer with a single file that failed
+    # thumbnail normalization will result in a failed SIP at "Prepare DIP: Copy
+    # thumbnails to DIP directory"
+    if (
+        exitstatus != 0
+        and opts.purpose in ("access", "thumbnail")
+        and cl.output_location
+        and (not os.path.isfile(cl.output_location))
+    ):
+        # Fall back to default rule
+        fallback_rule = get_default_rule(opts.purpose)
+        if fallback_rule:
+            job.print_output(
+                opts.purpose,
+                "normalization failed, falling back to default",
+                opts.purpose,
+                "rule",
+            )
+        else:
+            job.print_output(
+                "Not retrying normalizing for",
+                os.path.basename(file_.currentlocation),
+                " - No default rule found to normalize for",
+                opts.purpose,
+            )
+            fallback_rule = None
+        # Don't re-run the same command
+        if fallback_rule and fallback_rule.command != command:
+            job.print_output("Fallback Format Policy Rule:", fallback_rule)
+            command = fallback_rule.command
+            job.print_output("Fallback Format Policy Command", command.description)
 
-    #         # Use existing replacement dict
-    #         cl = transcoder.CommandLinker(
-    #             job,
-    #             fallback_rule,
-    #             command,
-    #             replacement_dict,
-    #             opts,
-    #             once_normalized_callback(job),
-    #         )
-    #         exitstatus = cl.execute()
+            # Use existing replacement dict
+            cl = Executor(
+                job,
+                # fallback_rule,
+                command,
+                replacement_dict,
+                once_normalized_callback(job),
+                opts,
+            )
+            exitstatus = cl.execute()
 
     # TODO Needed for thumbnails?
     # # Store thumbnails locally for use during AIP searches
