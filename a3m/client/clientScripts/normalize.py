@@ -556,7 +556,7 @@ def main(job, opts):
         if not rules:
             if (
                 opts.purpose == "thumbnail"
-                # and opts.thumbnail_mode == "generate_non_default"
+                and opts.thumbnail_mode == "generate_non_default"
             ):
                 job.pyprint("Thumbnail not generated as no rule found for format")
                 return SUCCESS
