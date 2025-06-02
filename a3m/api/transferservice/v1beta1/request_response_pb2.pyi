@@ -188,6 +188,7 @@ class ProcessingConfig(_message.Message):
         "transcribe_files",
         "perform_policy_checks_on_originals",
         "perform_policy_checks_on_preservation_derivatives",
+        "perform_policy_checks_on_access_derivatives",
         "aip_compression_level",
         "aip_compression_algorithm",
     )
@@ -239,6 +240,7 @@ class ProcessingConfig(_message.Message):
     TRANSCRIBE_FILES_FIELD_NUMBER: _ClassVar[int]
     PERFORM_POLICY_CHECKS_ON_ORIGINALS_FIELD_NUMBER: _ClassVar[int]
     PERFORM_POLICY_CHECKS_ON_PRESERVATION_DERIVATIVES_FIELD_NUMBER: _ClassVar[int]
+    PERFORM_POLICY_CHECKS_ON_ACCESS_DERIVATIVES_FIELD_NUMBER: _ClassVar[int]
     AIP_COMPRESSION_LEVEL_FIELD_NUMBER: _ClassVar[int]
     AIP_COMPRESSION_ALGORITHM_FIELD_NUMBER: _ClassVar[int]
     assign_uuids_to_directories: bool
@@ -254,6 +256,7 @@ class ProcessingConfig(_message.Message):
     transcribe_files: bool
     perform_policy_checks_on_originals: bool
     perform_policy_checks_on_preservation_derivatives: bool
+    perform_policy_checks_on_access_derivatives: bool
     aip_compression_level: int
     aip_compression_algorithm: ProcessingConfig.AIPCompressionAlgorithm
     def __init__(
@@ -271,6 +274,7 @@ class ProcessingConfig(_message.Message):
         transcribe_files: bool = ...,
         perform_policy_checks_on_originals: bool = ...,
         perform_policy_checks_on_preservation_derivatives: bool = ...,
+        perform_policy_checks_on_access_derivatives: bool = ...,
         aip_compression_level: _Optional[int] = ...,
         aip_compression_algorithm: _Optional[
             _Union[ProcessingConfig.AIPCompressionAlgorithm, str]

@@ -96,6 +96,7 @@ message ProcessingConfig {
 	bool transcribe_files = 11;
 	bool perform_policy_checks_on_originals = 12;
 	bool perform_policy_checks_on_preservation_derivatives = 13;
+	bool perform_policy_checks_on_access_derivatives = 16;
 
 	// AIP compression level (1 is the fastest, 9 is the smallest).
 	int32 aip_compression_level = 14;
