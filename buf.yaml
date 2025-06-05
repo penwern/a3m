@@ -1,7 +1,7 @@
 version: v2
 modules:
  - path: proto
-   name: buf.build/artefactual/a3m
+   name: buf.build/penwern/a3m
    lint:
      use:
        - STANDARD

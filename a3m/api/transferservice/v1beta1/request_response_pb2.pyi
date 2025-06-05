@@ -188,9 +188,10 @@ class ProcessingConfig(_message.Message):
         "transcribe_files",
         "perform_policy_checks_on_originals",
         "perform_policy_checks_on_preservation_derivatives",
-        "perform_policy_checks_on_access_derivatives",
         "aip_compression_level",
         "aip_compression_algorithm",
+        "perform_policy_checks_on_access_derivatives",
+        "thumbnail_mode",
     )
     class AIPCompressionAlgorithm(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
@@ -227,6 +228,17 @@ class ProcessingConfig(_message.Message):
     AIP_COMPRESSION_ALGORITHM_S7_COPY: ProcessingConfig.AIPCompressionAlgorithm
     AIP_COMPRESSION_ALGORITHM_S7_BZIP2: ProcessingConfig.AIPCompressionAlgorithm
     AIP_COMPRESSION_ALGORITHM_S7_LZMA: ProcessingConfig.AIPCompressionAlgorithm
+    class ThumbnailMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        THUMBNAIL_MODE_UNSPECIFIED: _ClassVar[ProcessingConfig.ThumbnailMode]
+        THUMBNAIL_MODE_GENERATE: _ClassVar[ProcessingConfig.ThumbnailMode]
+        THUMBNAIL_MODE_GENERATE_NON_DEFAULT: _ClassVar[ProcessingConfig.ThumbnailMode]
+        THUMBNAIL_MODE_DO_NOT_GENERATE: _ClassVar[ProcessingConfig.ThumbnailMode]
+
+    THUMBNAIL_MODE_UNSPECIFIED: ProcessingConfig.ThumbnailMode
+    THUMBNAIL_MODE_GENERATE: ProcessingConfig.ThumbnailMode
+    THUMBNAIL_MODE_GENERATE_NON_DEFAULT: ProcessingConfig.ThumbnailMode
+    THUMBNAIL_MODE_DO_NOT_GENERATE: ProcessingConfig.ThumbnailMode
     ASSIGN_UUIDS_TO_DIRECTORIES_FIELD_NUMBER: _ClassVar[int]
     EXAMINE_CONTENTS_FIELD_NUMBER: _ClassVar[int]
     GENERATE_TRANSFER_STRUCTURE_REPORT_FIELD_NUMBER: _ClassVar[int]
@@ -240,9 +252,10 @@ class ProcessingConfig(_message.Message):
     TRANSCRIBE_FILES_FIELD_NUMBER: _ClassVar[int]
     PERFORM_POLICY_CHECKS_ON_ORIGINALS_FIELD_NUMBER: _ClassVar[int]
     PERFORM_POLICY_CHECKS_ON_PRESERVATION_DERIVATIVES_FIELD_NUMBER: _ClassVar[int]
-    PERFORM_POLICY_CHECKS_ON_ACCESS_DERIVATIVES_FIELD_NUMBER: _ClassVar[int]
     AIP_COMPRESSION_LEVEL_FIELD_NUMBER: _ClassVar[int]
     AIP_COMPRESSION_ALGORITHM_FIELD_NUMBER: _ClassVar[int]
+    PERFORM_POLICY_CHECKS_ON_ACCESS_DERIVATIVES_FIELD_NUMBER: _ClassVar[int]
+    THUMBNAIL_MODE_FIELD_NUMBER: _ClassVar[int]
     assign_uuids_to_directories: bool
     examine_contents: bool
     generate_transfer_structure_report: bool
@@ -256,9 +269,10 @@ class ProcessingConfig(_message.Message):
     transcribe_files: bool
     perform_policy_checks_on_originals: bool
     perform_policy_checks_on_preservation_derivatives: bool
-    perform_policy_checks_on_access_derivatives: bool
     aip_compression_level: int
     aip_compression_algorithm: ProcessingConfig.AIPCompressionAlgorithm
+    perform_policy_checks_on_access_derivatives: bool
+    thumbnail_mode: ProcessingConfig.ThumbnailMode
     def __init__(
         self,
         assign_uuids_to_directories: bool = ...,
@@ -274,9 +288,10 @@ class ProcessingConfig(_message.Message):
         transcribe_files: bool = ...,
         perform_policy_checks_on_originals: bool = ...,
         perform_policy_checks_on_preservation_derivatives: bool = ...,
-        perform_policy_checks_on_access_derivatives: bool = ...,
         aip_compression_level: _Optional[int] = ...,
         aip_compression_algorithm: _Optional[
             _Union[ProcessingConfig.AIPCompressionAlgorithm, str]
         ] = ...,
+        perform_policy_checks_on_access_derivatives: bool = ...,
+        thumbnail_mode: _Optional[_Union[ProcessingConfig.ThumbnailMode, str]] = ...,
     ) -> None: ...

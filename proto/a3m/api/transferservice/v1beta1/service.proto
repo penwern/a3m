@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package a3m.api.transferservice.v1beta1;
 
-option go_package = "github.com/artefactual-labs/a3m/proto/a3m/api/transferservice/v1beta1;transferservice";
+option go_package = "github.com/penwern/a3m/proto/a3m/api/transferservice/v1beta1;transferservice";
 
 import "a3m/api/transferservice/v1beta1/request_response.proto";
 

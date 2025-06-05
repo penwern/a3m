@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package a3m.api.transferservice.v1beta1;
 
-option go_package = "github.com/artefactual-labs/a3m/proto/a3m/api/transferservice/v1beta1;transferservice";
+option go_package = "github.com/penwern/a3m/proto/a3m/api/transferservice/v1beta1;transferservice";
 
 import "google/protobuf/timestamp.proto";
 
@@ -96,13 +96,16 @@ message ProcessingConfig {
 	bool transcribe_files = 11;
 	bool perform_policy_checks_on_originals = 12;
 	bool perform_policy_checks_on_preservation_derivatives = 13;
-	bool perform_policy_checks_on_access_derivatives = 16;
 
 	// AIP compression level (1 is the fastest, 9 is the smallest).
 	int32 aip_compression_level = 14;
 
 	// AIP compression algorithm
 	AIPCompressionAlgorithm aip_compression_algorithm = 15;
+
+	// DIP Reintegrations
+	bool perform_policy_checks_on_access_derivatives = 16;
+	ThumbnailMode thumbnail_mode = 17;
 
 	enum AIPCompressionAlgorithm {
 		AIP_COMPRESSION_ALGORITHM_UNSPECIFIED = 0;
@@ -113,5 +116,12 @@ message ProcessingConfig {
 		AIP_COMPRESSION_ALGORITHM_S7_COPY = 5;
 		AIP_COMPRESSION_ALGORITHM_S7_BZIP2 = 6;
 		AIP_COMPRESSION_ALGORITHM_S7_LZMA = 7;
+	}
+
+	enum ThumbnailMode {
+		THUMBNAIL_MODE_UNSPECIFIED = 0;
+		THUMBNAIL_MODE_GENERATE = 1;
+		THUMBNAIL_MODE_GENERATE_NON_DEFAULT = 2;
+		THUMBNAIL_MODE_DO_NOT_GENERATE = 3;
 	}
 }
