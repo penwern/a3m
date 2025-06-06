@@ -12,21 +12,21 @@ permissions:
   packages: write
 
 jobs:
-  pypi:
-    runs-on: ubuntu-latest
-    environment: release
-    steps:
-    - name: "Check out source code"
-      uses: "actions/checkout@v4"
-    - name: Install the latest version of uv
-      uses: astral-sh/setup-uv@v2
-      with:
-        enable-cache: true
-        version: latest
-    - name: Build package
-      run: uv build
-    - name: "Upload distribution packages to PyPI"
-      uses: pypa/gh-action-pypi-publish@release/v1
+  # pypi:
+  #   runs-on: ubuntu-latest
+  #   environment: release
+  #   steps:
+  #   - name: "Check out source code"
+  #     uses: "actions/checkout@v4"
+  #   - name: Install the latest version of uv
+  #     uses: astral-sh/setup-uv@v2
+  #     with:
+  #       enable-cache: true
+  #       version: latest
+  #   - name: Build package
+  #     run: uv build
+  #   - name: "Upload distribution packages to PyPI"
+  #     uses: pypa/gh-action-pypi-publish@release/v1
   docker:
     runs-on: ubuntu-latest
     environment: release
