@@ -15,7 +15,7 @@ jobs:
       with:
         input: proto
     # TODO: use buf-breaking-action when ready
-    #- uses: bufbuild/buf-push-action@v1
-    #  with:
-    #    input: proto
-    #    buf_token: ${{ secrets.BUF_TOKEN }}
+    - uses: bufbuild/buf-push-action@v1
+      with:
+        input: proto
+        buf_token: ${{ secrets.BUF_TOKEN }}
