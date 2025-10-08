@@ -2667,7 +2667,7 @@
           }
         ],
         "config_attr": "generate_dip",
-        "default": true
+        "default": false
       },
       "description": {
         "en": "Generate DIP?",

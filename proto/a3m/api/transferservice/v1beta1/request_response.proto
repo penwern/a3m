@@ -106,6 +106,7 @@ message ProcessingConfig {
 	// DIP Reintegrations
 	bool perform_policy_checks_on_access_derivatives = 16;
 	ThumbnailMode thumbnail_mode = 17;
+	bool generate_dip = 18;
 
 	enum AIPCompressionAlgorithm {
 		AIP_COMPRESSION_ALGORITHM_UNSPECIFIED = 0;

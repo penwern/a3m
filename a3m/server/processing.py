@@ -18,4 +18,5 @@ DEFAULT_PROCESSING_CONFIG = transfer_service_api.request_response_pb2.Processing
     aip_compression_level=1,
     aip_compression_algorithm=transfer_service_api.request_response_pb2.ProcessingConfig.AIP_COMPRESSION_ALGORITHM_S7_COPY,
     thumbnail_mode=transfer_service_api.request_response_pb2.ProcessingConfig.THUMBNAIL_MODE_GENERATE,
+    generate_dip=False,
 )

@@ -192,6 +192,7 @@ class ProcessingConfig(_message.Message):
         "aip_compression_algorithm",
         "perform_policy_checks_on_access_derivatives",
         "thumbnail_mode",
+        "generate_dip",
     )
     class AIPCompressionAlgorithm(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
@@ -256,6 +257,7 @@ class ProcessingConfig(_message.Message):
     AIP_COMPRESSION_ALGORITHM_FIELD_NUMBER: _ClassVar[int]
     PERFORM_POLICY_CHECKS_ON_ACCESS_DERIVATIVES_FIELD_NUMBER: _ClassVar[int]
     THUMBNAIL_MODE_FIELD_NUMBER: _ClassVar[int]
+    GENERATE_DIP_FIELD_NUMBER: _ClassVar[int]
     assign_uuids_to_directories: bool
     examine_contents: bool
     generate_transfer_structure_report: bool
@@ -273,6 +275,7 @@ class ProcessingConfig(_message.Message):
     aip_compression_algorithm: ProcessingConfig.AIPCompressionAlgorithm
     perform_policy_checks_on_access_derivatives: bool
     thumbnail_mode: ProcessingConfig.ThumbnailMode
+    generate_dip: bool
     def __init__(
         self,
         assign_uuids_to_directories: bool = ...,
@@ -294,4 +297,5 @@ class ProcessingConfig(_message.Message):
         ] = ...,
         perform_policy_checks_on_access_derivatives: bool = ...,
         thumbnail_mode: _Optional[_Union[ProcessingConfig.ThumbnailMode, str]] = ...,
+        generate_dip: bool = ...,
     ) -> None: ...
