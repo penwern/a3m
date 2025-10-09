@@ -54,14 +54,16 @@ BULK_CREATE_BATCH_SIZE = 2000
 
 class BlobTextField(models.TextField):
     """
-    Text field backed by `longblob` instead of `longtext`.
+    Text field backed by `longblob` (MySQL) or `bytea` (PostgreSQL) instead of `longtext`.
 
     Used for storing strings that need to match unchanged paths on disk.
 
-    BLOBs are byte strings (bynary character set and collation).
+    BLOBs are byte strings (binary character set and collation).
     """
 
     def db_type(self, connection):
+        if connection.vendor == 'postgresql':
+            return "bytea"
         return "longblob"
 
 
