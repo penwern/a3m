@@ -16,6 +16,7 @@ dependencies = [
   # Django ORM
   "Django~=4.2",
   "django-stubs-ext~=4.2",
+  "psycopg2-binary~=2.9",
   # Infra
   "prometheus_client~=0.17",
   "requests~=2.31",

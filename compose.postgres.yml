@@ -1,0 +1,162 @@
+---
+# Docker Compose configuration for a3m with PostgreSQL
+# This enables concurrent package processing with PostgreSQL as the database backend
+
+volumes:
+  a3m-pipeline-data:
+    name: "a3m-pipeline-data"
+  postgres-data:
+    name: "a3m-postgres-data"
+  pgadmin-data:
+    name: "a3m-pgadmin-data"
+
+networks:
+  a3m-network:
+    name: a3m-network
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: a3m-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: a3m_database
+      POSTGRES_USER: a3m_user
+      POSTGRES_PASSWORD: ${A3M_DB_PASSWORD:-changeme_secure_password}
+      POSTGRES_INITDB_ARGS: "-E UTF8 --locale=en_US.UTF-8"
+      # Performance tuning for concurrent writes
+      POSTGRES_MAX_CONNECTIONS: 100
+      POSTGRES_SHARED_BUFFERS: 256MB
+      POSTGRES_EFFECTIVE_CACHE_SIZE: 1GB
+      POSTGRES_WORK_MEM: 4MB
+    volumes:
+      - "postgres-data:/var/lib/postgresql/data"
+    networks:
+      - a3m-network
+    ports:
+      # Expose PostgreSQL port for debugging (optional, comment out in production)
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U a3m_user -d a3m_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    command:
+      - "postgres"
+      # Performance tuning parameters
+      - "-c"
+      - "max_connections=100"
+      - "-c"
+      - "shared_buffers=256MB"
+      - "-c"
+      - "effective_cache_size=1GB"
+      - "-c"
+      - "maintenance_work_mem=64MB"
+      - "-c"
+      - "checkpoint_completion_target=0.9"
+      - "-c"
+      - "wal_buffers=16MB"
+      - "-c"
+      - "default_statistics_target=100"
+      - "-c"
+      - "random_page_cost=1.1"
+      - "-c"
+      - "effective_io_concurrency=200"
+      - "-c"
+      - "work_mem=4MB"
+      - "-c"
+      - "min_wal_size=1GB"
+      - "-c"
+      - "max_wal_size=4GB"
+      - "-c"
+      - "max_worker_processes=8"
+      - "-c"
+      - "max_parallel_workers_per_gather=4"
+      - "-c"
+      - "max_parallel_workers=8"
+
+  a3m:
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    container_name: a3m-server
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # PostgreSQL Configuration
+      A3M_DB_ENGINE: django.db.backends.postgresql
+      A3M_DB_NAME: a3m_database
+      A3M_DB_USER: a3m_user
+      A3M_DB_PASSWORD: ${A3M_DB_PASSWORD:-changeme_secure_password}
+      A3M_DB_HOST: postgres
+      A3M_DB_PORT: 5432
+
+      # Concurrency settings - adjust based on your CPU count
+      # Defaults to half of CPU count if not specified
+      A3M_CONCURRENT_PACKAGES: ${A3M_CONCURRENT_PACKAGES:-4}
+      A3M_WORKER_THREADS: ${A3M_WORKER_THREADS:-8}
+      A3M_RPC_THREADS: ${A3M_RPC_THREADS:-4}
+      A3M_BATCH_SIZE: ${A3M_BATCH_SIZE:-128}
+
+      # Other settings
+      A3M_DEBUG: ${A3M_DEBUG:-false}
+      A3M_TIME_ZONE: ${A3M_TIME_ZONE:-UTC}
+      A3M_SECRET_KEY: ${A3M_SECRET_KEY:-change_this_secret_key_in_production}
+
+      # Prometheus metrics (optional)
+      A3M_PROMETHEUS_BIND_ADDRESS: ${A3M_PROMETHEUS_BIND_ADDRESS:-}
+      A3M_PROMETHEUS_BIND_PORT: ${A3M_PROMETHEUS_BIND_PORT:-}
+
+      # Organization info (optional)
+      A3M_ORG_ID: ${A3M_ORG_ID:-}
+      A3M_ORG_NAME: ${A3M_ORG_NAME:-}
+    volumes:
+      # Persistent data directory
+      - "a3m-pipeline-data:/home/a3m/.local/share/a3m:rw"
+      # Note: Local code mount is disabled for PostgreSQL setup
+      # Uncomment the line below for development (requires rebuild after changes):
+      # - ".:/app:ro"
+    networks:
+      - a3m-network
+    ports:
+      # gRPC API port
+      - "${A3M_RPC_PORT:-7000}:7000"
+    healthcheck:
+      test: ["CMD-SHELL", "grpc_health_probe -addr=:7000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Uncomment to set resource limits
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '8'
+    #       memory: 8G
+    #     reservations:
+    #       cpus: '4'
+    #       memory: 4G
+
+  # Optional: pgAdmin for database management
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: a3m-pgadmin
+    restart: unless-stopped
+    profiles:
+      - tools
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@a3m.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - a3m-network
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    depends_on:
+      - postgres
