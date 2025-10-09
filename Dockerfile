@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.10.0-labs
 
 ARG SYSTEM_IMAGE=ubuntu:22.04
-ARG UV_VERSION=0.4.16
+ARG UV_VERSION=0.5.29
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 
@@ -107,14 +107,14 @@ WORKDIR /app
 RUN --mount=type=cache,target=/home/a3m/.cache/uv,uid=${USER_ID},gid=${GROUP_ID} \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    uv sync --frozen --no-install-project --no-dev
+    uv sync --frozen --no-install-project --no-dev --python 3.12
 
 # Add the rest of the project source code and install it.
 # Installing separately from its dependencies allows optimal layer caching.
 COPY --exclude=.git . /app
 RUN --mount=type=cache,target=/home/a3m/.cache/uv,uid=${USER_ID},gid=${GROUP_ID} \
 	--mount=type=bind,source=.git,target=.git \
-    uv sync --frozen --no-dev
+    uv sync --frozen --no-dev --python 3.12
 
 # Place executables in the environment at the front of the path.
 ENV PATH="/app/.venv/bin:$PATH"
