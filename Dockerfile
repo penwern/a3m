@@ -55,6 +55,7 @@ RUN set -ex \
 	libimage-exiftool-perl \
 	libevent-dev \
 	libjansson4 \
+	mediaconch \
 	mediainfo \
 	openjdk-8-jre-headless \
 	p7zip-full \
