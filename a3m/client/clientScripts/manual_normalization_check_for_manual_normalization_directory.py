@@ -26,7 +26,14 @@ def call(jobs):
             )
             job.pyprint("Manual normalization path:", manualNormalizationPath)
             if os.path.isdir(manualNormalizationPath):
+                mn_access_path = os.path.join(manualNormalizationPath, "access")
                 mn_preserve_path = os.path.join(manualNormalizationPath, "preservation")
+                # Return to indicate manually normalized files exist
+                if os.path.isdir(mn_access_path) and os.listdir(mn_access_path):
+                    job.pyprint("Manually normalized files found")
+                    job.set_status(179)
+                    continue
+
                 if os.path.isdir(mn_preserve_path) and os.listdir(mn_preserve_path):
                     job.pyprint("Manually normalized files found")
                     job.set_status(179)
