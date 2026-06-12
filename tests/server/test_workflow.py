@@ -98,3 +98,16 @@ def test_get_schema_not_found(mocker):
     mocker.patch("a3m.server.workflow._LATEST_SCHEMA", "non-existen-schema")
     with pytest.raises(IOError):
         workflow._get_schema()
+
+
+def test_create_dip_directory_tolerates_existing_directory():
+    """The "Move access files to DIP" link (manual normalization) creates
+    %SIPDirectory%DIP/ during ingest, before "Create DIP directory" runs in
+    the generate_dip branch. mkdir must therefore be invoked with -p or the
+    link fails and the whole DIP branch is skipped via its fallback."""
+    with open(os.path.join(ASSETS_DIR, "workflow.json")) as fp:
+        wf = workflow.load(fp)
+    ln = wf.get_link("47c83e01-7556-4c13-881f-282c6d9c7d6a")
+    assert ln.get_label("description") == "Create DIP directory"
+    arguments = ln.config["arguments"]
+    assert arguments.startswith("-p "), arguments

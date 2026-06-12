@@ -1090,7 +1090,7 @@
     "47c83e01-7556-4c13-881f-282c6d9c7d6a": {
       "config": {
         "@manager": "linkTaskManagerDirectories",
-        "arguments": "-m 770 \"%SIPDirectory%DIP/\" \"%SIPDirectory%DIP/objects/\"",
+        "arguments": "-p -m 770 \"%SIPDirectory%DIP/\" \"%SIPDirectory%DIP/objects/\"",
         "execute": "cmd_mkdir"
       },
       "description": {
