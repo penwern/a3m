@@ -36,6 +36,16 @@ BASE_REPLACEMENTS = {
     r"%rejectedDirectory%": _get_setting("REJECTED_DIRECTORY"),
 }
 
+# String forms expected by the normalize client script's --thumbnail_mode
+# argument, keyed by the ThumbnailMode protobuf enum.
+_PROCESSING_CONFIG = transfer_service_api.request_response_pb2.ProcessingConfig
+THUMBNAIL_MODE_STRINGS = {
+    _PROCESSING_CONFIG.THUMBNAIL_MODE_UNSPECIFIED: "generate",
+    _PROCESSING_CONFIG.THUMBNAIL_MODE_GENERATE: "generate",
+    _PROCESSING_CONFIG.THUMBNAIL_MODE_GENERATE_NON_DEFAULT: "generate_non_default",
+    _PROCESSING_CONFIG.THUMBNAIL_MODE_DO_NOT_GENERATE: "do_not_generate",
+}
+
 
 def get_file_replacement_mapping(file_obj, unit_directory):
     mapping = BASE_REPLACEMENTS.copy()
@@ -283,6 +293,8 @@ class Package:
                 for config_attr in transfer_service_api.request_response_pb2.ProcessingConfig.DESCRIPTOR.fields
             }
         )
+
+        mapping[r"%ThumbnailMode%"] = THUMBNAIL_MODE_STRINGS[self.config.thumbnail_mode]
 
         if self.stage is Stage.INGEST:
             mapping.update(
