@@ -328,7 +328,9 @@ def once_normalized(job, executor: Executor, opts, replacement_dict):
     if executor.event_detail_command is not None:
         event_detail_output += f"; {executor.event_detail_command.std_out}"
     for ef in transcoded_files:
-        if "thumbnails" in opts.purpose:
+        # Thumbnails are not part of the package contents; don't register
+        # them in the database.
+        if opts.purpose == "thumbnail":
             continue
         today = timezone.now()
         output_file_uuid = opts.task_uuid  # Match the UUID on disk
