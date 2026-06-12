@@ -160,3 +160,74 @@ def test_queue_next_job_raises_full(
 
     with pytest.raises(queue.Full):
         package_queue.queue_next_job()
+
+
+@pytest.fixture
+def terminal_link(request):
+    return Link(
+        uuid.uuid4(),
+        {
+            "config": {
+                "@manager": "linkTaskManagerDirectory",
+                "@model": "StandardTaskConfig",
+                "arguments": "",
+                "execute": "testLink_v0",
+            },
+            "description": {"en": "A terminal test link"},
+            "exit_codes": {
+                "0": {"job_status": "Completed successfully", "link_id": None}
+            },
+            "fallback_job_status": "Failed",
+            "fallback_link_id": None,
+            "group": {"en": "Testing"},
+            "end": True,
+        },
+        object(),
+    )
+
+
+class FailingMockJob(MockJob):
+    def run(self, *args, **kwargs):
+        self.job_ran.set()
+        raise Exception("simulated job crash")
+
+
+def test_terminal_job_failure_releases_a_single_slot(
+    simple_executor, package, package_2, terminal_link, workflow_link, mocker
+):
+    """A failing terminal job triggers both the job and the package completed
+    callbacks. Recovery (deactivate + admit next package) must happen exactly
+    once, or one finished package admits two queued ones."""
+    package_queue = PackageQueue(
+        simple_executor, max_concurrent_packages=1, max_queued_packages=2, debug=True
+    )
+    package_3 = SIP(
+        "package-3",
+        "file:///tmp/foobar-3.gz",
+        ProcessingConfig(),
+        FakeUnit("mno"),
+        FakeUnit("pqr"),
+    )
+
+    failing_job = FailingMockJob(mocker.Mock(), terminal_link, package)
+    queued_job_2 = MockJob(mocker.Mock(), workflow_link, package_2)
+    queued_job_3 = MockJob(mocker.Mock(), workflow_link, package_3)
+
+    package_queue.schedule_job(failing_job)
+    package_queue.schedule_job(queued_job_2)
+    package_queue.schedule_job(queued_job_3)
+
+    assert package_queue.sip_queue.qsize() == 2
+
+    package_queue.process_one_job(timeout=0.1)
+
+    failing_job.job_ran.wait(1.0)
+    # The done callbacks run in the single worker thread before it picks up
+    # new work, so a barrier task guarantees they have finished.
+    simple_executor.submit(lambda: None).result(timeout=5.0)
+
+    assert package.uuid not in package_queue.active_packages
+    # Exactly one queued package may take the freed slot.
+    assert len(package_queue.active_packages) == 1
+    assert package_queue.job_queue.qsize() == 1
+    assert package_queue.sip_queue.qsize() == 1
