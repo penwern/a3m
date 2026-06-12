@@ -379,7 +379,9 @@ class SIPDIP(Package):
     def get_or_create_from_db_by_path(cls, path):
         """Matches a directory to a database SIP by its appended UUID, or path."""
         path = path.replace(_get_setting("SHARED_DIRECTORY"), r"%sharedPath%", 1)
-        package_type = cls.unit_variable_type
+        # cls.unit_variable_type is a property descriptor at class level, so
+        # the class constant must be used here.
+        package_type = cls.UNIT_VARIABLE_TYPE
         sip_uuid = uuid_from_path(path)
         created = True
         if sip_uuid:

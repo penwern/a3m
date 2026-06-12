@@ -15,6 +15,7 @@ from a3m.server.workflow import load as load_workflow
 FIXTURES_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 INTEGRATION_TEST_PATH = os.path.join(FIXTURES_DIR, "workflow-integration-test.json")
 from a3m.server.packages import DIP
+from a3m.server.packages import SIP
 from a3m.server.packages import Transfer
 
 
@@ -26,9 +27,10 @@ def test_dip_get_or_create_from_db_path_without_uuid(tmp_path):
 
     assert dip.current_path == str(dip_path)
     try:
-        models.SIP.objects.get(uuid=dip.uuid)
+        sip_model = models.SIP.objects.get(uuid=dip.uuid)
     except models.SIP.DoesNotExist:
         pytest.fail("DIP.get_or_create_from_db_by_path didn't create a SIP model")
+    assert sip_model.sip_type == "DIP"
 
 
 @pytest.mark.django_db(transaction=True)
@@ -41,9 +43,29 @@ def test_dip_get_or_create_from_db_path_with_uuid(tmp_path):
     assert dip.uuid == dip_uuid
     assert dip.current_path == str(dip_path)
     try:
-        models.SIP.objects.get(uuid=dip_uuid)
+        sip_model = models.SIP.objects.get(uuid=dip_uuid)
     except models.SIP.DoesNotExist:
         pytest.fail("DIP.get_or_create_from_db_by_path didn't create a SIP model")
+    assert sip_model.sip_type == "DIP"
+
+
+@pytest.mark.django_db(transaction=True)
+def test_sip_get_or_create_from_db_path_updates_current_path(tmp_path):
+    sip_uuid = uuid.uuid4()
+    old_path = tmp_path / "old-location" / f"test-sip-{sip_uuid}"
+    new_path = tmp_path / "new-location" / f"test-sip-{sip_uuid}"
+    sip_model = models.SIP.objects.create(
+        uuid=sip_uuid, currentpath=str(old_path), sip_type="SIP"
+    )
+    models.Transfer.objects.create(uuid=sip_uuid, currentlocation=str(old_path))
+    sip_model.transfer_id = str(sip_uuid)
+
+    sip = SIP.get_or_create_from_db_by_path(str(new_path))
+
+    assert str(sip.uuid) == str(sip_uuid)
+    sip_model = models.SIP.objects.get(uuid=sip_uuid)
+    assert sip_model.sip_type == "SIP"
+    assert sip_model.currentpath == str(new_path)
 
 
 @pytest.mark.django_db(transaction=True)
