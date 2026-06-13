@@ -183,7 +183,7 @@ class PackageQueue:
 
         # Pass package to callback so we can deactivate on failure
         job_done_callback = functools.partial(
-            self._job_completed_callback, job.package, job.link.id
+            self._job_completed_callback, job.package, job.link
         )
         result.add_done_callback(job_done_callback)
 
@@ -233,7 +233,7 @@ class PackageQueue:
         self.deactivate_package(package)
         self.queue_next_job()
 
-    def _job_completed_callback(self, package, link_id, future):
+    def _job_completed_callback(self, package, link, future):
         """Schedule the next job in the chain.
 
         Retrieve the next job from the result from the previous job. If there is
@@ -248,10 +248,16 @@ class PackageQueue:
             logger.error(
                 "Job execution failed for package %s (link %s) with exception: %s",
                 package.uuid,
-                link_id,
+                link.id,
                 err,
                 exc_info=True,
             )
+            if link.is_terminal:
+                # _package_completed_callback is also registered on this
+                # future and owns recovery; deactivating and admitting the
+                # next package here too would release two queue slots for a
+                # single freed one.
+                return
             # Job failed - deactivate package so it doesn't block the queue
             self.deactivate_package(package)
             self.queue_next_job()
