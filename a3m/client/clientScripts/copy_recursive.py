@@ -7,7 +7,7 @@ def call(jobs):
     for job in jobs:
         with job.JobContext():
             if not os.path.isdir(job.args[1]):
-                return
+                continue
 
             exit_code, std_out, std_error = executeOrRun(
                 "command", ["cp", "-R"] + job.args[1:], capture_output=True

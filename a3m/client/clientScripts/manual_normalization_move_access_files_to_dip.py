@@ -107,13 +107,13 @@ def main(job):
             if isinstance(e, File.DoesNotExist):
                 job.print_error(
                     "No matching file for: ",
-                    opts.filePath.replace(opts.SIPDirectory, "%SIPDirectory%", 1),
+                    opts.filePath.replace(opts.sipDirectory, "%SIPDirectory%", 1),
                 )
                 return 3
             elif isinstance(e, File.MultipleObjectsReturned):
                 job.print_error(
                     "Too many possible files for: ",
-                    opts.filePath.replace(opts.SIPDirectory, "%SIPDirectory%", 1),
+                    opts.filePath.replace(opts.sipDirectory, "%SIPDirectory%", 1),
                 )
                 return 2
 
