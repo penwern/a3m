@@ -90,6 +90,9 @@ def test_once_normalized_registers_access_derivatives(tmp_path, original_file):
 
     access_file = models.File.objects.get(uuid=opts.task_uuid)
     assert access_file.filegrpuse == "access"
-    assert models.Derivation.objects.filter(
-        source_file_id=file_uuid, derived_file_id=opts.task_uuid
-    ).count() == 1
+    assert (
+        models.Derivation.objects.filter(
+            source_file_id=file_uuid, derived_file_id=opts.task_uuid
+        ).count()
+        == 1
+    )
