@@ -14,9 +14,7 @@ def test_copy_recursive_processes_remaining_jobs_after_missing_source(tmp_path):
     dst = tmp_path / "dst"
     dst.mkdir()
 
-    job_missing = Job(
-        "copy_recursive", str(uuid.uuid4()), [str(missing_src), str(dst)]
-    )
+    job_missing = Job("copy_recursive", str(uuid.uuid4()), [str(missing_src), str(dst)])
     job_real = Job("copy_recursive", str(uuid.uuid4()), [str(src), str(dst)])
 
     copy_recursive.call([job_missing, job_real])
