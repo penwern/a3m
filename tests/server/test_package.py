@@ -65,6 +65,40 @@ def test_transfer_get_or_create_from_db_path_without_uuid(tmp_path):
         )
 
 
+class FakeUnit:
+    def __init__(self, pk, currentlocation="/tmp/fake-unit"):
+        self.pk = pk
+        self.currentlocation = currentlocation
+
+
+@pytest.mark.parametrize(
+    "thumbnail_mode,expected",
+    [
+        (ProcessingConfig.THUMBNAIL_MODE_UNSPECIFIED, "generate"),
+        (ProcessingConfig.THUMBNAIL_MODE_GENERATE, "generate"),
+        (
+            ProcessingConfig.THUMBNAIL_MODE_GENERATE_NON_DEFAULT,
+            "generate_non_default",
+        ),
+        (ProcessingConfig.THUMBNAIL_MODE_DO_NOT_GENERATE, "do_not_generate"),
+    ],
+)
+def test_replacement_mapping_resolves_thumbnail_mode(thumbnail_mode, expected):
+    """The workflow passes --thumbnail_mode "%ThumbnailMode%" to the normalize
+    client script, which expects the string forms below."""
+    package = Package(
+        "test-package",
+        "file:///tmp/foobar.gz",
+        ProcessingConfig(thumbnail_mode=thumbnail_mode),
+        FakeUnit(uuid.uuid4()),
+        FakeUnit(uuid.uuid4()),
+    )
+
+    mapping = package.get_replacement_mapping()
+
+    assert mapping[r"%ThumbnailMode%"] == expected
+
+
 @pytest.fixture
 def workflow(request):
     with open(INTEGRATION_TEST_PATH) as workflow_file:
