@@ -16,6 +16,25 @@ jobs:
       with:
         enable-cache: true
         version: latest
+    - name: Install media tools for the characterisation e2e test
+      # jhove must be the Archivematica externals build (as in the production
+      # image): Ubuntu's jhove 1.20 emits the pre-OPF XML namespace, which the
+      # FPR validation command does not recognise ("Unable to find status!").
+      # The JRE and the other tools come from Ubuntu first so that jhove's
+      # dependencies are already satisfied and only jhove itself is pulled
+      # from the externals repo. atool/p7zip/rsync/unar serve the AIP jobs
+      # (submission docs, compression) so the package can reach COMPLETE.
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends \
+          atool p7zip-full rsync unar \
+          ffmpeg imagemagick libimage-exiftool-perl mediainfo default-jre-headless
+        curl -fsSL https://packages.archivematica.org/GPG-KEY-archivematica \
+          | sudo gpg --dearmor -o /usr/share/keyrings/archivematica.gpg
+        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/archivematica.gpg] http://packages.archivematica.org/1.15.x/ubuntu-externals jammy main" \
+          | sudo tee /etc/apt/sources.list.d/archivematica.list
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends jhove
     - name: Run tests
       run: ./test.sh
     - name: "Upload coverage report"
