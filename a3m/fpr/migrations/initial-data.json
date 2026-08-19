@@ -16953,7 +16953,7 @@
     },
     {
         "fields": {
-            "description": "Text (Markup)",
+            "description": "Text (Mark-up)",
             "slug": "text-markup",
             "uuid": "89961b53-4d5c-49e2-9910-8825d96c8640"
         },
@@ -16989,7 +16989,7 @@
     },
     {
         "fields": {
-            "description": "Word Processing",
+            "description": "Word Processor",
             "slug": "word-processing",
             "uuid": "805d359a-32f0-4767-8a9c-cc14f13d8392"
         },
@@ -17148,6 +17148,15 @@
         },
         "model": "fpr.formatgroup",
         "pk": 34
+    },
+    {
+        "fields": {
+            "description": "Text (Unstructured)",
+            "slug": "text-unstructured",
+            "uuid": "c64e205e-60be-43d1-ba92-18e8f849e50a"
+        },
+        "model": "fpr.formatgroup",
+        "pk": 35
     },
     {
         "fields": {
@@ -59312,7 +59321,7 @@
     {
         "fields": {
             "access_format": false,
-            "description": "JPEG2000 \u2013 JPH/HTJ2K",
+            "description": "JPEG2000 – JPH/HTJ2K",
             "enabled": true,
             "format": "83d0c7da-8941-4988-a4da-4326effffc6a",
             "lastmodified": "2025-04-14T17:02:17.517Z",
@@ -61737,22 +61746,6 @@
         },
         "model": "fpr.fprule",
         "pk": 2
-    },
-    {
-        "fields": {
-            "command": "6537147f-4dd4-4950-8aff-5578db9a485d",
-            "count_attempts": 0,
-            "count_not_okay": 0,
-            "count_okay": 0,
-            "enabled": false,
-            "format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
-            "lastmodified": "2013-11-15T01:18:38Z",
-            "purpose": "characterize",
-            "replaces": null,
-            "uuid": "3a19de70-0e42-4145-976b-3a248d43b462"
-        },
-        "model": "fpr.fprule",
-        "pk": 3
     },
     {
         "fields": {
@@ -66396,22 +66389,6 @@
     },
     {
         "fields": {
-            "command": "e1b71449-8822-49ac-9d8a-b7ed6f960ec8",
-            "count_attempts": 0,
-            "count_not_okay": 0,
-            "count_okay": 0,
-            "enabled": true,
-            "format": "c6a208a1-8abc-47b9-9b1e-47c877aa4a0f",
-            "lastmodified": "2013-11-15T01:18:40Z",
-            "purpose": "access",
-            "replaces": null,
-            "uuid": "88337789-3e52-442c-8b66-ac46faf61133"
-        },
-        "model": "fpr.fprule",
-        "pk": 294
-    },
-    {
-        "fields": {
             "command": "b8864e2c-87a0-4aec-a8cf-a747a073be28",
             "count_attempts": 0,
             "count_not_okay": 0,
@@ -66569,22 +66546,6 @@
         },
         "model": "fpr.fprule",
         "pk": 304
-    },
-    {
-        "fields": {
-            "command": "183f6d5f-3a8e-4e5a-a6bc-948b9bfca176",
-            "count_attempts": 0,
-            "count_not_okay": 0,
-            "count_okay": 0,
-            "enabled": false,
-            "format": "0ab4cd40-90e7-4d75-b294-498177b3897d",
-            "lastmodified": "2014-05-30T23:53:13Z",
-            "purpose": "default_characterization",
-            "replaces": null,
-            "uuid": "0eee2e2a-a31e-4b3e-a179-ef7211020c3b"
-        },
-        "model": "fpr.fprule",
-        "pk": 305
     },
     {
         "fields": {
@@ -70108,7 +70069,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -70124,7 +70085,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -70140,7 +70101,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71084,7 +71045,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71100,7 +71061,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71116,7 +71077,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71132,7 +71093,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71148,7 +71109,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71164,7 +71125,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71180,7 +71141,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71196,7 +71157,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71212,7 +71173,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71228,7 +71189,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71244,7 +71205,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71260,7 +71221,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71276,7 +71237,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71292,7 +71253,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71308,7 +71269,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71324,7 +71285,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71340,7 +71301,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71356,7 +71317,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71372,7 +71333,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71388,7 +71349,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71404,7 +71365,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71420,7 +71381,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71436,7 +71397,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71452,7 +71413,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71468,7 +71429,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71484,7 +71445,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71500,7 +71461,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71516,7 +71477,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71532,7 +71493,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71548,7 +71509,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71564,7 +71525,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71580,7 +71541,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71596,7 +71557,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71612,7 +71573,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71628,7 +71589,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71644,7 +71605,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71660,7 +71621,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71676,7 +71637,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71692,7 +71653,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71708,7 +71669,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "34858217-507c-4e65-a7d9-ca62e1f72642",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71724,7 +71685,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71740,7 +71701,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71756,7 +71717,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71772,7 +71733,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71788,7 +71749,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71804,7 +71765,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71820,7 +71781,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "8816399f-ca5d-4861-9ae9-a4d22cc89e63",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71836,7 +71797,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "8816399f-ca5d-4861-9ae9-a4d22cc89e63",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71852,7 +71813,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "8816399f-ca5d-4861-9ae9-a4d22cc89e63",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71868,7 +71829,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "d610e7d6-f78c-4fb8-bd19-09a10fa48672",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71884,7 +71845,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "d610e7d6-f78c-4fb8-bd19-09a10fa48672",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71900,7 +71861,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "d610e7d6-f78c-4fb8-bd19-09a10fa48672",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71916,7 +71877,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "d610e7d6-f78c-4fb8-bd19-09a10fa48672",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71932,7 +71893,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71948,7 +71909,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71964,7 +71925,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71980,7 +71941,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -71996,7 +71957,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72012,7 +71973,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72028,7 +71989,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72044,7 +72005,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72060,7 +72021,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72412,7 +72373,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72476,7 +72437,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72492,7 +72453,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72540,7 +72501,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72556,7 +72517,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72572,7 +72533,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72588,7 +72549,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72604,7 +72565,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72620,7 +72581,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72636,7 +72597,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72652,7 +72613,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72668,7 +72629,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72684,7 +72645,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -72700,7 +72661,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -73852,7 +73813,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -74316,13 +74277,13 @@
     },
     {
         "fields": {
-            "command": "95149bc4-0620-4c20-964c-1d6c34b9400e",
+            "command": "484d3a8f-9e59-4912-a5b8-f8a2deb3466a",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
             "enabled": true,
             "format": "0ab4cd40-90e7-4d75-b294-498177b3897d",
-            "lastmodified": "2023-10-23T20:36:06.181Z",
+            "lastmodified": "2026-08-19T13:54:26.949Z",
             "purpose": "default_thumbnail",
             "replaces": "b0613a6c-943f-42fa-a0da-9c292eb81d38",
             "uuid": "3a19f9a3-c5d5-4934-9286-13b3ad6c24d3"
@@ -74962,7 +74923,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "4dc90ad8-319a-46be-95c8-390b189867d9",
-            "lastmodified": "2023-10-23T20:36:06.916Z",
+            "lastmodified": "2026-08-19T13:54:27.114Z",
             "purpose": "validation",
             "replaces": null,
             "uuid": "a2fb0477-6cde-43f8-a1c9-49834913d588"
@@ -74978,7 +74939,7 @@
             "count_okay": 0,
             "enabled": false,
             "format": "4dc90ad8-319a-46be-95c8-390b189867d9",
-            "lastmodified": "2023-10-23T20:36:07.084Z",
+            "lastmodified": "2026-08-19T13:54:27.144Z",
             "purpose": "policy_check",
             "replaces": null,
             "uuid": "aaaf34ef-c00f-4bb9-85c1-01c0ad5f3a8c"
@@ -74994,7 +74955,7 @@
             "count_okay": 0,
             "enabled": false,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2023-10-23T20:36:07.200Z",
+            "lastmodified": "2026-08-19T13:54:27.164Z",
             "purpose": "preservation",
             "replaces": null,
             "uuid": "52db06e9-ed12-4ca3-83e6-6e867a171dba"
@@ -75010,7 +74971,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2023-10-23T20:36:07.202Z",
+            "lastmodified": "2026-08-19T13:54:27.165Z",
             "purpose": "access",
             "replaces": null,
             "uuid": "7a2bfddd-0f1d-4027-8087-cba338d1ce80"
@@ -75026,7 +74987,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2023-10-23T20:36:07.203Z",
+            "lastmodified": "2026-08-19T13:54:27.165Z",
             "purpose": "characterization",
             "replaces": null,
             "uuid": "4aafcf44-4d28-4d56-9df1-50be1fd9dd78"
@@ -75042,7 +75003,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2023-10-23T20:36:07.203Z",
+            "lastmodified": "2026-08-19T13:54:27.165Z",
             "purpose": "characterization",
             "replaces": null,
             "uuid": "cb95c93c-6cdf-40eb-a328-eb6811daf8c0"
@@ -75058,29 +75019,13 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2023-10-23T20:36:07.204Z",
+            "lastmodified": "2026-08-19T13:54:27.166Z",
             "purpose": "characterization",
             "replaces": null,
             "uuid": "885de9a4-7463-4914-b40c-780a232e5442"
         },
         "model": "fpr.fprule",
         "pk": 835
-    },
-    {
-        "fields": {
-            "command": "0b0d301f-b586-45d5-ba35-d76da57ce32a",
-            "count_attempts": 0,
-            "count_not_okay": 0,
-            "count_okay": 0,
-            "enabled": false,
-            "format": "0ab4cd40-90e7-4d75-b294-498177b3897d",
-            "lastmodified": "2023-10-23T20:36:07.311Z",
-            "purpose": "default_characterization",
-            "replaces": "0eee2e2a-a31e-4b3e-a179-ef7211020c3b",
-            "uuid": "296a131d-ce70-45ae-b800-6c71b3ea46f0"
-        },
-        "model": "fpr.fprule",
-        "pk": 836
     },
     {
         "fields": {
@@ -75308,7 +75253,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -75324,7 +75269,7 @@
     },
     {
         "fields": {
-            "command": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "command": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -75346,29 +75291,13 @@
             "count_okay": 0,
             "enabled": true,
             "format": "734edb99-968d-42fc-9fc6-342b86fcb6e6",
-            "lastmodified": "2023-10-23T20:36:08.962Z",
+            "lastmodified": "2026-08-19T13:54:27.407Z",
             "purpose": "preservation",
             "replaces": "76ece049-6812-402e-b231-8cf1445a04b4",
             "uuid": "b98667be-2614-410b-9079-41942dbc3b32"
         },
         "model": "fpr.fprule",
         "pk": 853
-    },
-    {
-        "fields": {
-            "command": "1a0394dc-528b-4a03-8c2b-1c158f1fb313",
-            "count_attempts": 0,
-            "count_not_okay": 0,
-            "count_okay": 0,
-            "enabled": true,
-            "format": "0ab4cd40-90e7-4d75-b294-498177b3897d",
-            "lastmodified": "2023-10-23T20:36:09.765Z",
-            "purpose": "default_characterization",
-            "replaces": "296a131d-ce70-45ae-b800-6c71b3ea46f0",
-            "uuid": "c3b06895-ef9d-401e-8c51-ac585f955655"
-        },
-        "model": "fpr.fprule",
-        "pk": 854
     },
     {
         "fields": {
@@ -75420,7 +75349,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -75484,7 +75413,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "1dd10753-12f4-4a71-bd69-532186b77d93",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -75596,7 +75525,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "228f6676-97d7-44ff-bdb8-bfe181dee1a1",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -75612,7 +75541,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "228f6676-97d7-44ff-bdb8-bfe181dee1a1",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -75628,7 +75557,7 @@
     },
     {
         "fields": {
-            "command": "cb335c49-e6ce-445f-a774-494a6f2300c6",
+            "command": "228f6676-97d7-44ff-bdb8-bfe181dee1a1",
             "count_attempts": 0,
             "count_not_okay": 0,
             "count_okay": 0,
@@ -75644,22 +75573,115 @@
     },
     {
         "fields": {
-            "command": "This is a placeholder command only, and should not be called.",
-            "command_usage": "characterization",
-            "description": "FITS",
-            "enabled": false,
-            "event_detail_command": null,
-            "lastmodified": "2013-11-15T01:18:36Z",
-            "output_format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
-            "output_location": "",
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "count_attempts": 0,
+            "count_not_okay": 0,
+            "count_okay": 0,
+            "enabled": true,
+            "format": "6ad6b8e1-0fc5-46ac-8531-28dbf5fe33c4",
+            "lastmodified": "2026-08-19T13:54:28.578Z",
+            "purpose": "validation",
             "replaces": null,
-            "script_type": "as_is",
-            "tool": "c5465b07-8dc7-475e-a5c9-ccb2ba2ed083",
-            "uuid": "6537147f-4dd4-4950-8aff-5578db9a485d",
-            "verification_command": null
+            "uuid": "d1847d80-bf55-4872-8e99-a2ae73237f4e"
         },
-        "model": "fpr.fpcommand",
-        "pk": 3
+        "model": "fpr.fprule",
+        "pk": 872
+    },
+    {
+        "fields": {
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "count_attempts": 0,
+            "count_not_okay": 0,
+            "count_okay": 0,
+            "enabled": true,
+            "format": "70e7e501-a18c-4e82-9ef4-c0f7a4b03c13",
+            "lastmodified": "2026-08-19T13:54:28.579Z",
+            "purpose": "validation",
+            "replaces": null,
+            "uuid": "754242d6-8c99-4087-8509-5379606c7407"
+        },
+        "model": "fpr.fprule",
+        "pk": 873
+    },
+    {
+        "fields": {
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "count_attempts": 0,
+            "count_not_okay": 0,
+            "count_okay": 0,
+            "enabled": true,
+            "format": "de098228-88e7-43c0-ad5c-6c5d088a4058",
+            "lastmodified": "2026-08-19T13:54:28.580Z",
+            "purpose": "validation",
+            "replaces": null,
+            "uuid": "1f7dc1cd-1ff4-4026-a9fe-82279bc430b5"
+        },
+        "model": "fpr.fprule",
+        "pk": 874
+    },
+    {
+        "fields": {
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "count_attempts": 0,
+            "count_not_okay": 0,
+            "count_okay": 0,
+            "enabled": true,
+            "format": "869fb668-65b6-4f67-a66b-a66d95e33932",
+            "lastmodified": "2026-08-19T13:54:28.581Z",
+            "purpose": "validation",
+            "replaces": null,
+            "uuid": "a04e8922-6863-4c52-9732-8e6c2f173e69"
+        },
+        "model": "fpr.fprule",
+        "pk": 875
+    },
+    {
+        "fields": {
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "count_attempts": 0,
+            "count_not_okay": 0,
+            "count_okay": 0,
+            "enabled": true,
+            "format": "57fdad94-a1c3-4711-bf37-8a3da2e68550",
+            "lastmodified": "2026-08-19T13:54:28.582Z",
+            "purpose": "validation",
+            "replaces": null,
+            "uuid": "52e36de0-ea68-4af4-859b-5df4c8cc3037"
+        },
+        "model": "fpr.fprule",
+        "pk": 876
+    },
+    {
+        "fields": {
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "count_attempts": 0,
+            "count_not_okay": 0,
+            "count_okay": 0,
+            "enabled": true,
+            "format": "9bd6b33e-b1b4-4e6f-b497-f05dc919e3ce",
+            "lastmodified": "2026-08-19T13:54:28.583Z",
+            "purpose": "validation",
+            "replaces": null,
+            "uuid": "0a307e9b-9671-4465-a7b2-bbd23ee2229f"
+        },
+        "model": "fpr.fprule",
+        "pk": 877
+    },
+    {
+        "fields": {
+            "command": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "count_attempts": 0,
+            "count_not_okay": 0,
+            "count_okay": 0,
+            "enabled": true,
+            "format": "4895b264-e244-4344-8783-824e4b3401b0",
+            "lastmodified": "2026-08-19T13:54:28.585Z",
+            "purpose": "validation",
+            "replaces": null,
+            "uuid": "332e2ad7-3bf7-426d-8353-c3a15b6583a4"
+        },
+        "model": "fpr.fprule",
+        "pk": 878
     },
     {
         "fields": {
@@ -75777,25 +75799,6 @@
     },
     {
         "fields": {
-            "command": "echo \"/usr/lib/archivematica/transcoder/transcoderScripts/\" \"%fileFullName%\" \"%outputDirectory%%prefix%%fileName%%postfix%.mbox\"",
-            "command_usage": "event_detail",
-            "description": "Transcoding maildir to mbox event detail",
-            "enabled": true,
-            "event_detail_command": null,
-            "lastmodified": "2013-11-15T01:18:36Z",
-            "output_format": null,
-            "output_location": "",
-            "replaces": null,
-            "script_type": "command",
-            "tool": "2385486a-35e2-42e4-bae9-3bfa1995dda4",
-            "uuid": "5c319663-42f6-4a46-b957-f730c5f3ae88",
-            "verification_command": null
-        },
-        "model": "fpr.fpcommand",
-        "pk": 10
-    },
-    {
-        "fields": {
             "command": "echo program=\\\"ffmpeg\\\"\\; version=\\\"`ffmpeg 2>&1 | grep --ignore-case \"FFmpeg version\"`\\\"",
             "command_usage": "event_detail",
             "description": "Get event detail text for ffmpeg extraction",
@@ -75818,7 +75821,7 @@
             "command": "echo program=\\\"7z\\\"\\; version=\\\"`7z | grep Version`\\\"",
             "command_usage": "event_detail",
             "description": "Get event detail text for 7z extraction",
-            "enabled": true,
+            "enabled": false,
             "event_detail_command": null,
             "lastmodified": "2013-11-15T01:18:36Z",
             "output_format": null,
@@ -76104,7 +76107,7 @@
             "command_usage": "Extraction",
             "description": "Extracting 7Zip compatible format.",
             "enabled": true,
-            "event_detail_command": "914fe3e5-fa45-47c6-858d-e11bc71f5b76",
+            "event_detail_command": "8f177f1c-5eac-45c4-aa6f-2214107d1a7b",
             "lastmodified": "2013-11-15T01:18:36Z",
             "output_format": null,
             "output_location": "%outputDirectory%",
@@ -76116,25 +76119,6 @@
         },
         "model": "fpr.fpcommand",
         "pk": 27
-    },
-    {
-        "fields": {
-            "command": "\"/usr/lib/archivematica/MCPClient/clientScripts/archivematicaMaildirToMbox.py\" \"%fileFullName%\" \"%outputDirectory%%prefix%%fileName%%postfix%.mbox\"",
-            "command_usage": "normalization",
-            "description": "Transcoding maildir to mbox",
-            "enabled": true,
-            "event_detail_command": "5c319663-42f6-4a46-b957-f730c5f3ae88",
-            "lastmodified": "2013-11-15T01:18:36Z",
-            "output_format": "b791c6e4-17f1-4317-961c-d87ea7811132",
-            "output_location": "%outputDirectory%%prefix%%fileName%%postfix%.mbox",
-            "replaces": null,
-            "script_type": "command",
-            "tool": "efa8474a-8526-48c3-8279-e5a76bdc0995",
-            "uuid": "e1b71449-8822-49ac-9d8a-b7ed6f960ec8",
-            "verification_command": "ef3ea000-0c3c-4cae-adc2-aa2a6ccbffce"
-        },
-        "model": "fpr.fpcommand",
-        "pk": 28
     },
     {
         "fields": {
@@ -76195,25 +76179,6 @@
     },
     {
         "fields": {
-            "command": "ng edu.harvard.hul.ois.fits.Fits -i %relativeLocation%",
-            "command_usage": "characterization",
-            "description": "FITS",
-            "enabled": false,
-            "event_detail_command": null,
-            "lastmodified": "2014-05-30T23:16:54Z",
-            "output_format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
-            "output_location": null,
-            "replaces": "6537147f-4dd4-4950-8aff-5578db9a485d",
-            "script_type": "command",
-            "tool": "c5465b07-8dc7-475e-a5c9-ccb2ba2ed083",
-            "uuid": "183f6d5f-3a8e-4e5a-a6bc-948b9bfca176",
-            "verification_command": null
-        },
-        "model": "fpr.fpcommand",
-        "pk": 32
-    },
-    {
-        "fields": {
             "command": "ffprobe -i \"%fileFullName%\" -show_data -show_format -show_error -show_streams -show_chapters -show_private_data -show_versions -print_format xml",
             "command_usage": "characterization",
             "description": "FFprobe",
@@ -76271,7 +76236,7 @@
     },
     {
         "fields": {
-            "command": "fiwalk -x %relativeLocation%",
+            "command": "fiwalk -x %relativeLocation% -c /usr/lib/archivematica/archivematicaCommon/externals/fiwalk_plugins/ficonfig.txt",
             "command_usage": "Characterization",
             "description": "fiwalk",
             "enabled": true,
@@ -76371,7 +76336,7 @@
             "description": "Using default thumbnail",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:06.178Z",
+            "lastmodified": "2026-08-19T13:54:26.948Z",
             "output_format": "ffb55e9a-29f1-4276-a9a5-5ef813229b79",
             "output_location": "%outputDirectory%%postfix%.jpg",
             "replaces": "3bd47271-a3fa-4627-be97-9f7f69ddeefd",
@@ -76385,12 +76350,12 @@
     },
     {
         "fields": {
-            "command": "import json\nimport subprocess\nimport sys\nimport uuid\nfrom collections import namedtuple\n\nfrom lxml import etree\n\n\nSUCCESS_CODE = 0\nERROR_CODE = 1\nNS = \"{https://mediaarea.net/mediaconch}\"\n\n\nclass MediaConchException(Exception):\n    pass\n\n\nParse = namedtuple(\"Parse\", \"etree_el stdout\")\n\n\ndef parse_mediaconch_data(target):\n    \"\"\"Run `mediaconch -mc -fx -iv 4 <target>` against `target` and return an\n    lxml etree parse of the output.\n    \"\"\"\n    args = [\"mediaconch\", \"-mc\", \"-fx\", \"-iv\", \"4\", target]\n    try:\n        output = subprocess.check_output(args)\n    except subprocess.CalledProcessError:\n        raise MediaConchException(\n            \"MediaConch failed when running: {}\".format(\" \".join(args))\n        )\n    try:\n        return Parse(etree_el=etree.fromstring(output), stdout=output)\n    except etree.XMLSyntaxError:\n        raise MediaConchException(\n            \"MediaConch failed when attempting to parse the XML output by\" \" MediaConch\"\n        )\n\n\ndef get_impl_check_name(impl_check_el):\n    name_el = impl_check_el.find(\"%sname\" % NS)\n    if name_el is not None:\n        return name_el.text\n    else:\n        return \"Unnamed Implementation Check %s\" % uuid.uuid4()\n\n\ndef get_check_name(check_el):\n    return check_el.attrib.get(\n        \"name\", check_el.attrib.get(\"icid\", \"Unnamed Check %s\" % uuid.uuid4())\n    )\n\n\ndef get_check_tests_outcomes(check_el):\n    \"\"\"Return a list of outcome strings for the <check> element `check_el`.\"\"\"\n    outcomes = []\n    for test_el in check_el.iterfind(\"%stest\" % NS):\n        outcome = test_el.attrib.get(\"outcome\")\n        if outcome:\n            outcomes.append(outcome)\n    return outcomes\n\n\ndef get_impl_check_result(impl_check_el):\n    \"\"\"Return a dict mapping check names to lists of test outcome strings.\"\"\"\n    checks = {}\n    for check_el in impl_check_el.iterfind(\"%scheck\" % NS):\n        check_name = get_check_name(check_el)\n        test_outcomes = get_check_tests_outcomes(check_el)\n        if test_outcomes:\n            checks[check_name] = test_outcomes\n    return checks\n\n\ndef get_impl_checks(doc):\n    \"\"\"When not provided with a policy file, MediaConch produces a series of\n    XML <implementationChecks> elements that contain <check> sub-elements. This\n    function returns a dict mapping implementation check names to dicts that\n    map individual check names to lists of test outcomes, i.e., 'pass' or\n    'fail'.\n    \"\"\"\n    impl_checks = {}\n    path = f\".{NS}media/{NS}implementationChecks\"\n    for impl_check_el in doc.iterfind(path):\n        impl_check_name = get_impl_check_name(impl_check_el)\n        impl_check_result = get_impl_check_result(impl_check_el)\n        if impl_check_result:\n            impl_checks[impl_check_name] = impl_check_result\n    return impl_checks\n\n\ndef get_event_outcome_information_detail(impl_checks):\n    \"\"\"Return a 2-tuple of info and detail.\n    - info: 'pass' or 'fail'\n    - detail: human-readable string indicating which implementation checks\n      passed or failed. If implementation check as a whole passed, just return\n      the passed check names; if it failed, just return the failed ones.\n    \"\"\"\n    info = \"pass\"\n    failed_impl_checks = []\n    passed_impl_checks = []\n    for impl_check, checks in impl_checks.items():\n        passed_checks = set()\n        failed_checks = set()\n        for check, outcomes in checks.items():\n            for outcome in outcomes:\n                if outcome == \"pass\":\n                    passed_checks.add(check)\n                else:\n                    info = \"fail\"\n                    failed_checks.add(check)\n        if failed_checks:\n            failed_impl_checks.append(\n                \"The implementation check %s returned\"\n                \" failure for the following check(s): %s.\"\n                % (impl_check, \", \".join(failed_checks))\n            )\n        else:\n            passed_impl_checks.append(\n                \"The implementation check %s returned\"\n                \" success for the following check(s): %s.\"\n                % (impl_check, \", \".join(passed_checks))\n            )\n    prefix = \"MediaConch implementation check result:\"\n    if info == \"pass\":\n        if passed_impl_checks:\n            return info, \"{} {}\".format(prefix, \" \".join(passed_impl_checks))\n        return (info, f\"{prefix} All checks passed.\")\n    else:\n        return (info, \"{} {}\".format(prefix, \" \".join(failed_impl_checks)))\n\n\ndef main(target):\n    \"\"\"Return 0 if MediaConch can successfully assess whether the file at\n    `target` is a valid Matroska (.mkv) file. Parse the XML output by\n    MediaConch and print a JSON representation of that output.\n    \"\"\"\n    try:\n        parse = parse_mediaconch_data(target)\n        impl_checks = get_impl_checks(parse.etree_el)\n        info, detail = get_event_outcome_information_detail(impl_checks)\n        print(\n            json.dumps(\n                {\n                    \"eventOutcomeInformation\": info,\n                    \"eventOutcomeDetailNote\": detail,\n                    \"stdout\": parse.stdout,\n                }\n            )\n        )\n        return SUCCESS_CODE\n    except MediaConchException as e:\n        print(\n            json.dumps(\n                {\n                    \"eventOutcomeInformation\": \"fail\",\n                    \"eventOutcomeDetailNote\": str(e),\n                    \"stdout\": None,\n                }\n            ),\n            file=sys.stderr,\n        )\n        return ERROR_CODE\n\n\nif __name__ == \"__main__\":\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "import json\nimport subprocess\nimport sys\nimport uuid\nfrom collections import namedtuple\n\nfrom lxml import etree\n\nSUCCESS_CODE = 0\nERROR_CODE = 1\nNS = \"{https://mediaarea.net/mediaconch}\"\n\n\nclass MediaConchException(Exception):\n    pass\n\n\nParse = namedtuple(\"Parse\", \"etree_el stdout\")\n\n\ndef parse_mediaconch_data(target):\n    \"\"\"Run `mediaconch -mc -fx -iv 4 <target>` against `target` and return an\n    lxml etree parse of the output.\n    \"\"\"\n    args = [\"mediaconch\", \"-mc\", \"-fx\", \"-iv\", \"4\", target]\n    try:\n        output = subprocess.check_output(args)\n    except subprocess.CalledProcessError:\n        raise MediaConchException(\n            \"MediaConch failed when running: {}\".format(\" \".join(args))\n        )\n    try:\n        return Parse(etree_el=etree.fromstring(output), stdout=output)\n    except etree.XMLSyntaxError:\n        raise MediaConchException(\n            \"MediaConch failed when attempting to parse the XML output by MediaConch\"\n        )\n\n\ndef get_impl_check_name(impl_check_el):\n    name_el = impl_check_el.find(\"%sname\" % NS)\n    if name_el is not None:\n        return name_el.text\n    else:\n        return \"Unnamed Implementation Check %s\" % uuid.uuid4()\n\n\ndef get_check_name(check_el):\n    return check_el.attrib.get(\n        \"name\", check_el.attrib.get(\"icid\", \"Unnamed Check %s\" % uuid.uuid4())\n    )\n\n\ndef get_check_tests_outcomes(check_el):\n    \"\"\"Return a list of outcome strings for the <check> element `check_el`.\"\"\"\n    outcomes = []\n    for test_el in check_el.iterfind(\"%stest\" % NS):\n        outcome = test_el.attrib.get(\"outcome\")\n        if outcome:\n            outcomes.append(outcome)\n    return outcomes\n\n\ndef get_impl_check_result(impl_check_el):\n    \"\"\"Return a dict mapping check names to lists of test outcome strings.\"\"\"\n    checks = {}\n    for check_el in impl_check_el.iterfind(\"%scheck\" % NS):\n        check_name = get_check_name(check_el)\n        test_outcomes = get_check_tests_outcomes(check_el)\n        if test_outcomes:\n            checks[check_name] = test_outcomes\n    return checks\n\n\ndef get_impl_checks(doc):\n    \"\"\"When not provided with a policy file, MediaConch produces a series of\n    XML <implementationChecks> elements that contain <check> sub-elements. This\n    function returns a dict mapping implementation check names to dicts that\n    map individual check names to lists of test outcomes, i.e., 'pass' or\n    'fail'.\n    \"\"\"\n    impl_checks = {}\n    path = f\".{NS}media/{NS}implementationChecks\"\n    for impl_check_el in doc.iterfind(path):\n        impl_check_name = get_impl_check_name(impl_check_el)\n        impl_check_result = get_impl_check_result(impl_check_el)\n        if impl_check_result:\n            impl_checks[impl_check_name] = impl_check_result\n    return impl_checks\n\n\ndef get_event_outcome_information_detail(impl_checks):\n    \"\"\"Return a 2-tuple of info and detail.\n    - info: 'pass' or 'fail'\n    - detail: human-readable string indicating which implementation checks\n      passed or failed. If implementation check as a whole passed, just return\n      the passed check names; if it failed, just return the failed ones.\n    \"\"\"\n    info = \"pass\"\n    failed_impl_checks = []\n    passed_impl_checks = []\n    for impl_check, checks in impl_checks.items():\n        passed_checks = set()\n        failed_checks = set()\n        for check, outcomes in checks.items():\n            for outcome in outcomes:\n                if outcome == \"pass\":\n                    passed_checks.add(check)\n                else:\n                    info = \"fail\"\n                    failed_checks.add(check)\n        if failed_checks:\n            failed_impl_checks.append(\n                \"The implementation check %s returned\"\n                \" failure for the following check(s): %s.\"\n                % (impl_check, \", \".join(failed_checks))\n            )\n        else:\n            passed_impl_checks.append(\n                \"The implementation check %s returned\"\n                \" success for the following check(s): %s.\"\n                % (impl_check, \", \".join(passed_checks))\n            )\n    prefix = \"MediaConch implementation check result:\"\n    if info == \"pass\":\n        if passed_impl_checks:\n            return info, \"{} {}\".format(prefix, \" \".join(passed_impl_checks))\n        return (info, f\"{prefix} All checks passed.\")\n    else:\n        return (info, \"{} {}\".format(prefix, \" \".join(failed_impl_checks)))\n\n\ndef main(target):\n    \"\"\"Return 0 if MediaConch can successfully assess whether the file at\n    `target` is a valid Matroska (.mkv) file. Parse the XML output by\n    MediaConch and print a JSON representation of that output.\n    \"\"\"\n    try:\n        parse = parse_mediaconch_data(target)\n        impl_checks = get_impl_checks(parse.etree_el)\n        info, detail = get_event_outcome_information_detail(impl_checks)\n        print(\n            json.dumps(\n                {\n                    \"eventOutcomeInformation\": info,\n                    \"eventOutcomeDetailNote\": detail,\n                    \"stdout\": parse.stdout,\n                }\n            )\n        )\n        return SUCCESS_CODE\n    except MediaConchException as e:\n        print(\n            json.dumps(\n                {\n                    \"eventOutcomeInformation\": \"fail\",\n                    \"eventOutcomeDetailNote\": str(e),\n                    \"stdout\": None,\n                }\n            ),\n            file=sys.stderr,\n        )\n        return ERROR_CODE\n\n\nif __name__ == \"__main__\":\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using MediaConch",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:06.877Z",
+            "lastmodified": "2026-08-19T13:54:27.113Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76409,7 +76374,7 @@
             "description": "Check against policy PLACEHOLDER_FOR_POLICY_FILE_NAME using MediaConch",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:07.082Z",
+            "lastmodified": "2026-08-19T13:54:27.143Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76423,31 +76388,12 @@
     },
     {
         "fields": {
-            "command": "set -euo pipefail\nIFS=$'\\n\\t'\ntempdir=$(mktemp -d %tmpDirectory%fits.XXXXXX)\nng edu.harvard.hul.ois.fits.Fits -i \"%relativeLocation%\" -o \"$tempdir/fits.xml\" >/dev/null\ncat \"$tempdir/fits.xml\"\nrm -r \"$tempdir\"",
-            "command_usage": "characterization",
-            "description": "FITS",
-            "enabled": false,
-            "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:07.308Z",
-            "output_format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
-            "output_location": null,
-            "replaces": "183f6d5f-3a8e-4e5a-a6bc-948b9bfca176",
-            "script_type": "bashScript",
-            "tool": "c5465b07-8dc7-475e-a5c9-ccb2ba2ed083",
-            "uuid": "0b0d301f-b586-45d5-ba35-d76da57ce32a",
-            "verification_command": null
-        },
-        "model": "fpr.fpcommand",
-        "pk": 44
-    },
-    {
-        "fields": {
             "command": "ffmpeg -vcodec libopenjpeg -i \"%fileFullName%\" -compression_algo raw -pix_fmt rgb24 \"%outputDirectory%%prefix%%fileName%%postfix%.tif\"",
             "command_usage": "normalization",
             "description": "Transcoding to tif with ffmpeg",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:08.960Z",
+            "lastmodified": "2026-08-19T13:54:27.406Z",
             "output_format": "2ebdfa17-2257-49f8-8035-5f304bb46918",
             "output_location": "%outputDirectory%%prefix%%fileName%%postfix%.tif",
             "replaces": null,
@@ -76461,31 +76407,12 @@
     },
     {
         "fields": {
-            "command": "set -euo pipefail\nIFS=$'\\n\\t'\ntempdir=$(mktemp -d %tmpDirectory%fits.XXXXXX)\nif type ng-nailgun 1>/dev/null 2>/dev/null\n then function ng { ng-nailgun \"$@\"; }\n else function ng { ng \"$@\"; }\nfi\nng edu.harvard.hul.ois.fits.Fits -i \"%relativeLocation%\" -o \"$tempdir/fits.xml\" >/dev/null\ncat \"$tempdir/fits.xml\"\nrm -r \"$tempdir\"",
-            "command_usage": "characterization",
-            "description": "FITS",
-            "enabled": true,
-            "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:09.762Z",
-            "output_format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
-            "output_location": null,
-            "replaces": "0b0d301f-b586-45d5-ba35-d76da57ce32a",
-            "script_type": "bashScript",
-            "tool": "c5465b07-8dc7-475e-a5c9-ccb2ba2ed083",
-            "uuid": "1a0394dc-528b-4a03-8c2b-1c158f1fb313",
-            "verification_command": null
-        },
-        "model": "fpr.fpcommand",
-        "pk": 46
-    },
-    {
-        "fields": {
             "command": "/usr/bin/inkscape \"%fileFullName%\" --export-plain-svg=\"%outputDirectory%%prefix%%fileName%%postfix%.svg\"\nchmod 777 \"%outputDirectory%%prefix%%fileName%%postfix%.svg\"",
             "command_usage": "normalization",
             "description": "Transcoding to plain svg with inkscape",
             "enabled": true,
             "event_detail_command": "1db2deea-01dd-43e5-9f27-dc9ed02acdfe",
-            "lastmodified": "2023-10-23T20:36:10.167Z",
+            "lastmodified": "2026-08-19T13:54:27.606Z",
             "output_format": "8ba2101d-3f3c-4620-a0fa-a75cf5f5ec27",
             "output_location": "%outputDirectory%%prefix%%fileName%%postfix%.svg",
             "replaces": "64c450b4-135c-46d1-a9aa-3f9b15671677",
@@ -76504,7 +76431,7 @@
             "description": "Validate using JHOVE",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:10.286Z",
+            "lastmodified": "2026-08-19T13:54:27.626Z",
             "output_format": null,
             "output_location": null,
             "replaces": "fe9e3046-29fb-4cc6-b71c-db50b0aac127",
@@ -76523,7 +76450,7 @@
             "description": "Validate using JHOVE",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:11.808Z",
+            "lastmodified": "2026-08-19T13:54:27.792Z",
             "output_format": null,
             "output_location": null,
             "replaces": "11036e14-78d9-4449-8360-e2da394279ad",
@@ -76542,7 +76469,7 @@
             "description": "Validate using MediaConch",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:11.821Z",
+            "lastmodified": "2026-08-19T13:54:27.796Z",
             "output_format": null,
             "output_location": null,
             "replaces": "287656fb-e58f-4967-bf72-0bae3bbb5ca8",
@@ -76561,7 +76488,7 @@
             "description": "tsk_recover",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:11.836Z",
+            "lastmodified": "2026-08-19T13:54:27.798Z",
             "output_format": null,
             "output_location": null,
             "replaces": "8f41dc6f-05eb-46d4-9b22-0a0d74673510",
@@ -76578,9 +76505,9 @@
             "command": "\nimport argparse\nimport base64\nimport sys\n\n# http://i.imgur.com/ijwSkff.jpg\nDEFAULT_THUMBNAIL = \\\"\\\"\\\"\n/9j/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB\nAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB\nAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAwADADASIAAhEBAxEB/8QAHAABAQACAgMA\nAAAAAAAAAAAACAAFCQEKAwQG/8QANBAAAAUDAgIFCwUAAAAAAAAAAQMEBQYAAgcICRESExQ5eLcV\nGSExV1iVmMHS1xZScYWn/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAKBEAAgADBgUFAAAAAAAA\nAAAAAAECESESMVFhkcEiQUJxoVJystHS/9oADAMBAAIRAxEAPwDelul5RzWOsiAYeh2d8yYlgjdp\nmTZLBtxBOF+PVTjLXvKcmi7iufHJjLKXPye5mj7MQhQu5yxIymJVKhjKbTnl/vdQn13Pfvpa1vmN\nmf30vNzvtGIj3KWDx0n9F2gML13Pfvpa1vmNmf314znLPJBJp9+tLWwNhJRhtwW6jJkNw2l2jfcF\noCYADcIAPABEA4+sQD01nq9VcUaciWEkcnTGpVBRPSCNpfSmFX2F842gNwWc4hzCACIW8RABH0UA\nxdv3cZl2K2rHuPNW85dpbjLIrexrYhqAmLkscHTGsslRFi+yIZZkj48Ozu6QV6VKRvbMivKm0uBv\nSq9reDUuNFrVZivsa10WSpLlNjhDVBXjT4dJWxsjLVHFR9kua1qNyKbW5Mg6yY3AxKxKAy5PapAm\n+43oLuXlPvEsDR3HbLOsLKUyksm0c5BaXVQx4zxmom+OnWTOVy2UQ6Mx56g8SGAqHDqKW2SxxQfL\nLXOJ86VrugaBtURZrPeYisizHj2TWK1B8Tud9oxEe5SweOk/ou0otzvtGIj3KWDx0n9F2qCqqqoC\npC7VicpPuS5UEouwvrGkZ5PM5LQt5zByliEq6+7gAcbhAq0BuH0iAAHqAKPVI3a07SPJfc+efFjF\nFZivg9z+MRVdF23RldzvtGIj3KWDx0n9F2tru4Lt+ah9ROf4VnnT9P8AEjGvb8PW4ik0fysErbiC\nEjXNHmZNrwyuMXj8sFzNdTpGqRL0S1AyeRbWNIemWPnl5QQxC7zWe5H7TNH4f3OWPricarbXS3mr\nO8SfgSzS12TDnVSM81nuSe0zR/8AGcr/AImq81nuSe0zR/8AGcr/AImqWn6ItYP0JLFefoOdIzaz\nHjuSZND9uj94D/V8TXfWuB2styQfVk7SAH8PGVvriUaY+3ht4ahNNeoTIef8/wCQ8UyBxkGKQxdH\no9i79TuKe9O4yaNSNxdXVxkcah1zX5LuhyBMhQpkD/e9Xv7goUODEWxpEj1Ktw8LUnOtnBqSk3Wv\na+ook6pzWeKfNZH/2Q==\\\"\\\"\\\"\n\ndef main(target):\n    with open(target, 'wb') as f:\n        f.write(base64.b64decode(DEFAULT_THUMBNAIL))\n\nif __name__ == '__main__':\n    parser = argparse.ArgumentParser()\n    parser.add_argument('--output-location', required=True)\n    args, _ = parser.parse_known_args()\n\n    sys.exit(main(args.output_location))\n",
             "command_usage": "normalization",
             "description": "Using default thumbnail",
-            "enabled": true,
+            "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:11.846Z",
+            "lastmodified": "2026-08-19T13:54:27.800Z",
             "output_format": "ffb55e9a-29f1-4276-a9a5-5ef813229b79",
             "output_location": "%outputDirectory%%postfix%.jpg",
             "replaces": "7c2b65c7-6cea-4f81-9f3b-53375efc5bee",
@@ -76597,9 +76524,9 @@
             "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find('.{http://schema.openpreservation.org/ois/xml/ns/jhove}repInfo/{http://schema.openpreservation.org/ois/xml/ns/jhove}status')\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find('.{http://schema.openpreservation.org/ois/xml/ns/jhove}repInfo/{http://schema.openpreservation.org/ois/xml/ns/jhove}format')\n    version = doc.find('.{http://schema.openpreservation.org/ois/xml/ns/jhove}repInfo/{http://schema.openpreservation.org/ois/xml/ns/jhove}version')\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef format_event_outcome_detail_note(format, version, result):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        note = format_event_outcome_detail_note(format, version, status)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE",
-            "enabled": true,
+            "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2023-10-23T20:36:14.571Z",
+            "lastmodified": "2026-08-19T13:54:28.193Z",
             "output_format": null,
             "output_location": null,
             "replaces": "4cac3267-453e-4456-9306-6d098dacb70d",
@@ -76613,6 +76540,215 @@
     },
     {
         "fields": {
+            "command": "\nimport argparse\nimport base64\nimport sys\n\n# http://i.imgur.com/ijwSkff.jpg\nDEFAULT_THUMBNAIL = \"\"\"\n/9j/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB\nAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB\nAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAwADADASIAAhEBAxEB/8QAHAABAQACAgMA\nAAAAAAAAAAAACAAFCQEKAwQG/8QANBAAAAUDAgIFCwUAAAAAAAAAAQMEBQYAAgcICRESExQ5eLcV\nGSExV1iVmMHS1xZScYWn/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAKBEAAgADBgUFAAAAAAAA\nAAAAAAECESESMVFhkcEiQUJxoVJystHS/9oADAMBAAIRAxEAPwDelul5RzWOsiAYeh2d8yYlgjdp\nmTZLBtxBOF+PVTjLXvKcmi7iufHJjLKXPye5mj7MQhQu5yxIymJVKhjKbTnl/vdQn13Pfvpa1vmN\nmf30vNzvtGIj3KWDx0n9F2gML13Pfvpa1vmNmf314znLPJBJp9+tLWwNhJRhtwW6jJkNw2l2jfcF\noCYADcIAPABEA4+sQD01nq9VcUaciWEkcnTGpVBRPSCNpfSmFX2F842gNwWc4hzCACIW8RABH0UA\nxdv3cZl2K2rHuPNW85dpbjLIrexrYhqAmLkscHTGsslRFi+yIZZkj48Ozu6QV6VKRvbMivKm0uBv\nSq9reDUuNFrVZivsa10WSpLlNjhDVBXjT4dJWxsjLVHFR9kua1qNyKbW5Mg6yY3AxKxKAy5PapAm\n+43oLuXlPvEsDR3HbLOsLKUyksm0c5BaXVQx4zxmom+OnWTOVy2UQ6Mx56g8SGAqHDqKW2SxxQfL\nLXOJ86VrugaBtURZrPeYisizHj2TWK1B8Tud9oxEe5SweOk/ou0otzvtGIj3KWDx0n9F2qCqqqoC\npC7VicpPuS5UEouwvrGkZ5PM5LQt5zByliEq6+7gAcbhAq0BuH0iAAHqAKPVI3a07SPJfc+efFjF\nFZivg9z+MRVdF23RldzvtGIj3KWDx0n9F2tru4Lt+ah9ROf4VnnT9P8AEjGvb8PW4ik0fysErbiC\nEjXNHmZNrwyuMXj8sFzNdTpGqRL0S1AyeRbWNIemWPnl5QQxC7zWe5H7TNH4f3OWPricarbXS3mr\nO8SfgSzS12TDnVSM81nuSe0zR/8AGcr/AImq81nuSe0zR/8AGcr/AImqWn6ItYP0JLFefoOdIzaz\nHjuSZND9uj94D/V8TXfWuB2styQfVk7SAH8PGVvriUaY+3ht4ahNNeoTIef8/wCQ8UyBxkGKQxdH\no9i79TuKe9O4yaNSNxdXVxkcah1zX5LuhyBMhQpkD/e9Xv7goUODEWxpEj1Ktw8LUnOtnBqSk3Wv\na+ook6pzWeKfNZH/2Q==\"\"\"\n\ndef main(target):\n    with open(target, 'wb') as f:\n        f.write(base64.b64decode(DEFAULT_THUMBNAIL))\n\nif __name__ == '__main__':\n    parser = argparse.ArgumentParser()\n    parser.add_argument('--output-location', required=True)\n    args, _ = parser.parse_known_args()\n\n    sys.exit(main(args.output_location))\n",
+            "command_usage": "normalization",
+            "description": "Using default thumbnail",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.330Z",
+            "output_format": "ffb55e9a-29f1-4276-a9a5-5ef813229b79",
+            "output_location": "%outputDirectory%%postfix%.jpg",
+            "replaces": "95149bc4-0620-4c20-964c-1d6c34b9400e",
+            "script_type": "pythonScript",
+            "tool": "efa8474a-8526-48c3-8279-e5a76bdc0995",
+            "uuid": "484d3a8f-9e59-4912-a5b8-f8a2deb3466a",
+            "verification_command": "ef3ea000-0c3c-4cae-adc2-aa2a6ccbffce"
+        },
+        "model": "fpr.fpcommand",
+        "pk": 54
+    },
+    {
+        "fields": {
+            "command": "echo program=\\\"7z\\\"\\; version=\\\"`7z | awk 'NR==3 && /^p7zip Version/ {print; exit} NR==2 {line2=$0} NR==3 {print line2 $0}'`\\\"",
+            "command_usage": "event_detail",
+            "description": "Get event detail text for 7z extraction",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.378Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": "914fe3e5-fa45-47c6-858d-e11bc71f5b76",
+            "script_type": "bashScript",
+            "tool": "2385486a-35e2-42e4-bae9-3bfa1995dda4",
+            "uuid": "8f177f1c-5eac-45c4-aa6f-2214107d1a7b",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 55
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'JPEG-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE JPEG-hul",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.397Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "1dd10753-12f4-4a71-bd69-532186b77d93",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 56
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'JPEG2000-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE JPEG2000-hul",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.399Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "34858217-507c-4e65-a7d9-ca62e1f72642",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 57
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'TIFF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE TIFF-hul",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.399Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "09a14b6b-3f4c-49d8-9a62-0c7212aca83c",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 58
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'WAVE-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE WAVE-hul",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.400Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "33510bbe-8115-48af-8e6c-7cc7e1773d35",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 59
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'AIFF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE AIFF-hul",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.401Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "d610e7d6-f78c-4fb8-bd19-09a10fa48672",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 60
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'gif-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE gif-hul",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.402Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "8816399f-ca5d-4861-9ae9-a4d22cc89e63",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 61
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'WARC-kb', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE WARC-kb",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.402Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "228f6676-97d7-44ff-bdb8-bfe181dee1a1",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 62
+    },
+    {
+        "fields": {
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\nfrom archivematica.archivematicaCommon.namespaces import jhoveBNS\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'PDF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command_usage": "validation",
+            "description": "Validate using JHOVE PDF-hul",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.403Z",
+            "output_format": null,
+            "output_location": null,
+            "replaces": null,
+            "script_type": "pythonScript",
+            "tool": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
+            "uuid": "2d2fd8b9-5215-41f8-bb33-58be6a2b4abb",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 63
+    },
+    {
+        "fields": {
+            "command": "fiwalk -x %relativeLocation%",
+            "command_usage": "Characterization",
+            "description": "fiwalk",
+            "enabled": true,
+            "event_detail_command": null,
+            "lastmodified": "2026-08-19T13:54:28.537Z",
+            "output_format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
+            "output_location": null,
+            "replaces": "928ce834-8830-44cc-a282-4ba1271f7842",
+            "script_type": "command",
+            "tool": "0a78f98a-9484-431a-9759-59e5d1d09281",
+            "uuid": "fcd033ec-8e29-48e8-99b9-6dbccd8f9c6e",
+            "verification_command": null
+        },
+        "model": "fpr.fpcommand",
+        "pk": 64
+    },
+    {
+        "fields": {
             "description": "convert",
             "enabled": false,
             "slug": "convert-667-9",
@@ -76621,17 +76757,6 @@
         },
         "model": "fpr.fptool",
         "pk": 1
-    },
-    {
-        "fields": {
-            "description": "FITS",
-            "enabled": false,
-            "slug": "fits-061",
-            "uuid": "c5465b07-8dc7-475e-a5c9-ccb2ba2ed083",
-            "version": "0.6.1"
-        },
-        "model": "fpr.fptool",
-        "pk": 2
     },
     {
         "fields": {
@@ -76929,17 +77054,6 @@
         },
         "model": "fpr.fptool",
         "pk": 29
-    },
-    {
-        "fields": {
-            "description": "FITS",
-            "enabled": true,
-            "slug": "fits-084",
-            "uuid": "1e13b3ca-c7b4-46a1-a1e9-a66220581c2d",
-            "version": "0.8.4"
-        },
-        "model": "fpr.fptool",
-        "pk": 30
     },
     {
         "fields": {
