@@ -150,7 +150,7 @@ def main(job, transfer_id, transfer_path, url):
             job.pyprint(f"Unsupported URL scheme: {parsed.scheme}", file=sys.stderr)
             return 1
     except RetrievalError as err:
-        job.pyprint(f"Error retrievent contents: {err}", file=sys.stderr)
+        job.pyprint(f"Error retrieving contents: {err}", file=sys.stderr)
         return 1
 
     if is_bag(transfer_path):
