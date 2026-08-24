@@ -76751,9 +76751,9 @@
         "fields": {
             "description": "convert",
             "enabled": false,
-            "slug": "convert-667-9",
+            "slug": "convert-6911-60",
             "uuid": "8d81cd4f-20ee-4a82-9eca-455699509cd5",
-            "version": "6.6.7-9"
+            "version": "6.9.11-60"
         },
         "model": "fpr.fptool",
         "pk": 1
@@ -76762,9 +76762,9 @@
         "fields": {
             "description": "test",
             "enabled": false,
-            "slug": "test-597",
+            "slug": "test-gnu-coreutils-832",
             "uuid": "12e11ac5-d96d-412f-ab15-362ed5283d46",
-            "version": "5.97"
+            "version": "(GNU coreutils) 8.32"
         },
         "model": "fpr.fptool",
         "pk": 3
@@ -76773,9 +76773,9 @@
         "fields": {
             "description": "echo",
             "enabled": false,
-            "slug": "echo-gnu-coreutils-812197-032bb",
+            "slug": "echo-gnu-coreutils-832",
             "uuid": "2385486a-35e2-42e4-bae9-3bfa1995dda4",
-            "version": "GNU coreutils 8.12.197-032bb"
+            "version": "(GNU coreutils) 8.32"
         },
         "model": "fpr.fptool",
         "pk": 4
@@ -76784,9 +76784,9 @@
         "fields": {
             "description": "ffmpeg",
             "enabled": false,
-            "slug": "ffmpeg-0106-60106-0ubuntu0jon1precise1",
+            "slug": "ffmpeg-442",
             "uuid": "307d4e6d-9cfc-414e-8354-f41fe1247e12",
-            "version": "2.3-1"
+            "version": "4.4.2"
         },
         "model": "fpr.fptool",
         "pk": 5
@@ -76795,9 +76795,9 @@
         "fields": {
             "description": "Ghostscript",
             "enabled": false,
-            "slug": "ghostscript-905-2012-02-08",
+            "slug": "ghostscript-9550",
             "uuid": "ef6c5539-b803-4d26-9e09-a5b984bf0bf5",
-            "version": "9.05 (2012-02-08)"
+            "version": "9.55.0"
         },
         "model": "fpr.fptool",
         "pk": 6
@@ -76806,9 +76806,9 @@
         "fields": {
             "description": "inkscape",
             "enabled": false,
-            "slug": "inkscape-04831-r9886-jan-29-2013",
+            "slug": "inkscape-112",
             "uuid": "06523365-9061-4ac7-a7f5-3e7e5f06ffac",
-            "version": "0.48.3.1 r9886 (Jan 29 2013)"
+            "version": "1.1.2"
         },
         "model": "fpr.fptool",
         "pk": 7
@@ -76817,9 +76817,9 @@
         "fields": {
             "description": "ps2pdf",
             "enabled": false,
-            "slug": "ps2pdf-905-2012-02-08",
+            "slug": "ps2pdf-9550",
             "uuid": "18102743-3a25-4510-bf09-976421d5a646",
-            "version": "9.05 (2012-02-08)"
+            "version": "9.55.0"
         },
         "model": "fpr.fptool",
         "pk": 8
@@ -76828,9 +76828,9 @@
         "fields": {
             "description": "cp",
             "enabled": false,
-            "slug": "cp-gnu-coreutils-820",
+            "slug": "cp-gnu-coreutils-832",
             "uuid": "57864018-63d0-4786-8ce5-55393d3ab5a1",
-            "version": "(GNU coreutils) 8.20"
+            "version": "(GNU coreutils) 8.32"
         },
         "model": "fpr.fptool",
         "pk": 9
@@ -76839,9 +76839,9 @@
         "fields": {
             "description": "7Zip",
             "enabled": true,
-            "slug": "7zip-920",
+            "slug": "7zip-1602",
             "uuid": "7d1f8bb1-7915-4b45-a0d5-34e0aab8d6fc",
-            "version": "9.20"
+            "version": "16.02"
         },
         "model": "fpr.fptool",
         "pk": 10
@@ -76861,9 +76861,9 @@
         "fields": {
             "description": "unrar-free",
             "enabled": true,
-            "slug": "unrar-free-001",
+            "slug": "unrar-free-002",
             "uuid": "52621750-1f8f-410d-aa1b-eb0a34103d51",
-            "version": "0.0.1"
+            "version": "0.0.2"
         },
         "model": "fpr.fptool",
         "pk": 12
@@ -76872,9 +76872,9 @@
         "fields": {
             "description": "FFprobe",
             "enabled": false,
-            "slug": "ffprobe-220",
+            "slug": "ffprobe-442",
             "uuid": "467a5875-f9ef-49ac-ac93-29f4bac3dbae",
-            "version": "2.2.0"
+            "version": "4.4.2"
         },
         "model": "fpr.fptool",
         "pk": 13
@@ -76883,9 +76883,9 @@
         "fields": {
             "description": "ExifTool",
             "enabled": false,
-            "slug": "exiftool-927",
+            "slug": "exiftool-1240",
             "uuid": "bb957e1d-ee63-4354-a209-a41d23881e3e",
-            "version": "9.70"
+            "version": "12.40"
         },
         "model": "fpr.fptool",
         "pk": 14
@@ -76894,9 +76894,9 @@
         "fields": {
             "description": "MediaInfo",
             "enabled": false,
-            "slug": "mediainfo-0752",
+            "slug": "mediainfo-2605",
             "uuid": "e0d7abce-39fd-49f7-ab98-aef1bdb0378f",
-            "version": "0.7.52"
+            "version": "26.05"
         },
         "model": "fpr.fptool",
         "pk": 15
@@ -76905,9 +76905,9 @@
         "fields": {
             "description": "Sleuthkit",
             "enabled": true,
-            "slug": "sleuthkit-413",
+            "slug": "sleuthkit-4111",
             "uuid": "0a78f98a-9484-431a-9759-59e5d1d09281",
-            "version": "4.1.3"
+            "version": "4.11.1"
         },
         "model": "fpr.fptool",
         "pk": 16
@@ -76916,9 +76916,9 @@
         "fields": {
             "description": "Tesseract",
             "enabled": false,
-            "slug": "tesseract-302",
+            "slug": "tesseract-411",
             "uuid": "765335d5-70b7-4a02-816e-a293a1bc1b6c",
-            "version": "3.02"
+            "version": "4.1.1"
         },
         "model": "fpr.fptool",
         "pk": 17
@@ -76927,9 +76927,9 @@
         "fields": {
             "description": "JHOVE",
             "enabled": true,
-            "slug": "jhove-126",
+            "slug": "jhove-1261",
             "uuid": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
-            "version": "1.26"
+            "version": "1.26.1"
         },
         "model": "fpr.fptool",
         "pk": 18
@@ -77004,9 +77004,9 @@
         "fields": {
             "description": "inkscape",
             "enabled": true,
-            "slug": "inkscape-0484",
+            "slug": "inkscape-112",
             "uuid": "34afccc3-2cfd-4780-ba56-06221f1bfe18",
-            "version": "0.48.4"
+            "version": "1.1.2"
         },
         "model": "fpr.fptool",
         "pk": 25
@@ -77026,9 +77026,9 @@
         "fields": {
             "description": "ffmpeg",
             "enabled": true,
-            "slug": "ffmpeg-302",
+            "slug": "ffmpeg-442",
             "uuid": "fcc4e6d7-d956-40e9-af92-0e544895eb1f",
-            "version": "3.0.2"
+            "version": "4.4.2"
         },
         "model": "fpr.fptool",
         "pk": 27
@@ -77070,9 +77070,9 @@
         "fields": {
             "description": "MediaConch",
             "enabled": true,
-            "slug": "mediaconch-1803",
+            "slug": "mediaconch-2504",
             "uuid": "f79c56f1-2d42-440a-8a1f-f40888e24bca",
-            "version": "18.03"
+            "version": "25.04"
         },
         "model": "fpr.fptool",
         "pk": 32
