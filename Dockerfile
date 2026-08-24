@@ -35,7 +35,7 @@ ENV LC_ALL=en_US.UTF-8
 # OS dependencies
 RUN set -ex \
 	&& curl -s https://packages.archivematica.org/GPG-KEY-archivematica | apt-key add - \
-	&& add-apt-repository --no-update --yes "deb [arch=amd64] http://packages.archivematica.org/1.15.x/ubuntu-externals jammy main" \
+	&& add-apt-repository --no-update --yes "deb [arch=amd64] http://packages.archivematica.org/1.18.x/ubuntu-externals jammy main" \
 	&& add-apt-repository --no-update --yes "deb http://archive.ubuntu.com/ubuntu/ jammy multiverse" \
 	&& add-apt-repository --no-update --yes "deb http://archive.ubuntu.com/ubuntu/ jammy-security universe" \
 	&& add-apt-repository --no-update --yes "deb http://archive.ubuntu.com/ubuntu/ jammy-updates multiverse" \

@@ -76927,9 +76927,9 @@
         "fields": {
             "description": "JHOVE",
             "enabled": true,
-            "slug": "jhove-1261",
+            "slug": "jhove-1340",
             "uuid": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
-            "version": "1.26.1"
+            "version": "1.34.0"
         },
         "model": "fpr.fptool",
         "pk": 18
