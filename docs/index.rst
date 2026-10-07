@@ -13,6 +13,7 @@ Current release: |version|.
     installation
     usage
     settings
+    fpr-inspection
     development
     docker
     contributing

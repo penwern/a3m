@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package a3m.api.fprservice.v1beta1;
+
+option go_package = "github.com/penwern/a3m/proto/a3m/api/fprservice/v1beta1;fprservice";
+
+// Read-only facts from the registry loaded by this A3M instance.
+service FPRService {
+  rpc GetRegistry(GetRegistryRequest) returns (GetRegistryResponse) {}
+}
+
+message GetRegistryRequest {}
+
+message GetRegistryResponse {
+  uint32 schema_version = 1;
+  string source_sha256 = 2;
+  string a3m_version = 3;
+  // Identifies this server process; not a stable deployment identity.
+  string instance_id = 4;
+  repeated FormatGroup groups = 5;
+  repeated Format formats = 6;
+  repeated FormatVersion versions = 7;
+  repeated Tool tools = 8;
+  repeated Command commands = 9;
+  repeated Rule rules = 10;
+  repeated Diagnostic diagnostics = 11;
+}
+
+// Arrays retain loader order. source_index is the position in the source JSON.
+message FormatGroup {
+  string uuid = 1;
+  string slug = 2;
+  string description = 3;
+  uint32 source_index = 4;
+}
+
+message Format {
+  string uuid = 1;
+  string slug = 2;
+  string description = 3;
+  string group = 4;
+  uint32 source_index = 5;
+}
+
+message FormatVersion {
+  string uuid = 1;
+  string slug = 2;
+  string description = 3;
+  string format = 4;
+  optional string version = 5;
+  string pronom_id = 6;
+  bool enabled = 7;
+  optional string replaces = 8;
+  string lastmodified = 9;
+  bool access_format = 10;
+  bool preservation_format = 11;
+  uint32 source_index = 12;
+  bool active = 13;
+  // True only for the version returned by lookup of this non-empty PUID.
+  bool resolves_pronom_id = 14;
+}
+
+message Tool {
+  string uuid = 1;
+  string slug = 2;
+  string description = 3;
+  // Declared in the FPR, not detected from the installed binary.
+  string version = 4;
+  // Source metadata; the registry does not enforce tool eligibility.
+  bool enabled = 5;
+  uint32 source_index = 6;
+}
+
+message Command {
+  string uuid = 1;
+  string description = 2;
+  string tool = 3;
+  // Source metadata; get_rules does not check this flag.
+  bool enabled = 4;
+  optional string replaces = 5;
+  string lastmodified = 6;
+  string command = 7;
+  string command_usage = 8;
+  string script_type = 9;
+  optional string output_location = 10;
+  optional string output_format = 11;
+  optional string verification_command = 12;
+  optional string event_detail_command = 13;
+  uint32 source_index = 14;
+}
+
+message Rule {
+  string uuid = 1;
+  string format = 2;
+  string command = 3;
+  string purpose = 4;
+  bool enabled = 5;
+  optional string replaces = 6;
+  string lastmodified = 7;
+  uint32 source_index = 8;
+  // Returned by backend.get_rules for its format/purpose. This does not
+  // imply the workflow will execute it or describe fallback/retry behaviour.
+  bool selected_by_registry = 9;
+  bool loaded = 10;
+}
+
+message Diagnostic {
+  string record_id = 1;
+  string message = 2;
+}
