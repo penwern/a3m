@@ -55,11 +55,7 @@ RUN set -ex \
 	libimage-exiftool-perl \
 	libevent-dev \
 	libjansson4 \
-	libxml2-dev \
-	libxslt1-dev \
-	libpq-dev \
-	build-essential \
-	python3-dev \
+	mediaconch \
 	mediainfo \
 	openjdk-8-jre-headless \
 	p7zip-full \
