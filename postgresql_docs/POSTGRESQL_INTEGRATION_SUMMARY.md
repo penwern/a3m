@@ -32,7 +32,6 @@ Successfully integrated PostgreSQL support into penwern-a3m, enabling **concurre
 **Created:**
 - `README.postgres.md` - Quick start guide (3 commands to get started)
 - `docs/docker-postgres.md` - Comprehensive 300+ line guide
-- `docs/CONCURRENT_PROCESSING_EVIDENCE.md` - Full evidence with logs
 - `docs/settings.rst` - Updated with PostgreSQL configuration
 - `examples/postgresql-setup.md` - Standalone PostgreSQL setup guide
 
@@ -141,7 +140,6 @@ penwern-a3m/
 ├── pyproject.toml                                # Added psycopg2-binary
 ├── docs/
 │   ├── docker-postgres.md                        # Comprehensive guide
-│   ├── CONCURRENT_PROCESSING_EVIDENCE.md        # Full evidence doc
 │   └── settings.rst                             # Updated settings
 ├── examples/
 │   └── postgresql-setup.md                       # PostgreSQL setup
@@ -177,7 +175,6 @@ print('Concurrent packages:', settings.CONCURRENT_PACKAGES)
 
 ## Support Resources
 
-- **Evidence Document**: `docs/CONCURRENT_PROCESSING_EVIDENCE.md`
 - **Quick Start**: `README.postgres.md`
 - **Full Guide**: `docs/docker-postgres.md`
 - **PostgreSQL Setup**: `examples/postgresql-setup.md`
