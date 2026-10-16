@@ -96,14 +96,10 @@ Server with PostgreSQL
 ======================
 
 ``compose.postgres.yml`` builds the image and runs the gRPC server on port
-``7000`` against a PostgreSQL container, so packages can be processed
+``52000`` against a PostgreSQL container, so packages can be processed
 concurrently (see :doc:`settings`)::
 
     docker compose -f compose.postgres.yml up --detach
-
-Set ``A3M_CONCURRENT_PACKAGES`` to change the number of packages processed at
-once (``4`` by default) and ``A3M_DB_PASSWORD`` to replace the default database
-password.
 
 Don't forget to clean up before leaving::
 
