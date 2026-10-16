@@ -20,7 +20,8 @@ a3m supports both SQLite (default) and PostgreSQL as database backends.
 
 **SQLite** (Default)
 
-SQLite is used by default for single-user deployments. It limits ``concurrent_packages`` to 1 due to write contention limitations::
+SQLite is used by default for single-user deployments. It limits
+``concurrent_packages`` to 1 due to write contention limitations::
 
     [a3m]
     db_engine = django.db.backends.sqlite3
@@ -28,7 +29,8 @@ SQLite is used by default for single-user deployments. It limits ``concurrent_pa
 
 **PostgreSQL** (Recommended for Concurrent Processing)
 
-PostgreSQL enables true concurrent package processing, allowing multiple packages to be processed simultaneously. To use PostgreSQL::
+PostgreSQL enables true concurrent package processing, allowing multiple
+packages to be processed simultaneously. To use PostgreSQL::
 
     [a3m]
     db_engine = django.db.backends.postgresql
@@ -47,7 +49,9 @@ Or via environment variables::
     export A3M_DB_HOST=localhost
     export A3M_DB_PORT=5432
 
-With PostgreSQL, the system will automatically enable concurrent package processing based on CPU count (defaults to half of available CPUs). This significantly improves throughput for batch processing scenarios.
+With PostgreSQL, the system will automatically enable concurrent package
+processing based on CPU count (defaults to half of available CPUs). This
+significantly improves throughput for batch processing scenarios.
 
 Configuration Settings
 ----------------------
@@ -67,7 +71,9 @@ Configuration Settings
 * ``prometheus_bind_address`` (string)
 * ``prometheus_bind_port`` (string)
 * ``time_zone`` (string)
-* ``db_engine`` (string) - Database backend engine. Default: ``django.db.backends.sqlite3``. For PostgreSQL use: ``django.db.backends.postgresql``
+* ``db_engine`` (string) - Database backend engine. Default:
+  ``django.db.backends.sqlite3``. For PostgreSQL use:
+  ``django.db.backends.postgresql``
 * ``db_name`` (string) - Database name or path (for SQLite)
 * ``db_user`` (string) - Database user (not used for SQLite)
 * ``db_password`` (string) - Database password (not used for SQLite)
