@@ -1,14 +1,18 @@
 # syntax=docker/dockerfile:1.10.0-labs
 
-ARG SYSTEM_IMAGE=ubuntu:22.04
-ARG UV_VERSION=0.5.29
+ARG SYSTEM_IMAGE=default-system
+ARG UV_IMAGE=default-uv
 ARG USER_ID=1000
 ARG GROUP_ID=1000
+
+# Keep the default image references literal for Dependabot. The image
+# arguments can still override the corresponding stages.
 
 #
 # Base
 #
 
+FROM ubuntu:26.04 AS default-system
 FROM ${SYSTEM_IMAGE} AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -17,13 +21,12 @@ ENV PYTHONUNBUFFERED=1
 RUN set -ex \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends \
-	apt-transport-https \
+	ca-certificates \
 	curl \
 	git \
-	gpg-agent \
+	gnupg \
 	locales \
 	locales-all \
-	software-properties-common \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Set the locale
@@ -34,13 +37,13 @@ ENV LC_ALL=en_US.UTF-8
 
 # OS dependencies
 RUN set -ex \
-	&& curl -s https://packages.archivematica.org/GPG-KEY-archivematica | apt-key add - \
-	&& add-apt-repository --no-update --yes "deb [arch=amd64] http://packages.archivematica.org/1.18.x/ubuntu-externals jammy main" \
-	&& add-apt-repository --no-update --yes "deb http://archive.ubuntu.com/ubuntu/ jammy multiverse" \
-	&& add-apt-repository --no-update --yes "deb http://archive.ubuntu.com/ubuntu/ jammy-security universe" \
-	&& add-apt-repository --no-update --yes "deb http://archive.ubuntu.com/ubuntu/ jammy-updates multiverse" \
-	&& curl -so /tmp/repo-mediaarea_1.0-25_all.deb -L https://mediaarea.net/repo/deb/repo-mediaarea_1.0-25_all.deb \
-	&& dpkg -i /tmp/repo-mediaarea_1.0-25_all.deb \
+	&& mkdir -p /etc/apt/keyrings \
+	&& UBUNTU_CODENAME=$(. /etc/os-release && printf '%s' "$VERSION_CODENAME") \
+	&& curl --retry 3 -fsSL https://packages.archivematica.org/GPG-KEY-archivematica | gpg --dearmor -o /etc/apt/keyrings/archivematica.gpg \
+	&& echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/archivematica.gpg] https://packages.archivematica.org/1.19.x/ubuntu-externals ${UBUNTU_CODENAME} main" > /etc/apt/sources.list.d/archivematica.list \
+	&& curl --retry 3 -fsSL -o /tmp/repo-mediaarea.deb https://mediaarea.net/repo/deb/repo-mediaarea_1.0-27_all.deb \
+	&& dpkg -i /tmp/repo-mediaarea.deb \
+	&& rm /tmp/repo-mediaarea.deb \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends \
 	atool \
@@ -51,7 +54,7 @@ RUN set -ex \
 	libavcodec-extra \
 	imagemagick \
 	inkscape \
-	jhove \
+	jhove=1.34.0-1~22.04 \
 	libimage-exiftool-perl \
 	libevent-dev \
 	libjansson4 \
@@ -73,7 +76,8 @@ RUN set -ex \
 
 # -----------------------------------------------------------------------------
 
-FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv
+FROM ghcr.io/astral-sh/uv:0.13.6@sha256:af22a52f5eafef3d78e551599d405c02df61919d18028f0cea8eda93bc9986d0 AS default-uv
+FROM ${UV_IMAGE} AS uv
 
 # -----------------------------------------------------------------------------
 
@@ -84,6 +88,10 @@ ARG GROUP_ID
 
 # Create a3m user.
 RUN set -ex \
+	&& existing_group=$(getent group "${GROUP_ID}" | cut -d: -f1 || true) \
+	&& if [ -n "${existing_group}" ]; then groupdel --force "${existing_group}"; fi \
+	&& existing_user=$(getent passwd "${USER_ID}" | cut -d: -f1 || true) \
+	&& if [ -n "${existing_user}" ]; then userdel --remove "${existing_user}"; fi \
 	&& groupadd --gid ${GROUP_ID} --system a3m \
 	&& useradd --uid ${USER_ID} --gid ${GROUP_ID} --home-dir /home/a3m --system a3m \
 	&& mkdir -p /home/a3m/.local/share/a3m/share \
@@ -98,24 +106,33 @@ ENV UV_COMPILE_BYTECODE=1
 # Copy from the cache instead of linking since it's a mounted volume.
 ENV UV_LINK_MODE=copy
 
+# Keep the interpreter managed by uv, independently of the base image.
+ENV UV_PYTHON_PREFERENCE=only-managed
+
 # Change the current user.
 USER a3m
 
 # Install the project into `/app`.
 WORKDIR /app
 
-# Install the project's dependencies using the lockfile and settings.
+# Install the project's dependencies and remove pip from the managed Python.
+# uv handles installs; removing pip here avoids shipping its vendored packages.
+# Cache the Python archive across dependency-layer rebuilds.
 RUN --mount=type=cache,target=/home/a3m/.cache/uv,uid=${USER_ID},gid=${GROUP_ID} \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
-    uv sync --frozen --no-install-project --no-dev --python 3.12
+    --mount=type=bind,source=.python-version,target=.python-version \
+    UV_PYTHON_CACHE_DIR=/home/a3m/.cache/uv/python uv sync --locked --no-install-project --no-dev \
+    && A3M_BASE_PREFIX=$(.venv/bin/python -c 'import sys; print(sys.base_prefix)') \
+    && uv pip uninstall --python "${A3M_BASE_PREFIX}/bin/python3" --break-system-packages pip \
+    && rm -f "${A3M_BASE_PREFIX}"/lib/python3.*/ensurepip/_bundled/pip-*.whl
 
 # Add the rest of the project source code and install it.
 # Installing separately from its dependencies allows optimal layer caching.
 COPY --exclude=.git . /app
 RUN --mount=type=cache,target=/home/a3m/.cache/uv,uid=${USER_ID},gid=${GROUP_ID} \
 	--mount=type=bind,source=.git,target=.git \
-    uv sync --frozen --no-dev --python 3.12
+    uv sync --locked --no-dev
 
 # Place executables in the environment at the front of the path.
 ENV PATH="/app/.venv/bin:$PATH"

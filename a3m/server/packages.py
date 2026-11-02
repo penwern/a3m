@@ -376,7 +376,7 @@ class Package:
         if created:
             message = "New UnitVariable %s created for %s: %s (MSCL: %s)"
         else:
-            message = "Existing UnitVariable %s for %s updated to %s (MSCL" " %s)"
+            message = "Existing UnitVariable %s for %s updated to %s (MSCL %s)"
 
         logger.info(message, key, self.uuid, value, chain_link_id)
 
