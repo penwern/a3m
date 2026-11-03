@@ -11,6 +11,10 @@ updates:
       python:
         patterns:
           - "*"
+    # Stay on the Django 5.2 LTS that pyproject.toml pins.
+    ignore:
+      - dependency-name: "django"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "uv"
     directory: "/acceptance"
     cooldown:
