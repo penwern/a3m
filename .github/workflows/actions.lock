@@ -11,7 +11,7 @@ workflows:
         - 'bufbuild/buf-action@v1.6.0'
     '.github/workflows/check-actions.yml':
         - 'actions/checkout@v7.0.1'
-        - 'jdx/jactionlint@v2.3.0'
+        - 'jdx/jactionlint@v2.4.0'
     '.github/workflows/main.yml':
         - 'actions/checkout@v7.0.1'
         - 'docker/build-push-action@v7.4.0'
@@ -94,9 +94,9 @@ dependencies:
         commit: 'sha1-2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2'
         owner_id: 9919
         repo_id: 259445878
-    'jdx/jactionlint@v2.3.0':
-        ref: 'v2.3.0'
-        commit: 'sha1-a65ab044e916760429068fe5794b8306abdfcbb9'
+    'jdx/jactionlint@v2.4.0':
+        ref: 'v2.4.0'
+        commit: 'sha1-baa8d685e2b27ff5821558c9eeabb2051c1da61b'
         owner_id: 216188
         repo_id: 1404951382
         uses:
