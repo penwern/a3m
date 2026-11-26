@@ -1,5 +1,7 @@
 import logging
+import os
 import sys
+from pathlib import Path
 
 import boto3
 from botocore.client import Config
@@ -30,9 +32,14 @@ def _upload_file(path, bucket, key):
         s3_config.update(addressing_style=settings.S3_ADDRESSING_STYLE)
     if settings.S3_SIGNATURE_VERSION:
         s3_config.update(signature_version=settings.S3_SIGNATURE_VERSION)
-    if s3_config:
-        config = Config(s3=s3_config)
-        boto_args.update(config=config)
+    # Keep uploads compatible with S3 services that do not accept checksum
+    # trailers, while allowing the standard AWS environment setting to opt in.
+    boto_args["config"] = Config(
+        s3=s3_config,
+        request_checksum_calculation=os.environ.get(
+            "AWS_REQUEST_CHECKSUM_CALCULATION", "when_required"
+        ),
+    )
 
     s3 = boto3.resource(**boto_args)
     s3.meta.client.upload_file(path, bucket, key)
@@ -58,5 +65,5 @@ def call(jobs):
     with transaction.atomic():
         with job.JobContext():
             sip_id = job.args[1]
-            aip_path = job.args[2]
+            aip_path = Path(job.args[2])
             job.set_status(_store_aip(job, sip_id, aip_path))

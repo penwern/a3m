@@ -92,6 +92,20 @@ Don't forget to clean up before leaving::
    separately.
 
 
+Server with PostgreSQL
+======================
+
+``compose.postgres.yml`` builds the image and runs the gRPC server on port
+``52000`` against a PostgreSQL container, so packages can be processed
+concurrently (see :doc:`settings`)::
+
+    docker compose -f compose.postgres.yml up --detach
+
+Don't forget to clean up before leaving::
+
+    docker compose -f compose.postgres.yml down
+
+
 Custom images
 =============
 

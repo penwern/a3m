@@ -1,5 +1,27 @@
 .DEFAULT_GOAL := help
 
+.PHONY: acceptance
+ACCEPTANCE_DOCKERFILE ?= Dockerfile
+acceptance:  ## Build the image and run CLI acceptance scenarios with Dagger.
+	docker build --file "$(ACCEPTANCE_DOCKERFILE)" --tag a3m:acceptance .
+	@acceptance_image=$$(mktemp "$${TMPDIR:-/tmp}/a3m-acceptance.XXXXXX") || exit $$?; \
+	trap 'rm -f "$$acceptance_image"' EXIT; \
+	docker save --output "$$acceptance_image" a3m:acceptance || exit $$?; \
+	dagger call acceptance --image="$$acceptance_image" export \
+		--path=acceptance/reports || exit $$?; \
+	acceptance_status=$$(cat acceptance/reports/exit-code.txt) || exit $$?; \
+	case "$$acceptance_status" in 0) exit 0;; *) exit 1;; esac
+
+.PHONY: lint-actions check-actions lock-actions
+lint-actions:  ## Lint workflows, Dependabot configuration, and the action lockfile.
+	uvx jactionlint==2.3.0 --strict-exit
+
+check-actions:  ## Verify locked actions against GitHub without changing files.
+	gh actions-lock --verify
+
+lock-actions:  ## Regenerate the lockfile after changing workflow dependencies.
+	gh actions-lock
+
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 export BUILDKIT_PROGRESS=plain

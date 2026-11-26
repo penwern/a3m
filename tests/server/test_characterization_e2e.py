@@ -203,8 +203,7 @@ def test_characterisation_tools_run_successfully(
         # Name every failed job so a failure outside the watched groups (e.g.
         # Compress AIP with no 7z on PATH) is still diagnosable from the report.
         failures.append(
-            f"package finished with status {result.status}; "
-            f"failed jobs: {failed_jobs}"
+            f"package finished with status {result.status}; failed jobs: {failed_jobs}"
         )
 
     # No characterise/validate/normalize job may end Failed.

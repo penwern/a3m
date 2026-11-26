@@ -77,9 +77,9 @@ db_retry_time_counter = Counter(
 
 @contextmanager
 def db_retry_timer(*args, **kwargs):
-    start_time = time.time()
+    start_time = time.monotonic()
     try:
         yield
     finally:
-        duration = time.time() - start_time
+        duration = time.monotonic() - start_time
         db_retry_time_counter.labels(**kwargs).inc(duration)

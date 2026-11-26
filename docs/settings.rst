@@ -47,6 +47,17 @@ Configuration settings are not properly described yet, but here's the list:
 * ``org_id`` (string)
 * ``org_name`` (string)
 
+SQLite is the default database, where ``concurrent_packages`` defaults to 1.
+With PostgreSQL it defaults to half the number of CPUs, rounded up, e.g.::
+
+    [a3m]
+    db_engine = django.db.backends.postgresql
+    db_name = a3m
+    db_user = a3m
+    db_password = a3m
+    db_host = localhost
+    db_port = 5432
+
 For greater flexibility, it is also possible to alter the applicatin settings
 module manually. This is how our :mod:`a3m.settings.common` module looks like:
 

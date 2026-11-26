@@ -1,0 +1,14 @@
+[project]
+name = "a3m-acceptance"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  "bagit==1.9.0",
+  "boto3==1.44.3",
+  "pytest==9.2.0",
+  "pytest-bdd==9.0.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+addopts = "--strict-markers"

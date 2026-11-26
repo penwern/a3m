@@ -58,10 +58,13 @@ class BlobTextField(models.TextField):
 
     Used for storing strings that need to match unchanged paths on disk.
 
-    BLOBs are byte strings (bynary character set and collation).
+    BLOBs are byte strings (bynary character set and collation). PostgreSQL
+    uses `text`, which already compares byte for byte.
     """
 
     def db_type(self, connection):
+        if connection.vendor == "postgresql":
+            return "text"
         return "longblob"
 
 

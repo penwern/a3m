@@ -193,16 +193,19 @@ config.read_dict(_get_data_dir_defaults(config))
 
 # Django
 
+_db_engine = config.get("db_engine")
+_db_options = {"timeout": 5} if "sqlite" in _db_engine else {}
+
 DATABASES = {
     "default": {
-        "ENGINE": config.get("db_engine"),
+        "ENGINE": _db_engine,
         "NAME": config.get("db_name"),
         "USER": config.get("db_user"),
         "PASSWORD": config.get("db_password"),
         "HOST": config.get("db_host"),
         "PORT": config.get("db_port"),
         "CONN_MAX_AGE": 3600,
-        "OPTIONS": {"timeout": 5},
+        "OPTIONS": _db_options,
     }
 }
 

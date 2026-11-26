@@ -69,6 +69,41 @@ Please adhere to the following instructions:
    new version of the package is available on `PyPI`_ and that the container
    image has been published to the `GitHub Container Registry`_.
 
+GitHub Actions dependencies
+---------------------------
+
+Workflow dependencies use version tags in YAML and verified commit
+pins in ``.github/workflows/actions.lock``, including transitive actions.
+CI checks the lockfile with ``gh-actions-lock`` and lints workflows and
+Dependabot configuration with ``jactionlint``. These tools do not require bine.
+
+Install the pinned GitHub CLI extension and authenticate with GitHub::
+
+    gh auth login
+    gh extension install github/gh-actions-lock --pin v0.2.0
+
+After changing an action version, regenerate the lockfile and verify it::
+
+    make lock-actions
+    make check-actions
+    make lint-actions
+
+The lint target runs pinned ``jactionlint`` through ``uvx``. The verification
+target checks dependencies against GitHub without changing files. For an offline
+coverage-only check, use ``gh actions-lock --verify-local``; it does not verify
+upstream provenance. Commit the generated lockfile with workflow changes,
+including dependency updates proposed by Dependabot. Review lockfile changes
+instead of accepting moved upstream references automatically.
+
+The pedantic lint profile delegates action pinning to the lockfile verifier.
+Exceptions for existing repository secrets are documented at their use sites.
+PyPI builds run without publishing credentials; a separate job downloads the
+distribution artifacts and publishes them through the existing release
+environment. It generates PyPI attestations with ``pypi-attestations`` and
+uploads through ``uv publish --trusted-publishing always``. The PyPA action
+generates a nested action at runtime, which the lockfile tool cannot resolve.
+
+
 Import FPR dataset from Archivematica
 -------------------------------------
 
@@ -76,9 +111,40 @@ a3m loads the FPR dataset from a JSON document
 (``a3m/fpr/migrations/initial-data.json``) generated from the upstream
 Archivematica project. This section describes how to generate it:
 
+Use a disposable Archivematica database with the latest FPR migrations applied.
+Adapt its registry for a3m before exporting it. The JHOVE commands need the
+namespace value directly because a3m does not include Archivematica's Python
+package. Two rules refer to a disabled format, and the old fiwalk command has
+been replaced. JPEG 2000 normalization must let FFmpeg select its decoder.
+Recent FFmpeg releases no longer provide the ``libopenjpeg`` decoder::
+
+    manage.py shell
+
+    from django.db.models import F, Value
+    from django.db.models.functions import Replace
+    from archivematica.dashboard.fpr.models import FPCommand, FPRule
+
+    FPRule.objects.filter(uuid__in=[
+        "20cad741-3cf1-4b6a-9e71-d1e8af13ba3f",
+        "9e502f30-ba01-4981-8377-dd01ecf2dc5c",
+    ]).update(enabled=False)
+    FPCommand.objects.filter(
+        uuid="928ce834-8830-44cc-a282-4ba1271f7842"
+    ).update(enabled=False)
+    old = "from archivematica.archivematicaCommon.namespaces import jhoveBNS"
+    new = 'jhoveBNS = "{http://schema.openpreservation.org/ois/xml/ns/jhove}"'
+    FPCommand.objects.filter(command__contains=old).update(
+        command=Replace(F("command"), Value(old), Value(new))
+    )
+    FPCommand.objects.filter(
+        uuid="66ba8388-2cd2-44a7-9d30-5d194d47c75b"
+    ).update(
+        command=Replace(F("command"), Value(" -vcodec libopenjpeg"), Value(""))
+    )
+
 In Archivematica, generate a dump with::
 
-    manage.py dumpdata --format=json fpr
+    manage.py dumpdata --format=json fpr > fpr-dumpdata.json
 
 Remove unused models from the document::
 

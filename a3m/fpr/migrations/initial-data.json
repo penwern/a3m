@@ -17153,7 +17153,7 @@
         "fields": {
             "description": "Text (Unstructured)",
             "slug": "text-unstructured",
-            "uuid": "c64e205e-60be-43d1-ba92-18e8f849e50a"
+            "uuid": "8615a541-834e-430f-9e1a-870c9a37f92a"
         },
         "model": "fpr.formatgroup",
         "pk": 35
@@ -74283,7 +74283,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "0ab4cd40-90e7-4d75-b294-498177b3897d",
-            "lastmodified": "2026-08-19T13:54:26.949Z",
+            "lastmodified": "2026-10-28T11:52:33.282Z",
             "purpose": "default_thumbnail",
             "replaces": "b0613a6c-943f-42fa-a0da-9c292eb81d38",
             "uuid": "3a19f9a3-c5d5-4934-9286-13b3ad6c24d3"
@@ -74923,7 +74923,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "4dc90ad8-319a-46be-95c8-390b189867d9",
-            "lastmodified": "2026-08-19T13:54:27.114Z",
+            "lastmodified": "2026-10-28T11:52:33.327Z",
             "purpose": "validation",
             "replaces": null,
             "uuid": "a2fb0477-6cde-43f8-a1c9-49834913d588"
@@ -74939,7 +74939,7 @@
             "count_okay": 0,
             "enabled": false,
             "format": "4dc90ad8-319a-46be-95c8-390b189867d9",
-            "lastmodified": "2026-08-19T13:54:27.144Z",
+            "lastmodified": "2026-10-28T11:52:33.334Z",
             "purpose": "policy_check",
             "replaces": null,
             "uuid": "aaaf34ef-c00f-4bb9-85c1-01c0ad5f3a8c"
@@ -74955,7 +74955,7 @@
             "count_okay": 0,
             "enabled": false,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2026-08-19T13:54:27.164Z",
+            "lastmodified": "2026-10-28T11:52:33.339Z",
             "purpose": "preservation",
             "replaces": null,
             "uuid": "52db06e9-ed12-4ca3-83e6-6e867a171dba"
@@ -74971,7 +74971,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2026-08-19T13:54:27.165Z",
+            "lastmodified": "2026-10-28T11:52:33.340Z",
             "purpose": "access",
             "replaces": null,
             "uuid": "7a2bfddd-0f1d-4027-8087-cba338d1ce80"
@@ -74987,7 +74987,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2026-08-19T13:54:27.165Z",
+            "lastmodified": "2026-10-28T11:52:33.340Z",
             "purpose": "characterization",
             "replaces": null,
             "uuid": "4aafcf44-4d28-4d56-9df1-50be1fd9dd78"
@@ -75003,7 +75003,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2026-08-19T13:54:27.165Z",
+            "lastmodified": "2026-10-28T11:52:33.340Z",
             "purpose": "characterization",
             "replaces": null,
             "uuid": "cb95c93c-6cdf-40eb-a328-eb6811daf8c0"
@@ -75019,7 +75019,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9dd2784d-fb57-44de-83b2-5cc54703476b",
-            "lastmodified": "2026-08-19T13:54:27.166Z",
+            "lastmodified": "2026-10-28T11:52:33.340Z",
             "purpose": "characterization",
             "replaces": null,
             "uuid": "885de9a4-7463-4914-b40c-780a232e5442"
@@ -75291,7 +75291,7 @@
             "count_okay": 0,
             "enabled": true,
             "format": "734edb99-968d-42fc-9fc6-342b86fcb6e6",
-            "lastmodified": "2026-08-19T13:54:27.407Z",
+            "lastmodified": "2026-10-28T11:52:33.428Z",
             "purpose": "preservation",
             "replaces": "76ece049-6812-402e-b231-8cf1445a04b4",
             "uuid": "b98667be-2614-410b-9079-41942dbc3b32"
@@ -75579,10 +75579,10 @@
             "count_okay": 0,
             "enabled": true,
             "format": "6ad6b8e1-0fc5-46ac-8531-28dbf5fe33c4",
-            "lastmodified": "2026-08-19T13:54:28.578Z",
+            "lastmodified": "2026-10-28T11:52:33.776Z",
             "purpose": "validation",
             "replaces": null,
-            "uuid": "d1847d80-bf55-4872-8e99-a2ae73237f4e"
+            "uuid": "0f61da9e-809b-49f0-bc98-9da2725582e2"
         },
         "model": "fpr.fprule",
         "pk": 872
@@ -75595,10 +75595,10 @@
             "count_okay": 0,
             "enabled": true,
             "format": "70e7e501-a18c-4e82-9ef4-c0f7a4b03c13",
-            "lastmodified": "2026-08-19T13:54:28.579Z",
+            "lastmodified": "2026-10-28T11:52:33.776Z",
             "purpose": "validation",
             "replaces": null,
-            "uuid": "754242d6-8c99-4087-8509-5379606c7407"
+            "uuid": "426c5343-97b4-4b9f-9235-2226cdacfdc9"
         },
         "model": "fpr.fprule",
         "pk": 873
@@ -75611,10 +75611,10 @@
             "count_okay": 0,
             "enabled": true,
             "format": "de098228-88e7-43c0-ad5c-6c5d088a4058",
-            "lastmodified": "2026-08-19T13:54:28.580Z",
+            "lastmodified": "2026-10-28T11:52:33.776Z",
             "purpose": "validation",
             "replaces": null,
-            "uuid": "1f7dc1cd-1ff4-4026-a9fe-82279bc430b5"
+            "uuid": "8bdd7899-0887-4736-bc79-caa2b054229a"
         },
         "model": "fpr.fprule",
         "pk": 874
@@ -75627,10 +75627,10 @@
             "count_okay": 0,
             "enabled": true,
             "format": "869fb668-65b6-4f67-a66b-a66d95e33932",
-            "lastmodified": "2026-08-19T13:54:28.581Z",
+            "lastmodified": "2026-10-28T11:52:33.777Z",
             "purpose": "validation",
             "replaces": null,
-            "uuid": "a04e8922-6863-4c52-9732-8e6c2f173e69"
+            "uuid": "bcc76cf2-cac0-4e13-a41e-ac9da02d0b0e"
         },
         "model": "fpr.fprule",
         "pk": 875
@@ -75643,10 +75643,10 @@
             "count_okay": 0,
             "enabled": true,
             "format": "57fdad94-a1c3-4711-bf37-8a3da2e68550",
-            "lastmodified": "2026-08-19T13:54:28.582Z",
+            "lastmodified": "2026-10-28T11:52:33.777Z",
             "purpose": "validation",
             "replaces": null,
-            "uuid": "52e36de0-ea68-4af4-859b-5df4c8cc3037"
+            "uuid": "c7c223f1-746b-4093-9ddf-8ce0a6e18bc6"
         },
         "model": "fpr.fprule",
         "pk": 876
@@ -75659,10 +75659,10 @@
             "count_okay": 0,
             "enabled": true,
             "format": "9bd6b33e-b1b4-4e6f-b497-f05dc919e3ce",
-            "lastmodified": "2026-08-19T13:54:28.583Z",
+            "lastmodified": "2026-10-28T11:52:33.777Z",
             "purpose": "validation",
             "replaces": null,
-            "uuid": "0a307e9b-9671-4465-a7b2-bbd23ee2229f"
+            "uuid": "8a4284d8-848b-47ed-bb02-1e78d82804ea"
         },
         "model": "fpr.fprule",
         "pk": 877
@@ -75675,10 +75675,10 @@
             "count_okay": 0,
             "enabled": true,
             "format": "4895b264-e244-4344-8783-824e4b3401b0",
-            "lastmodified": "2026-08-19T13:54:28.585Z",
+            "lastmodified": "2026-10-28T11:52:33.777Z",
             "purpose": "validation",
             "replaces": null,
-            "uuid": "332e2ad7-3bf7-426d-8353-c3a15b6583a4"
+            "uuid": "7bea437a-8457-4583-b1cc-7059d0acd87c"
         },
         "model": "fpr.fprule",
         "pk": 878
@@ -76236,10 +76236,10 @@
     },
     {
         "fields": {
-            "command": "fiwalk -x %relativeLocation%",
+            "command": "fiwalk -x %relativeLocation% -c /usr/lib/archivematica/archivematicaCommon/externals/fiwalk_plugins/ficonfig.txt",
             "command_usage": "Characterization",
             "description": "fiwalk",
-            "enabled": true,
+            "enabled": false,
             "event_detail_command": null,
             "lastmodified": "2014-07-28T19:10:29Z",
             "output_format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
@@ -76336,7 +76336,7 @@
             "description": "Using default thumbnail",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:26.948Z",
+            "lastmodified": "2026-10-28T11:52:33.282Z",
             "output_format": "ffb55e9a-29f1-4276-a9a5-5ef813229b79",
             "output_location": "%outputDirectory%%postfix%.jpg",
             "replaces": "3bd47271-a3fa-4627-be97-9f7f69ddeefd",
@@ -76355,7 +76355,7 @@
             "description": "Validate using MediaConch",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.113Z",
+            "lastmodified": "2026-10-28T11:52:33.327Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76374,7 +76374,7 @@
             "description": "Check against policy PLACEHOLDER_FOR_POLICY_FILE_NAME using MediaConch",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.143Z",
+            "lastmodified": "2026-10-28T11:52:33.334Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76388,12 +76388,12 @@
     },
     {
         "fields": {
-            "command": "ffmpeg -vcodec libopenjpeg -i \"%fileFullName%\" -compression_algo raw -pix_fmt rgb24 \"%outputDirectory%%prefix%%fileName%%postfix%.tif\"",
+            "command": "ffmpeg -i \"%fileFullName%\" -compression_algo raw -pix_fmt rgb24 \"%outputDirectory%%prefix%%fileName%%postfix%.tif\"",
             "command_usage": "normalization",
             "description": "Transcoding to tif with ffmpeg",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.406Z",
+            "lastmodified": "2026-10-28T11:52:33.427Z",
             "output_format": "2ebdfa17-2257-49f8-8035-5f304bb46918",
             "output_location": "%outputDirectory%%prefix%%fileName%%postfix%.tif",
             "replaces": null,
@@ -76412,7 +76412,7 @@
             "description": "Transcoding to plain svg with inkscape",
             "enabled": true,
             "event_detail_command": "1db2deea-01dd-43e5-9f27-dc9ed02acdfe",
-            "lastmodified": "2026-08-19T13:54:27.606Z",
+            "lastmodified": "2026-10-28T11:52:33.487Z",
             "output_format": "8ba2101d-3f3c-4620-a0fa-a75cf5f5ec27",
             "output_location": "%outputDirectory%%prefix%%fileName%%postfix%.svg",
             "replaces": "64c450b4-135c-46d1-a9aa-3f9b15671677",
@@ -76431,7 +76431,7 @@
             "description": "Validate using JHOVE",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.626Z",
+            "lastmodified": "2026-10-28T11:52:33.495Z",
             "output_format": null,
             "output_location": null,
             "replaces": "fe9e3046-29fb-4cc6-b71c-db50b0aac127",
@@ -76450,7 +76450,7 @@
             "description": "Validate using JHOVE",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.792Z",
+            "lastmodified": "2026-10-28T11:52:33.543Z",
             "output_format": null,
             "output_location": null,
             "replaces": "11036e14-78d9-4449-8360-e2da394279ad",
@@ -76469,7 +76469,7 @@
             "description": "Validate using MediaConch",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.796Z",
+            "lastmodified": "2026-10-28T11:52:33.544Z",
             "output_format": null,
             "output_location": null,
             "replaces": "287656fb-e58f-4967-bf72-0bae3bbb5ca8",
@@ -76488,7 +76488,7 @@
             "description": "tsk_recover",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.798Z",
+            "lastmodified": "2026-10-28T11:52:33.545Z",
             "output_format": null,
             "output_location": null,
             "replaces": "8f41dc6f-05eb-46d4-9b22-0a0d74673510",
@@ -76507,7 +76507,7 @@
             "description": "Using default thumbnail",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:27.800Z",
+            "lastmodified": "2026-10-28T11:52:33.545Z",
             "output_format": "ffb55e9a-29f1-4276-a9a5-5ef813229b79",
             "output_location": "%outputDirectory%%postfix%.jpg",
             "replaces": "7c2b65c7-6cea-4f81-9f3b-53375efc5bee",
@@ -76526,7 +76526,7 @@
             "description": "Validate using JHOVE",
             "enabled": false,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.193Z",
+            "lastmodified": "2026-10-28T11:52:33.656Z",
             "output_format": null,
             "output_location": null,
             "replaces": "4cac3267-453e-4456-9306-6d098dacb70d",
@@ -76545,7 +76545,7 @@
             "description": "Using default thumbnail",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.330Z",
+            "lastmodified": "2026-10-28T11:52:33.700Z",
             "output_format": "ffb55e9a-29f1-4276-a9a5-5ef813229b79",
             "output_location": "%outputDirectory%%postfix%.jpg",
             "replaces": "95149bc4-0620-4c20-964c-1d6c34b9400e",
@@ -76564,7 +76564,7 @@
             "description": "Get event detail text for 7z extraction",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.378Z",
+            "lastmodified": "2026-10-28T11:52:33.713Z",
             "output_format": null,
             "output_location": null,
             "replaces": "914fe3e5-fa45-47c6-858d-e11bc71f5b76",
@@ -76578,12 +76578,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'JPEG-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'JPEG-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE JPEG-hul",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.397Z",
+            "lastmodified": "2026-10-28T11:52:33.717Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76597,12 +76597,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'JPEG2000-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'JPEG2000-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE JPEG2000-hul",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.399Z",
+            "lastmodified": "2026-10-28T11:52:33.718Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76616,12 +76616,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'TIFF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'TIFF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE TIFF-hul",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.399Z",
+            "lastmodified": "2026-10-28T11:52:33.718Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76635,12 +76635,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'WAVE-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'WAVE-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE WAVE-hul",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.400Z",
+            "lastmodified": "2026-10-28T11:52:33.718Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76654,12 +76654,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'AIFF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'AIFF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE AIFF-hul",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.401Z",
+            "lastmodified": "2026-10-28T11:52:33.718Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76673,12 +76673,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'gif-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'gif-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE gif-hul",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.402Z",
+            "lastmodified": "2026-10-28T11:52:33.719Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76692,12 +76692,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'WARC-kb', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'WARC-kb', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE WARC-kb",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.402Z",
+            "lastmodified": "2026-10-28T11:52:33.719Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76711,12 +76711,12 @@
     },
     {
         "fields": {
-            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\n\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'PDF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
+            "command": "\nimport json\nimport subprocess\nimport sys\n\nfrom lxml import etree\njhoveBNS = \"{http://schema.openpreservation.org/ois/xml/ns/jhove}\"\n\nclass JhoveException(Exception):\n    pass\n\ndef parse_jhove_data(target):\n    args = ['jhove', '-h', 'xml', '-m', 'PDF-hul', target]\n    try:\n        output = subprocess.check_output(args).decode(\"utf8\")\n    except subprocess.CalledProcessError:\n        raise JhoveException(\"Jhove failed when running: \" + ' '.join(args))\n\n    return etree.fromstring(output.encode(\"utf8\"))\n\ndef get_status(doc):\n    status = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}status\")\n    if status is None:\n        raise JhoveException(\"Unable to find status!\")\n\n    return status.text\n\ndef get_outcome(status, format=None):\n    # JHOVE returns \"bytestream\" for unrecognized file formats.\n    # That can include unrecognized or malformed PDFs, JPEG2000s, etc.\n    # Since we're whitelisting the formats we're passing in,\n    # \"bytestream\" indicates that the format is not in fact well-formed\n    # regardless of what the status reads.\n    if format == \"bytestream\":\n        return \"partial pass\"\n\n    if status == \"Well-Formed and valid\":\n        return \"pass\"\n    elif status == \"Well-Formed, but not valid\":\n        return \"partial pass\"\n    else:\n        return \"fail\"\n\ndef get_format(doc):\n    format = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}format\")\n    version = doc.find(f\".{jhoveBNS}repInfo/{jhoveBNS}version\")\n\n    if format is None:\n        format = \"Not detected\"\n    else:\n        format = format.text\n\n    if version is not None:\n        version = version.text\n\n    return (format, version)\n\ndef get_errors(doc):\n    errors = doc.findall(f'.{jhoveBNS}repInfo/{jhoveBNS}messages/{jhoveBNS}message[@severity=\"error\"]')\n    messages = [f\"JHOVE error: {error.get('id')}, message: {error.text}\" for error in errors]\n    return '; '.join(messages)\n\ndef format_event_outcome_detail_note(format, version, result, errors):\n    note = 'format=\"{}\";'.format(format)\n    if version is not None:\n        note = note + ' version=\"{}\";'.format(version)\n    note = note + ' result=\"{}\"'.format(result)\n    if errors:\n        note = note + '; error=\"{}\"'.format(errors)\n\n    return note\n\ndef main(target):\n    try:\n        doc = parse_jhove_data(target)\n        status = get_status(doc)\n        format, version = get_format(doc)\n        outcome = get_outcome(status, format)\n        errors = get_errors(doc)\n        note = format_event_outcome_detail_note(format, version, status, errors)\n\n        out = {\n            \"eventOutcomeInformation\": outcome,\n            \"eventOutcomeDetailNote\": note\n        }\n        print(json.dumps(out))\n\n        return 0\n    except JhoveException as e:\n        return e\n\nif __name__ == '__main__':\n    target = sys.argv[1]\n    sys.exit(main(target))\n",
             "command_usage": "validation",
             "description": "Validate using JHOVE PDF-hul",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.403Z",
+            "lastmodified": "2026-10-28T11:52:33.719Z",
             "output_format": null,
             "output_location": null,
             "replaces": null,
@@ -76735,7 +76735,7 @@
             "description": "fiwalk",
             "enabled": true,
             "event_detail_command": null,
-            "lastmodified": "2026-08-19T13:54:28.537Z",
+            "lastmodified": "2026-10-28T11:52:33.762Z",
             "output_format": "d60e5243-692e-4af7-90cd-40c53cb8dc7d",
             "output_location": null,
             "replaces": "928ce834-8830-44cc-a282-4ba1271f7842",
@@ -76751,9 +76751,9 @@
         "fields": {
             "description": "convert",
             "enabled": false,
-            "slug": "convert-6911-60",
+            "slug": "convert-712-18",
             "uuid": "8d81cd4f-20ee-4a82-9eca-455699509cd5",
-            "version": "6.9.11-60"
+            "version": "7.1.2-18"
         },
         "model": "fpr.fptool",
         "pk": 1
@@ -76762,9 +76762,9 @@
         "fields": {
             "description": "test",
             "enabled": false,
-            "slug": "test-gnu-coreutils-832",
+            "slug": "test-uutils-coreutils-0100",
             "uuid": "12e11ac5-d96d-412f-ab15-362ed5283d46",
-            "version": "(GNU coreutils) 8.32"
+            "version": "(uutils coreutils) 0.10.0"
         },
         "model": "fpr.fptool",
         "pk": 3
@@ -76773,9 +76773,9 @@
         "fields": {
             "description": "echo",
             "enabled": false,
-            "slug": "echo-gnu-coreutils-832",
+            "slug": "echo-uutils-coreutils-0100",
             "uuid": "2385486a-35e2-42e4-bae9-3bfa1995dda4",
-            "version": "(GNU coreutils) 8.32"
+            "version": "(uutils coreutils) 0.10.0"
         },
         "model": "fpr.fptool",
         "pk": 4
@@ -76784,9 +76784,9 @@
         "fields": {
             "description": "ffmpeg",
             "enabled": false,
-            "slug": "ffmpeg-442",
+            "slug": "ffmpeg-801",
             "uuid": "307d4e6d-9cfc-414e-8354-f41fe1247e12",
-            "version": "4.4.2"
+            "version": "8.0.1"
         },
         "model": "fpr.fptool",
         "pk": 5
@@ -76795,9 +76795,9 @@
         "fields": {
             "description": "Ghostscript",
             "enabled": false,
-            "slug": "ghostscript-9550",
+            "slug": "ghostscript-10060",
             "uuid": "ef6c5539-b803-4d26-9e09-a5b984bf0bf5",
-            "version": "9.55.0"
+            "version": "10.06.0"
         },
         "model": "fpr.fptool",
         "pk": 6
@@ -76806,9 +76806,9 @@
         "fields": {
             "description": "inkscape",
             "enabled": false,
-            "slug": "inkscape-112",
+            "slug": "inkscape-143",
             "uuid": "06523365-9061-4ac7-a7f5-3e7e5f06ffac",
-            "version": "1.1.2"
+            "version": "1.4.3"
         },
         "model": "fpr.fptool",
         "pk": 7
@@ -76817,9 +76817,9 @@
         "fields": {
             "description": "ps2pdf",
             "enabled": false,
-            "slug": "ps2pdf-9550",
+            "slug": "ps2pdf-10060",
             "uuid": "18102743-3a25-4510-bf09-976421d5a646",
-            "version": "9.55.0"
+            "version": "10.06.0"
         },
         "model": "fpr.fptool",
         "pk": 8
@@ -76828,9 +76828,9 @@
         "fields": {
             "description": "cp",
             "enabled": false,
-            "slug": "cp-gnu-coreutils-832",
+            "slug": "cp-gnu-coreutils-97",
             "uuid": "57864018-63d0-4786-8ce5-55393d3ab5a1",
-            "version": "(GNU coreutils) 8.32"
+            "version": "(GNU coreutils) 9.7"
         },
         "model": "fpr.fptool",
         "pk": 9
@@ -76839,9 +76839,9 @@
         "fields": {
             "description": "7Zip",
             "enabled": true,
-            "slug": "7zip-1602",
+            "slug": "7zip-2600",
             "uuid": "7d1f8bb1-7915-4b45-a0d5-34e0aab8d6fc",
-            "version": "16.02"
+            "version": "26.00"
         },
         "model": "fpr.fptool",
         "pk": 10
@@ -76861,9 +76861,9 @@
         "fields": {
             "description": "unrar-free",
             "enabled": true,
-            "slug": "unrar-free-002",
+            "slug": "unrar-free-033",
             "uuid": "52621750-1f8f-410d-aa1b-eb0a34103d51",
-            "version": "0.0.2"
+            "version": "0.3.3"
         },
         "model": "fpr.fptool",
         "pk": 12
@@ -76872,9 +76872,9 @@
         "fields": {
             "description": "FFprobe",
             "enabled": false,
-            "slug": "ffprobe-442",
+            "slug": "ffprobe-801",
             "uuid": "467a5875-f9ef-49ac-ac93-29f4bac3dbae",
-            "version": "4.4.2"
+            "version": "8.0.1"
         },
         "model": "fpr.fptool",
         "pk": 13
@@ -76883,9 +76883,9 @@
         "fields": {
             "description": "ExifTool",
             "enabled": false,
-            "slug": "exiftool-1240",
+            "slug": "exiftool-1350",
             "uuid": "bb957e1d-ee63-4354-a209-a41d23881e3e",
-            "version": "12.40"
+            "version": "13.50"
         },
         "model": "fpr.fptool",
         "pk": 14
@@ -76894,9 +76894,9 @@
         "fields": {
             "description": "MediaInfo",
             "enabled": false,
-            "slug": "mediainfo-2605",
+            "slug": "mediainfo-2610",
             "uuid": "e0d7abce-39fd-49f7-ab98-aef1bdb0378f",
-            "version": "26.05"
+            "version": "26.10"
         },
         "model": "fpr.fptool",
         "pk": 15
@@ -76905,9 +76905,9 @@
         "fields": {
             "description": "Sleuthkit",
             "enabled": true,
-            "slug": "sleuthkit-4111",
+            "slug": "sleuthkit-4121",
             "uuid": "0a78f98a-9484-431a-9759-59e5d1d09281",
-            "version": "4.11.1"
+            "version": "4.12.1"
         },
         "model": "fpr.fptool",
         "pk": 16
@@ -76916,9 +76916,9 @@
         "fields": {
             "description": "Tesseract",
             "enabled": false,
-            "slug": "tesseract-411",
+            "slug": "tesseract-550",
             "uuid": "765335d5-70b7-4a02-816e-a293a1bc1b6c",
-            "version": "4.1.1"
+            "version": "5.5.0"
         },
         "model": "fpr.fptool",
         "pk": 17
@@ -76927,9 +76927,9 @@
         "fields": {
             "description": "JHOVE",
             "enabled": true,
-            "slug": "jhove-1340",
+            "slug": "jhove-134",
             "uuid": "085d8690-93b7-4d31-84f7-2c5f4cbf6735",
-            "version": "1.34.0"
+            "version": "1.34"
         },
         "model": "fpr.fptool",
         "pk": 18
@@ -77004,9 +77004,9 @@
         "fields": {
             "description": "inkscape",
             "enabled": true,
-            "slug": "inkscape-112",
+            "slug": "inkscape-143",
             "uuid": "34afccc3-2cfd-4780-ba56-06221f1bfe18",
-            "version": "1.1.2"
+            "version": "1.4.3"
         },
         "model": "fpr.fptool",
         "pk": 25
@@ -77026,9 +77026,9 @@
         "fields": {
             "description": "ffmpeg",
             "enabled": true,
-            "slug": "ffmpeg-442",
+            "slug": "ffmpeg-801",
             "uuid": "fcc4e6d7-d956-40e9-af92-0e544895eb1f",
-            "version": "4.4.2"
+            "version": "8.0.1"
         },
         "model": "fpr.fptool",
         "pk": 27

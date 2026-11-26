@@ -1,0 +1,34 @@
+---
+volumes:
+  a3m-pipeline-data:
+    name: "a3m-pipeline-data"
+  a3m-postgres-data:
+    name: "a3m-postgres-data"
+services:
+  postgres:
+    image: "postgres:15-alpine"
+    environment:
+      POSTGRES_DB: "a3m"
+      POSTGRES_USER: "a3m"
+      POSTGRES_PASSWORD: "a3m"
+    volumes:
+      - "a3m-postgres-data:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "a3m", "-d", "a3m"]
+      interval: "2s"
+  a3m:
+    build:
+      context: "."
+    environment:
+      A3M_DB_ENGINE: "django.db.backends.postgresql"
+      A3M_DB_NAME: "a3m"
+      A3M_DB_USER: "a3m"
+      A3M_DB_PASSWORD: "a3m"
+      A3M_DB_HOST: "postgres"
+    volumes:
+      - "a3m-pipeline-data:/home/a3m/.local/share/a3m:rw"
+    ports:
+      - "52000:7000"
+    depends_on:
+      postgres:
+        condition: "service_healthy"
