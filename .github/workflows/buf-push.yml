@@ -26,7 +26,9 @@ jobs:
         persist-credentials: false
     - uses: bufbuild/buf-action@v1.7.0
       with:
-        input: proto
+        # No input: the action reads module names from the buf.yaml in its
+        # input directory, and ours is at the repository root. Pointing it at
+        # proto/ found no named module, so the push step was skipped silently.
         lint: true
         format: false
         breaking: false
