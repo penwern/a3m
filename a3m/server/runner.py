@@ -30,11 +30,14 @@ from django.conf import settings as premis_settings
 from grpc_reflection.v1alpha import reflection
 
 from a3m import __version__
+from a3m.api.fprservice import v1beta1 as fpr_service_api
 from a3m.api.transferservice import v1beta1 as transfer_service_api
+from a3m.fpr.registry import FPR
 from a3m.main import models
 from a3m.server import metrics
 from a3m.server import shared_dirs
 from a3m.server.db import migrate
+from a3m.server.fpr_service import FPRService
 from a3m.server.jobs import Job
 from a3m.server.queues import PackageQueue
 from a3m.server.tasks import Task
@@ -104,6 +107,9 @@ class Server:
         self._mount_services()
 
     def _mount_services(self):
+        fpr_service_api.service_pb2_grpc.add_FPRServiceServicer_to_server(
+            FPRService(FPR.backend), self.grpc_server
+        )
         transfer_service = TransferService(
             self.workflow, self.queue, self.queue_executor
         )
@@ -111,10 +117,17 @@ class Server:
             transfer_service, self.grpc_server
         )
 
-        services = tuple(
-            service.full_name
-            for service in transfer_service_api.service_pb2.DESCRIPTOR.services_by_name.values()
-        ) + (reflection.SERVICE_NAME,)
+        services = (
+            tuple(
+                service.full_name
+                for service in transfer_service_api.service_pb2.DESCRIPTOR.services_by_name.values()
+            )
+            + tuple(
+                service.full_name
+                for service in fpr_service_api.service_pb2.DESCRIPTOR.services_by_name.values()
+            )
+            + (reflection.SERVICE_NAME,)
+        )
         reflection.enable_server_reflection(services, self.grpc_server)
 
     def start(self):

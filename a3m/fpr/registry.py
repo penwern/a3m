@@ -33,6 +33,7 @@ digital files.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import uuid
 from abc import ABC
@@ -299,7 +300,11 @@ class JSONBackend(Backend):
     replaced_rules: dict[uuid.UUID, uuid.UUID]
 
     def __init__(self, blob):
-        self._load(json.loads(blob))
+        source = blob.encode("utf-8") if isinstance(blob, str) else blob
+        self.source_sha256 = hashlib.sha256(source).hexdigest()
+        self.source_records = json.loads(source)
+        self.dropped_rule_ids: list[str] = []
+        self._load(self.source_records)
 
     def _load(self, data: DjangoDatabaseDumpList):
         self.formats = {}
@@ -367,6 +372,7 @@ class JSONBackend(Backend):
                 tool.slug = fields["slug"]
                 tool.description = fields["description"]
                 tool.version = fields["version"]
+                tool.enabled = fields["enabled"]
 
         # Load commands.
         for item in data:
@@ -424,7 +430,7 @@ class JSONBackend(Backend):
                     rule.format = self.versions[uuid.UUID(fields["format"])]
                     rule.command = self.commands[uuid.UUID(fields["command"])]
                 except KeyError:
-                    pass
+                    self.dropped_rule_ids.append(str(id))
                 else:
                     self.rules[id] = rule
         self.replaced_rules = get_replaced_objects(self.rules)
